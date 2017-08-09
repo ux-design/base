@@ -1,0 +1,44 @@
+{
+    "file": "index.html",
+    "language": "en",
+    "url": "/",
+    "meta": [ 
+        "<meta charset=\"utf-8\">"
+    ],
+    "title": "Andrea Mazzilli",
+    "style": "/css/bundle.min.css",
+    "body": {
+        "navigation": {
+            "welcome": { 
+                "name": "welcome",
+                "link": "/",
+                "selected" : true
+            },
+            "about": {
+                "name": "about",
+                "link": "/about"
+            },
+            "contact": {
+                "name": "contact",
+                "link": "/contact"
+            }
+        },
+        "content": [
+            {
+                "tag": "h1",
+                "classes": "title",
+                "id": "main-title"
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "main-subtitle"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "main-description"
+            }
+        ]
+    }
+}
