@@ -1,7 +1,7 @@
 {
-    "file": "index.html",
+    "file": "contact.html",
     "language": "en",
-    "url": "/",
+    "url": "/contact",
     "meta": [ 
         "<meta charset=\"utf-8\">"
     ],
@@ -11,8 +11,8 @@
         "navigation": {
             "welcome": { 
                 "name": "welcome",
-                "link": "/",
-                "selected" : true
+                "link": "/"
+                
             },
             "about": {
                 "name": "about",
@@ -20,7 +20,8 @@
             },
             "contact": {
                 "name": "contact",
-                "link": "/contact"
+                "link": "/contact",
+                "selected" : true
             }
         },
         "content": [
@@ -28,19 +29,19 @@
                 "tag": "h1",
                 "classes": "title",
                 "id": "main-title",
-                "value": "Welcome"
+                "value": "Contact"
             },
             {
                 "tag": "h2",
                 "classes": "subtitle",
                 "id": "main-subtitle",
-                "value": "introduction"
+                "value": "email"
             },
             {
                 "tag": "p",
                 "classes": "paragraph",
                 "id": "main-description",
-                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+                "value": "mazzilli.andrea@gmail.com"
             }
         ]
     }

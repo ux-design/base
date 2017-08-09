@@ -57,8 +57,9 @@ const createCONTENT = ( payload , test ) => {
             let el = content[ x ];
             let tag = el.tag 
             ,   classes = el.classes
-            ,   id = el.id ;
-            result.push( `<${tag} id="${id}" class="${classes}"></${tag}>` );
+            ,   id = el.id 
+            ,   value = el.value ? el.value : '';
+            result.push( `<${tag} id="${id}" class="${classes}">${value}</${tag}>` );
         }
         return `<div id="content">${result.join('')}</div>`;
         // function end
