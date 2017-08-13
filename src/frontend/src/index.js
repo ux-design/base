@@ -20,7 +20,7 @@ const update = ( page ) => {
     ReactDOM.render(<Loader on />, document.getElementById('loader'));
 
     //const ip = 'localhost';
-    const ip = '192.168.1.33';
+    const ip = '192.168.1.40';
     fetch(`http://${ip}:4000/templates/${page}`, {
         method: 'get'
     }).then( ( resp ) => {
@@ -29,6 +29,8 @@ const update = ( page ) => {
         ReactDOM.render(<Loader />, document.getElementById('loader'));
         ReactDOM.render(<Navigation data={ data.body.navigation } />, document.getElementById('navigation'));
         ReactDOM.render(<Content data={ data.body.content } />, document.getElementById('content'));
+        document.querySelector('#navigation').style.opacity = 1;
+        document.querySelector('#content').style.opacity = 1;
         registerServiceWorker();  
     }).catch( ( err ) => {
         // Error :(

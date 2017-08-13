@@ -8,7 +8,7 @@ const port = process.env.PORT || 4000;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 //const ip = 'localhost';
-const ip = '192.168.1.33';
+const ip = '192.168.1.40';
 
 // API
 
@@ -57,7 +57,7 @@ const _forcePageRendering = ( payload ) => {
         'brace_style': 'expand',
         'unformatted': ['sub', 'sup', 'b', 'i', 'u']
     }
-    result = result.replace(`</body>`,`<script type="text/javascript" src="http://${ip}:3000/static/js/bundle.js"></script>`);
+    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><script type="text/javascript" src="http://${ip}:3000/static/js/bundle.js"></script>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
