@@ -1,0 +1,30 @@
+.loader-el {
+  position: absolute;
+  z-index: 100000;
+  display: flex;
+  top: 0px;
+  right: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  color: red;
+  transform-origin: 50% 50%;
+}
+
+.loader-on {
+    opacity: 1;
+}
+
+.loader-off {
+    opacity: 0;
+    animation: loader-off 0.5s linear;
+}
+
+@keyframes loader-off {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+

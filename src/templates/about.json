@@ -1,7 +1,7 @@
 {
-    "file": "contact.html",
+    "file": "about.html",
     "language": "en",
-    "url": "/contact",
+    "url": "/about",
     "meta": [ 
         "<meta charset=\"utf-8\">"
     ],
@@ -28,19 +28,7 @@
                 "tag": "h1",
                 "classes": "title",
                 "id": "main-title",
-                "value": "Contact"
-            },
-            {
-                "tag": "h2",
-                "classes": "subtitle",
-                "id": "main-subtitle",
-                "value": "email"
-            },
-            {
-                "tag": "p",
-                "classes": "paragraph",
-                "id": "main-description",
-                "value": "mazzilli.andrea@gmail.com"
+                "value": "About"
             }
         ]
     }

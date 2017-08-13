@@ -1,0 +1,21 @@
+.navigation-el {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+}
+
+.navigation-in {
+  animation: navigation-in 0.5s ease-out;
+}
+
+@keyframes navigation-in {
+  from { transform: scale(0,0); }
+  to { transform: scale(1,1); }
+}
