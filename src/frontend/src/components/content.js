@@ -21,7 +21,7 @@ class Content extends Component {
       result.push( this._renderChild( el , x ) );
     }
     return (
-      <div>
+      <div className="wrapper">
         { result }
       </div>
     );

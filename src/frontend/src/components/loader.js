@@ -11,14 +11,14 @@ class Loader extends Component {
   render() {
     if ( this.props.on ) {
         return (
-            <div className="loader-el loader-on">
-                <p>loading..</p>
+            <div className="wrapper loader-el loader-on">
+                <i className="fa fa-circle-o-notch spin" aria-hidden="true"></i>
             </div>
         );
     } else {
         return (
-            <div className="loader-el loader-off">
-                <p>loading..</p>
+            <div className="wrapper loader-el loader-off">
+                <i className="fa fa-circle-o-notch" aria-hidden="true"></i>
             </div>
         );
     }

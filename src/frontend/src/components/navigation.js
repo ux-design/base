@@ -11,9 +11,13 @@ class Navigation extends Component {
   _renderChild( payload ) {
     var result;
     payload.link
-      ? result = <a onClick={ ()=>{ window.page = payload.link } }>{ payload.name }</a>
+      ? result = <a onClick={ ()=>{ window.state.page = payload.link } }>{ payload.name }</a>
       : result = payload.name
     return result;
+  }
+
+  _toggleMenu() {
+    window.state.toggleMenu = true;
   }
 
   shouldComponentUpdate( nextProps, nextState ){
@@ -29,8 +33,13 @@ class Navigation extends Component {
       result.push( <div key={ x } className={ `navigation-el navigation-in` }>{ this._renderChild( el ) }</div> );
     }
     return (
-      <div>
-        { result }
+      <div className="wrapper">
+        <div className="links">
+          { result }
+        </div>
+        <div className="menu-button" onClick={ this._toggleMenu }>
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>
       </div>
     );
   }
