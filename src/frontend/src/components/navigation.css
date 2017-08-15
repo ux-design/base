@@ -14,11 +14,22 @@
   flex-grow: 1;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 50px;
   background-color: black;
   color: white;
   transform-origin: 50% 50%;
   cursor: pointer;
+}
+
+.navigation-el:hover{
+  transform: scale(1.05);
+  background-color: #ff0050;
+  transition: transform 0.5s;
+}
+
+.navigation-el.selected{
+  background-color: #ff0050;
+  color: black;
 }
 
 .navigation-in {
@@ -26,8 +37,8 @@
 }
 
 @keyframes navigation-in {
-  from { transform: scale(0,0); }
-  to { transform: scale(1,1); }
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0px); }
 }
 
 /* mobile */
@@ -42,6 +53,19 @@
 
   #navigation .wrapper .menu-button{
     position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navigation .wrapper .menu-close{
+    position: absolute;
+    top: 0px;
     right: 0px;
     color: white;
     width: 40px;
@@ -55,8 +79,9 @@
     flex-direction: column;
     position: absolute;
     width: 100%;
-    top: 60px;
-    bottom: 60px;
+    top: 150px;
+    bottom: 150px;
+    min-height: 200px;
   }
 
 }
@@ -66,6 +91,10 @@
 @media screen and (min-width: 768px) {
 
   #navigation .wrapper .menu-button{
+    display: none;
+  }
+
+  #navigation .wrapper .menu-close{
     display: none;
   }
   

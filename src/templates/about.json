@@ -3,16 +3,20 @@
     "language": "en",
     "url": "/about",
     "meta": [ 
-        "<meta charset=\"utf-8\">",
-        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
     ],
-    "title": "Andrea Mazzilli",
-    "style": "/css/bundle.min.css",
+    "title": "Andrea Mazzilli - about",
+    "style": "",
     "body": {
         "navigation": {
             "welcome": { 
                 "name": "welcome",
                 "link": "/"
+            },
+            "video": {
+                "name": "video",
+                "link": "/video"
             },
             "about": {
                 "name": "about",

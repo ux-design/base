@@ -4,7 +4,9 @@ const createHTML = ( payload , test ) => {
 	return use( { payload , callback : ( payload ) => {
         // function start
         const { file , language , url , meta , title , style , body } = payload ;
-        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}<link rel="stylesheet" type="text/css" href="${style}" media="all" /></head>${createBODY(body)}</html>`;
+        var stylesheet = '';
+        if ( style !== '' ) stylesheet = `<link rel="stylesheet" type="text/css" href="${style}" media="all" />`;
+        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}${stylesheet}</head>${createBODY(body)}</html>`;
         // function end
 	}} , test );
 }

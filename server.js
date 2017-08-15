@@ -8,9 +8,14 @@ const port = process.env.PORT || 4000;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 //const ip = 'localhost';
-const ip = '192.168.1.40';
+//const ip = '192.168.1.40';    // home
+const ip = '10.99.71.101';      // office
 
 // API
+
+    // STATIC FILES (REACT)
+
+    app.use( express.static( __dirname + `/src/frontend/build` ) );
 
 	// GET
 
@@ -44,6 +49,12 @@ const ip = '192.168.1.40';
         
     } ) ;
 
+    app.get( '/bower_components/font-awesome/css/font-awesome.css' , function( req , res ) {
+        
+        res.sendFile( __dirname + `/bower_components/font-awesome/css/font-awesome.css` );
+        
+    } ) ;
+
 // functions  
 
 const _forcePageRendering = ( payload ) => {
@@ -57,7 +68,7 @@ const _forcePageRendering = ( payload ) => {
         'brace_style': 'expand',
         'unformatted': ['sub', 'sup', 'b', 'i', 'u']
     }
-    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><script type="text/javascript" src="http://${ip}:3000/static/js/bundle.js"></script>`);
+    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="http://${ip}:4000/static/css/main.c25737e3.css" media="all" /><script type="text/javascript" src="http://${ip}:4000/static/js/main.3d6fe7f7.js"></script>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         

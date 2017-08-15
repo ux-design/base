@@ -11,13 +11,17 @@ class Navigation extends Component {
   _renderChild( payload ) {
     var result;
     payload.link
-      ? result = <a onClick={ ()=>{ window.state.page = payload.link } }>{ payload.name }</a>
+      ? result = <span>{ payload.name }</span>
       : result = payload.name
     return result;
   }
 
   _toggleMenu() {
     window.state.toggleMenu = true;
+  }
+
+  _link( payload ) {
+    window.state.page = payload;
   }
 
   shouldComponentUpdate( nextProps, nextState ){
@@ -27,10 +31,13 @@ class Navigation extends Component {
   render() {
     const data = this.props.data;
     var result = [];
-    var el;
+    var el, selected = '';
     for( let x in data ){
       el = data[ x ];
-      result.push( <div key={ x } className={ `navigation-el navigation-in` }>{ this._renderChild( el ) }</div> );
+      el.selected
+        ? selected = 'selected'
+        : selected = ''
+      result.push( <div key={ x } className={ `navigation-el ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div> );
     }
     return (
       <div className="wrapper">
@@ -39,6 +46,9 @@ class Navigation extends Component {
         </div>
         <div className="menu-button" onClick={ this._toggleMenu }>
           <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div className="menu-close" onClick={ this._toggleMenu }>
+          <i className="fa fa-times" aria-hidden="true"></i>
         </div>
       </div>
     );
