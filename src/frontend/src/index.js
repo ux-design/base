@@ -6,7 +6,7 @@ import Navigation from './components/navigation';
 import Content from './components/content';
 import Loader from './components/loader';
 import registerServiceWorker from './registerServiceWorker';
-const ip = require( 'ip' ).address();
+const ip = window.location.hostname;
 //const ip = 'localhost';
 
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
@@ -66,8 +66,8 @@ const update = ( page ) => {
         setTimeout( ()=>{
             window.state.toggleMenu = true;
             ReactDOM.render(<Loader />, document.getElementById('loader'));
-            ReactDOM.render(<Navigation data={ data.body.navigation } />, document.getElementById('navigation'));
-            ReactDOM.render(<Content data={ data.body.content } />, document.getElementById('content'));
+            ReactDOM.render(<Navigation data={ data } />, document.getElementById('navigation'));
+            ReactDOM.render(<Content data={ data } />, document.getElementById('content'));
             document.title = data.title;
             //animateTitle( data.title );
             document.querySelector('#navigation').style.opacity = 1;

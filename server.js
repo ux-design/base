@@ -48,12 +48,6 @@ const ip = require( 'ip' ).address();
         
     } ) ;
 
-    app.get( '/bower_components/font-awesome/css/font-awesome.css' , function( req , res ) {
-        
-        res.sendFile( __dirname + `/bower_components/font-awesome/css/font-awesome.css` );
-        
-    } ) ;
-
 // functions  
 
 const _getProductionCss = () => {

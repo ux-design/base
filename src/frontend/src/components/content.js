@@ -13,7 +13,6 @@ class Content extends Component {
   }
 
   _showElementsOnScroll() {
-    var me = this;
     window.addEventListener('scroll',() => {
       this._showElements();
     });
@@ -35,7 +34,6 @@ class Content extends Component {
   }
 
   _hideElements() {
-    var me = this;
     var n = 0;
     for ( let x in this.refs ) {
       this._elHide( x, n );
@@ -70,7 +68,7 @@ class Content extends Component {
 
   render() {
     console.log('render')
-    const data = this.props.data;
+    const data = this.props.data.body.content;
     var result = [];
     var el;
     for( let x in data ){
