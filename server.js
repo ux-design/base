@@ -7,9 +7,8 @@ const io = require( 'socket.io' )( server ) ;
 const port = process.env.PORT || 4000;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
+const ip = require( 'ip' ).address();
 //const ip = 'localhost';
-//const ip = '192.168.1.40';    // home
-const ip = '10.99.71.101';      // office
 
 // API
 
@@ -57,6 +56,24 @@ const ip = '10.99.71.101';      // office
 
 // functions  
 
+const _getProductionCss = () => {
+    const items = fs.readdirSync( `./src/frontend/build/static/css` , 'utf8' );
+    var result ;
+    for ( var i=0; i<items.length; i++) {
+        result = items[i].split('.css')[0];
+    }
+    return `${result}.css`;
+}
+
+const _getProductionJs = () => {
+    const items = fs.readdirSync( `./src/frontend/build/static/js` , 'utf8' );
+    var result ;
+    for ( var i=0; i<items.length; i++) {
+        result = items[i].split('.js')[0];
+    }
+    return `${result}.js`;
+}
+
 const _forcePageRendering = ( payload ) => {
     console.log( `force rendering => ${payload}.html` )
     var page = JSON.parse( fs.readFileSync( `./src/templates/${payload}.json` , 'utf8' ) ) ;    
@@ -68,9 +85,11 @@ const _forcePageRendering = ( payload ) => {
         'brace_style': 'expand',
         'unformatted': ['sub', 'sup', 'b', 'i', 'u']
     }
-    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="http://${ip}:4000/static/css/main.c25737e3.css" media="all" /><script type="text/javascript" src="http://${ip}:4000/static/js/main.3d6fe7f7.js"></script>`);
+    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="http://${ip}:4000/static/css/${_getProductionCss()}" media="all" /><script type="text/javascript" src="http://${ip}:4000/static/js/${_getProductionJs()}"></script>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
 server.listen( port );  
 console.log('server listening on port 4000');
+
+;

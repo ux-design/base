@@ -6,6 +6,8 @@ import Navigation from './components/navigation';
 import Content from './components/content';
 import Loader from './components/loader';
 import registerServiceWorker from './registerServiceWorker';
+const ip = require( 'ip' ).address();
+//const ip = 'localhost';
 
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 const mobilecheck = () => {
@@ -55,9 +57,6 @@ const update = ( page ) => {
     }
     ReactDOM.render(<Loader on />, document.getElementById('loader'));
 
-    //const ip = 'localhost';
-    //const ip = '192.168.1.40';    // home
-    const ip = '10.99.71.101';      // office
     fetch(`http://${ip}:4000/templates/${page}`, {
         method: 'get'
     }).then( ( resp ) => {
@@ -74,7 +73,7 @@ const update = ( page ) => {
             document.querySelector('#navigation').style.opacity = 1;
             document.querySelector('#content').style.opacity = 1;
             registerServiceWorker();  
-        }, 200 ) ;
+        }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
     });

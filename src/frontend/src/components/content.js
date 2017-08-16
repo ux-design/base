@@ -34,6 +34,15 @@ class Content extends Component {
     }
   }
 
+  _hideElements() {
+    var me = this;
+    var n = 0;
+    for ( let x in this.refs ) {
+      this._elHide( x, n );
+      ++n;
+    }
+  }
+
   _elShow( payload, n ) {
     var me = this;
     const ref = payload;
@@ -53,7 +62,14 @@ class Content extends Component {
     this._showElements();
   }
 
+  componentDidUpdate( nextProps ) {
+    this._hideElements();
+    this._showElements();
+    console.log('componentDidUpdate')
+  }
+
   render() {
+    console.log('render')
     const data = this.props.data;
     var result = [];
     var el;
