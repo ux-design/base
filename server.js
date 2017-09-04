@@ -8,15 +8,12 @@ const port = process.env.PORT || 4000;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
+console.log( ip );
 //const ip = 'localhost';
 
 // API
 
-    // STATIC FILES (REACT)
-
-    app.use( express.static( __dirname + `/src/frontend/build` ) );
-
-	// GET
+    // GET
 
     app.get( '/' , function( req , res ) {
 
@@ -27,6 +24,11 @@ const ip = require( 'ip' ).address();
         res.sendFile( __dirname + `/src/html/index.html` );
         
     } ) ;
+
+    // STATIC FILES (REACT)
+
+    app.use( express.static( __dirname + `/src/frontend/build` ) );
+    
 
     app.get( '/:l1' , function( req , res ) {
 
@@ -79,7 +81,7 @@ const _forcePageRendering = ( payload ) => {
         'brace_style': 'expand',
         'unformatted': ['sub', 'sup', 'b', 'i', 'u']
     }
-    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="http://${ip}:4000/static/css/${_getProductionCss()}" media="all" /><script type="text/javascript" src="http://${ip}:4000/static/js/${_getProductionJs()}"></script>`);
+    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="http://localhost:4000/static/css/${_getProductionCss()}" media="all" /><script type="text/javascript" src="http://localhost:4000/static/js/${_getProductionJs()}"></script>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
