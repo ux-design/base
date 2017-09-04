@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "cd src/frontend && bower i && npm i && npm run build && cd ../../ && npm i && node server"
+    "build": "cd src/frontend && npm i && cd src && bower i && cd ../ && npm run build && cd ../../ && npm i && node server"
   },
   "author": "Andrea Mazzilli",
   "license": "ISC",
