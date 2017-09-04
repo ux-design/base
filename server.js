@@ -19,38 +19,38 @@ console.log( ip );
 
     // // GET
 
-    // app.get( '/' , function( req , res ) {
+    app.get( '/' , function( req , res ) {
 
-    //     const query = req.query;
-    //     if ( query.render != undefined ) {
-    //         _forcePageRendering( 'index' );
-    //     }
-    //     res.sendFile( __dirname + `/src/html/index.html` );
+        const query = req.query;
+        if ( query.render != undefined ) {
+            _forcePageRendering( 'index' );
+        }
+        res.sendFile( __dirname + `/src/html/index.html` );
         
-    // } ) ;
+    } ) ;
 
     
     
 
-    // app.get( '/:l1' , function( req , res ) {
+    app.get( '/:l1' , function( req , res ) {
 
-    //     const { l1 } = req.params;
-    //     const query = req.query;
-    //     if ( query.render != undefined ) {
-    //         _forcePageRendering( l1 );
-    //     }
-    //     res.sendFile( __dirname + `/src/html/${l1}.html` );
+        const { l1 } = req.params;
+        const query = req.query;
+        if ( query.render != undefined ) {
+            _forcePageRendering( l1 );
+        }
+        res.sendFile( __dirname + `/src/html/${l1}.html` );
         
-    // } ) ;
+    } ) ;
 
-    // app.get( '/templates/:page' , function( req , res ) {
+    app.get( '/templates/:page' , function( req , res ) {
         
-    //     const { page } = req.params;
-    //     res.header("Access-Control-Allow-Origin", "*");
-    //     res.setHeader('Content-Type', 'application/json');
-    //     res.sendFile( __dirname + `/src/templates/${page}.json` );
+        const { page } = req.params;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'application/json');
+        res.sendFile( __dirname + `/src/templates/${page}.json` );
         
-    // } ) ;
+    } ) ;
 
 // functions  
 
