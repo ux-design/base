@@ -1,0 +1,77 @@
+{
+    "file": "video.html",
+    "language": "en",
+    "url": "/video",
+    "meta": [ 
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+    ],
+    "title": "Andrea Mazzilli - video",
+    "style": "",
+    "logo": "logo.svg",
+    "body": {
+        "navigation": {
+            "welcome": { 
+                "name": "welcome",
+                "link": "/"
+            },
+            "video": {
+                "name": "video",
+                "link": "/video",
+                "selected" : true
+            },
+            "about": {
+                "name": "about",
+                "link": "/about"
+            },
+            "contact": {
+                "name": "contact",
+                "link": "/contact"
+            }
+        },
+        "content": [
+            {
+                "tag": "h1",
+                "classes": "title",
+                "id": "main-title",
+                "value": "Video"
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "main-subtitle",
+                "value": "introduction"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "main-description",
+                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "why-subtitle",
+                "value": "why this website?"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "why-description",
+                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "useful-links-subtitle",
+                "value": "useful links"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "useful-links-description",
+                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+            }
+        ]
+    }
+}

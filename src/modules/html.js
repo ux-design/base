@@ -4,7 +4,9 @@ const createHTML = ( payload , test ) => {
 	return use( { payload , callback : ( payload ) => {
         // function start
         const { file , language , url , meta , title , style , body } = payload ;
-        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}<link rel="stylesheet" type="text/css" href="${style}" media="all" /></head>${createBODY(body)}</html>`;
+        var stylesheet = '';
+        if ( style !== '' ) stylesheet = `<link rel="stylesheet" type="text/css" href="${style}" media="all" />`;
+        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}${stylesheet}</head>${createBODY(body)}</html>`;
         // function end
 	}} , test );
 }
@@ -57,8 +59,9 @@ const createCONTENT = ( payload , test ) => {
             let el = content[ x ];
             let tag = el.tag 
             ,   classes = el.classes
-            ,   id = el.id ;
-            result.push( `<${tag} id="${id}" class="${classes}"></${tag}>` );
+            ,   id = el.id 
+            ,   value = el.value ? el.value : '';
+            result.push( `<${tag} id="${id}" class="${classes}">${value}</${tag}>` );
         }
         return `<div id="content">${result.join('')}</div>`;
         // function end

@@ -1,0 +1,53 @@
+{
+    "file": "contact.html",
+    "language": "en",
+    "url": "/contact",
+    "meta": [ 
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+    ],
+    "title": "Andrea Mazzilli - contact",
+    "style": "",
+    "logo": "logo.svg",
+    "body": {
+        "navigation": {
+            "welcome": { 
+                "name": "welcome",
+                "link": "/"
+            },
+            "video": {
+                "name": "video",
+                "link": "/video"
+            },
+            "about": {
+                "name": "about",
+                "link": "/about"
+            },
+            "contact": {
+                "name": "contact",
+                "link": "/contact",
+                "selected" : true
+            }
+        },
+        "content": [
+            {
+                "tag": "h1",
+                "classes": "title",
+                "id": "main-title",
+                "value": "Contact"
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "main-subtitle",
+                "value": "email"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "main-description",
+                "value": "mazzilli.andrea@gmail.com"
+            }
+        ]
+    }
+}

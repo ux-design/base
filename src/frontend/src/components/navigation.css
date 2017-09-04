@@ -1,0 +1,148 @@
+#navigation .wrapper {
+  display: flex;
+  flex: 1;
+}
+
+#navigation .links {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.navigation-el {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: black;
+  color: white;
+  transform-origin: 50% 50%;
+  cursor: pointer;
+}
+
+.navigation-el:hover{
+  transform: scale(1.05);
+  background-color: rgba(255, 0, 80, 0.5);
+  transition: transform 0.5s;
+}
+
+.navigation-el.selected{
+  background-color: #ff0050;
+  color: black;
+}
+
+.navigation-in {
+  animation: navigation-in 0.5s ease-out;
+}
+
+@keyframes navigation-in {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0px); }
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+
+  #navigation .wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navigation .logo-container {
+    /* border: solid 1px white; */
+    overflow: hidden;
+    height: 100px;
+    flex: 1; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #navigation .logo {
+    /* border: solid 1px white; */
+    height: 100px;
+  }
+
+  #navigation.navigation-off .logo {
+    /* border: solid 1px white; */
+    position: absolute;
+    bottom: 0px;
+    overflow: hidden;
+    height: 40px;
+  }
+
+  #navigation .wrapper .menu-button{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navigation .wrapper .menu-close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navigation .wrapper .links {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 150px;
+    bottom: 150px;
+    min-height: 200px;
+  }
+
+  
+}
+
+/* desktop */
+
+@media screen and (min-width: 768px) {
+
+  #navigation .logo-container {
+    /* border: solid 1px white; */
+    overflow: hidden;
+    height: 50px;
+    flex: 1; 
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: black;
+  }
+
+  #navigation .logo {
+    /* border: solid 1px white; */
+    height: 50px;
+    margin-left:20px;
+  }
+
+  .navigation-el:hover{
+    background-color: rgba(255, 0, 80, 1);
+  }
+
+  #navigation .wrapper .menu-button{
+    display: none;
+  }
+
+  #navigation .wrapper .menu-close{
+    display: none;
+  }
+  
+}

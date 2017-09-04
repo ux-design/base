@@ -1,0 +1,41 @@
+{
+    "file": "about.html",
+    "language": "en",
+    "url": "/about",
+    "meta": [ 
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+    ],
+    "title": "Andrea Mazzilli - about",
+    "style": "",
+    "logo": "logo.svg",
+    "body": {
+        "navigation": {
+            "welcome": { 
+                "name": "welcome",
+                "link": "/"
+            },
+            "video": {
+                "name": "video",
+                "link": "/video"
+            },
+            "about": {
+                "name": "about",
+                "link": "/about",
+                "selected" : true
+            },
+            "contact": {
+                "name": "contact",
+                "link": "/contact"
+            }
+        },
+        "content": [
+            {
+                "tag": "h1",
+                "classes": "title",
+                "id": "main-title",
+                "value": "About"
+            }
+        ]
+    }
+}
