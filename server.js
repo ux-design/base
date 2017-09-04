@@ -9,6 +9,7 @@ const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
 console.log( ip );
+const forceRendering = true ;
 //const ip = 'localhost';
 
 // API
@@ -22,7 +23,7 @@ console.log( ip );
     app.get( '/' , function( req , res ) {
 
         const query = req.query;
-        if ( query.render != undefined ) {
+        if ( query.render != undefined || forceRendering ) {
             _forcePageRendering( 'index' );
         }
         res.sendFile( __dirname + `/src/html/index.html` );
@@ -36,7 +37,7 @@ console.log( ip );
 
         const { l1 } = req.params;
         const query = req.query;
-        if ( query.render != undefined ) {
+        if ( query.render != undefined || forceRendering ) {
             _forcePageRendering( l1 );
         }
         res.sendFile( __dirname + `/src/html/${l1}.html` );
