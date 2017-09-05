@@ -18,12 +18,13 @@ const mobilecheck = () => {
 
 // a small state to share with all react components
 window.state = {
-  toggleMenu: true,
+  toggleMenu: false,
   menu: false,
   data: null,
   scrollY: 0,
   scrollYOld: 0,
   page: '/',
+  pageLoaded: false,
   isMobile: mobilecheck(),
 };
 
@@ -64,7 +65,8 @@ const update = ( page ) => {
     }).then( ( data ) => {
         window.state.data = data;
         setTimeout( ()=>{
-            window.state.toggleMenu = true;
+            window.state.menu = true ;
+            window.state.toggleMenu = true ;
             ReactDOM.render(<Loader />, document.getElementById('loader'));
             ReactDOM.render(<Navigation data={ data } />, document.getElementById('navigation'));
             ReactDOM.render(<Content data={ data } />, document.getElementById('content'));
@@ -88,22 +90,30 @@ setInterval( () => {
         window.state.page = undefined ;
     }
     // menu mobile
-    if ( window.state.toggleMenu ){
+    if ( window.state.toggleMenu  ){
         window.state.toggleMenu = false ;
         if ( window.state.menu ) {
             // remove touch lock from document
             if ( window.state.isMobile ) document.querySelector('body').className = document.querySelector('body').className.replace("lock-screen","");
             // hide mobile menu
             window.state.menu = false ;
-            document.querySelector('#navigation').className += "navigation-off";
-            document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace("navigation-on","");
+            document.querySelector('#navigation').className += " navigation-off-anim";
+            document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace(" navigation-on-anim","").replace(" navigation-on","");
+            setTimeout( () => {
+                document.querySelector('#navigation').className += " navigation-off";
+                document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace(" navigation-off-anim","");
+            }, 600 );
         } else {
             // lock the document from touch scrolling
             if ( window.state.isMobile ) document.querySelector('body').className += "lock-screen";
             // show mobile menu 
             window.state.menu = true ;
-            document.querySelector('#navigation').className += "navigation-on";
-            document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace("navigation-off","");
+            document.querySelector('#navigation').className += " navigation-on-anim";
+            document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace(" navigation-off-anim","").replace(" navigation-off","");
+            setTimeout( () => {
+                document.querySelector('#navigation').className += " navigation-on";
+                document.querySelector('#navigation').className = document.querySelector('#navigation').className.replace(" navigation-on-anim","");
+            }, 600 );
         }
     }
     

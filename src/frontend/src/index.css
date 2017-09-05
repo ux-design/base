@@ -74,11 +74,21 @@ body {
   }
 
   #navigation.navigation-off {
-    animation: navigation-off 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation: navigation-off 0s ;
     animation-fill-mode: forwards;
   }
 
   #navigation.navigation-on {
+    animation: navigation-on 0s ;
+    animation-fill-mode: forwards;
+  }
+
+  #navigation.navigation-off-anim {
+    animation: navigation-off 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation-fill-mode: forwards;
+  }
+
+  #navigation.navigation-on-anim {
     animation: navigation-on 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
     animation-fill-mode: forwards;
   }
@@ -87,8 +97,6 @@ body {
     animation: ios-small-in 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
     animation-fill-mode: forwards;
   }
-
-
 
   #content {
     padding-top: 50px;
