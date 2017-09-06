@@ -8,7 +8,6 @@ const port = process.env.PORT || 4000;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
-console.log( ip );
 const forceRendering = true ;
 //const ip = 'localhost';
 
@@ -89,6 +88,4 @@ const _forcePageRendering = ( payload ) => {
 }
         
 server.listen( port );  
-console.log('server listening on port 4000');
-
-;
+console.log( `http://${ip}:4000` );
