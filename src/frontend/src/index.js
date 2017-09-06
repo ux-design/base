@@ -85,7 +85,7 @@ const update = ( page ) => {
             document.querySelector('#navigation').style.opacity = 1;
             document.querySelector('#content').style.opacity = 1;
             document.querySelector('#block').style.display = 'none';
-            registerServiceWorker();  
+            registerServiceWorker();
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
