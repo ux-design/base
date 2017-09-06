@@ -18,6 +18,18 @@ body {
   top: 0px;
 }
 
+#block {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #overlay {
   z-index: 1000;
 }
@@ -84,7 +96,7 @@ body {
   }
 
   #navigation.navigation-off-anim {
-    animation: navigation-off 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation: navigation-off 0.3s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
     animation-fill-mode: forwards;
   }
 
