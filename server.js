@@ -52,6 +52,15 @@ const forceRendering = true ;
         
     } ) ;
 
+    app.get( '/images/:image' , function( req , res ) {
+        
+        const { image } = req.params;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.sendFile( __dirname + `/src/images/${image}` );
+        
+    } ) ;
+
 // functions  
 
 const _getProductionCss = () => {

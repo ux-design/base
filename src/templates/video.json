@@ -43,6 +43,12 @@
                 "value": "introduction"
             },
             {
+                "tag": "img",
+                "classes": "image cropped header",
+                "id": "main-subtitle-img",
+                "src": "me.jpg"
+            },
+            {
                 "tag": "p",
                 "classes": "paragraph",
                 "id": "main-description",
@@ -55,6 +61,12 @@
                 "value": "why this website?"
             },
             {
+                "tag": "img",
+                "classes": "image cropped header",
+                "id": "main-subtitle-img",
+                "src": "me.jpg"
+            },
+            {
                 "tag": "p",
                 "classes": "paragraph",
                 "id": "why-description",
@@ -65,6 +77,12 @@
                 "classes": "subtitle",
                 "id": "useful-links-subtitle",
                 "value": "useful links"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped full",
+                "id": "main-subtitle-img",
+                "src": "me.jpg"
             },
             {
                 "tag": "p",

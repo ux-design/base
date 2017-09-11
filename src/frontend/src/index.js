@@ -84,7 +84,9 @@ const update = ( page ) => {
             //animateTitle( data.title );
             document.querySelector('#navigation').style.opacity = 1;
             document.querySelector('#content').style.opacity = 1;
-            document.querySelector('#block').style.display = 'none';
+            setTimeout( () => {
+              document.querySelector('#block').style.display = 'none';
+            } , 500 );
             registerServiceWorker();
         }, 5 ) ;
     }).catch( ( err ) => {

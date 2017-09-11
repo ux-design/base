@@ -51,7 +51,7 @@ const createNAVIGATIONlinks = ( payload , test ) => {
 }
 
 const createCONTENT = ( payload , test ) => {
-	return use( { payload , callback : ( payload ) => {
+    return use( { payload , callback : ( payload ) => {
         // function start
         var result = [];
         const { content } = payload ; 
@@ -61,12 +61,26 @@ const createCONTENT = ( payload , test ) => {
             ,   classes = el.classes
             ,   id = el.id 
             ,   value = el.value ? el.value : '';
-            result.push( `<${tag} id="${id}" class="${classes}">${value}</${tag}>` );
+            if ( tag == 'img' ) {
+                result.push( createIMG( el ) );
+            } else {
+                result.push( `<${tag} id="${id}" class="${classes}">${value}</${tag}>` );
+            }
         }
         return `<div id="content">${result.join('')}</div>`;
         // function end
-	}} , test );
+    }} , test );
+}
+
+const createIMG = ( payload , test ) => {
+    return use( { payload , callback : ( payload ) => {
+        // function start
+        var result = [];
+        const { src , classes , id } = payload ; 
+        return `<div id="${id}" style="background-image:url(/images/${src});" class="${classes}"></div>`;
+        // function end
+    }} , test );
 }
 
 
-module.exports = { createHTML , createMETA , createBODY , createNAVIGATION }
+module.exports = { createHTML , createMETA , createBODY , createNAVIGATION , createIMG }

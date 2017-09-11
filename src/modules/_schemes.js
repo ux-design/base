@@ -37,6 +37,12 @@ const schemes = {
 	createCONTENT : {
 		content: '[object Array]'
 	},
+	// content
+	createIMG : {
+		src: '[object String]',
+		id: '[object String]',
+		classes: '[object String]'
+	}
 }
 
 module.exports = schemes

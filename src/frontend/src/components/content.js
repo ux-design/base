@@ -9,11 +9,21 @@ class Content extends Component {
   }
 
   _renderChild( payload , n ) {
-    return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id}>{payload.value}</payload.tag>;
+    if ( payload.tag === 'img' ) {
+      return <div key={ n } style={{ opacity : 0 , backgroundImage : 'url(/images/'+payload.src+')' }} ref={ 'content' + n } className={payload.classes} id={payload.id} />;
+    } else {
+      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id}>{payload.value}</payload.tag>;
+    }
   }
 
   _showElementsOnScroll() {
     window.addEventListener('scroll',() => {
+      this._showElements();
+    });
+  }
+
+  _showElementsOnResize() {
+    window.addEventListener('resize',() => {
       this._showElements();
     });
   }
@@ -57,6 +67,7 @@ class Content extends Component {
 
   componentDidMount() {
     this._showElementsOnScroll();
+    this._showElementsOnResize();
     this._showElements();
   }
 
