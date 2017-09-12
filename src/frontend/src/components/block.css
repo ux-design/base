@@ -7,13 +7,32 @@
 }
 
 .block-on {
-    opacity: 1;
+  opacity: 1;
 }
 
 .block-off {
-    opacity: 1;
-    animation: block-off 1s linear;
-    animation-fill-mode: forwards;
+  opacity: 1;
+  animation: block-off 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border: dashed 10px #eee;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.loading {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  color: #eee;
+  font-weight: bold;
 }
 
 @keyframes block-off {
@@ -34,7 +53,17 @@
 
 @keyframes spin {
   from { transform: rotate(0deg); }
-  to { transform: rotate(600deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-low {
+  animation: spin 6s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin-low {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 
@@ -47,6 +76,7 @@
   }
 
   .block-el {
+    font-size: 32px;
   }
 
 }
@@ -56,7 +86,7 @@
 @media screen and (min-width: 768px) {
 
   #block .wrapper {
-    
+    font-size: 32px;
   }
 
   .block-el {

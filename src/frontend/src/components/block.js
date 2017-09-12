@@ -17,7 +17,8 @@ class Block extends Component {
     }
     return (
         <div className={ "wrapper block-el block-on " + animIn + animOut }>
-            <span>loading <i className="fa fa-circle-o-notch spin" aria-hidden="true"></i></span>
+            <div className="circle spin-low"></div>
+            <p className="loading">LOADING</p>
         </div>
     );
   }

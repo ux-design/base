@@ -9,13 +9,16 @@
   margin: 0;
   /* border: 1px dashed red;  */
   font-weight: 100;
-  padding: 15px 15px 15px 15px;
+  padding: 15px 15px 15px 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -4px;
 }
 
 #content h2 {
   margin: 0;
   /* border: 1px dashed red;  */
-  font-weight: 900;
+  font-weight: bold;
   padding: 15px 15px 15px 0;
   /* background-color: #ff0050; */
   color: white;
@@ -76,7 +79,7 @@
 
 h2.el-show{
   opacity: 1!important;
-  transform: scale( 1 , 1 ) rotate(3deg)!important;
+  transform: scale( 1 , 1 ) rotate(-1deg)!important;
   transition: all .5s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }
