@@ -46,7 +46,7 @@
                 "tag": "img",
                 "classes": "image cropped header",
                 "id": "main-subtitle-img",
-                "src": "me.jpg"
+                "src": "swim.jpg"
             },
             {
                 "tag": "p",
@@ -64,7 +64,7 @@
                 "tag": "img",
                 "classes": "image cropped header",
                 "id": "main-subtitle-img",
-                "src": "me.jpg"
+                "src": "swim.jpg"
             },
             {
                 "tag": "p",
@@ -82,7 +82,7 @@
                 "tag": "img",
                 "classes": "image cropped full",
                 "id": "main-subtitle-img",
-                "src": "me.jpg"
+                "src": "swim.jpg"
             },
             {
                 "tag": "p",
