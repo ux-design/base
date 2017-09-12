@@ -10,7 +10,7 @@ class Content extends Component {
 
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return <div key={ n } style={{ opacity : 0 , backgroundImage : 'url(/images/'+payload.src+')' }} ref={ 'content' + n } className={payload.classes} id={payload.id} />;
+      return <div key={ n } id={payload.id} className={payload.classes} ><div ref={ 'content' + n } style={{ backgroundImage : 'url(/images/'+payload.src+')' }} className="image-inner" /></div>;
     } else {
       return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id}>{payload.value}</payload.tag>;
     }
@@ -62,7 +62,7 @@ class Content extends Component {
   _elHide( payload, n ) {
     var me = this;
     const ref = payload;
-    me.refs[ ref ].className = me.refs[ ref ].className.replace('el-show','');
+    me.refs[ ref ].className = me.refs[ ref ].className.replace(' el-show','');
   }
 
   componentDidMount() {

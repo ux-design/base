@@ -77,7 +77,7 @@ const createIMG = ( payload , test ) => {
         // function start
         var result = [];
         const { src , classes , id } = payload ; 
-        return `<div id="${id}" style="background-image:url(/images/${src});" class="${classes}"></div>`;
+        return `<img id="${id}" src="/images/${src}" alt="${id}"/>`;
         // function end
     }} , test );
 }
