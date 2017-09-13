@@ -8,13 +8,26 @@ class Debugger extends Component {
     this.state = {};
   }
 
+  _renderValues() {
+    var line =  <div className="line">
+                  <div className="key">key</div>
+                  <div className="value">value</div>
+                </div>;
+    var result =  [<div className="line">
+                    <div className="key">key</div>
+                    <div className="value">value</div>
+                  </div>,
+                  <div className="line">
+                    <div className="key">key</div>
+                    <div className="value">value</div>
+                  </div>];
+    return result;
+  }
+
   render() {
     return (
         <div className={ "wrapper debugger-el" }>
-          <div className="line">
-            <div className="key">key</div>
-            <div className="value">value</div>
-          </div>
+          { this._renderValues() }
         </div>
     );
   }
