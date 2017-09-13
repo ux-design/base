@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './content.css';
+const ip = window.location.hostname;
 
 class Content extends Component {
   
@@ -10,7 +11,7 @@ class Content extends Component {
 
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return <div key={ n } id={payload.id} className={payload.classes} ><div ref={ 'content' + n } style={{ backgroundImage : 'url(/images/'+payload.src+')' }} className="image-inner" /></div>;
+      return <div key={ n } id={payload.id} className={payload.classes} ><div ref={ 'content' + n } style={{ backgroundImage : 'url(http://'+ip+'/images/'+payload.src+')' }} className="image-inner" /></div>;
     } else {
       return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id}>{payload.value}</payload.tag>;
     }
@@ -36,7 +37,7 @@ class Content extends Component {
         this._elShow( x, n );
         ++n;
       }
-      if ( window.scrollY < me.refs[ x ].offsetTop - window.innerHeight + 40 ) {
+      if ( window.scrollY < me.refs[ x ].offsetTop - window.innerHeight - 40 ) {
         this._elHide( x, n );
         ++n;
       }

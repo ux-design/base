@@ -17,8 +17,12 @@ class Block extends Component {
     }
     return (
         <div className={ "wrapper block-el block-on " + animIn + animOut }>
+          <div className="loader-background">
             <div className="circle spin-low"></div>
+          </div>
+          <div className="loader-foreground">
             <p className="loading">LOADING</p>
+          </div>
         </div>
     );
   }

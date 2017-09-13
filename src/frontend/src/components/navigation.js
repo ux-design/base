@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './navigation.css';
+import Model from '../model';
 import '../logo.svg';
 
 class Navigation extends Component {
@@ -18,17 +19,17 @@ class Navigation extends Component {
   }
 
   _toggleMenu() {
-    window.state.toggleMenu = true;
+    Model.state.toggleMenu = true;
   }
 
   _link( payload ) {
-    window.state.page = payload;
+    Model.state.page = payload;
   }
 
   _renderLogo() {
     const logo = this.props.data.logo;
     if ( logo !== '' ) {
-      return <div className="logo-container" onClick={ this._link.bind( this , '/' ) }><img alt="logo" src={ `http://${window.location.hostname}:4000/static/media/logo.0541813a.svg` } className="logo" /></div>
+      return <div className="logo-container" onClick={ this._link.bind( this , '/' ) }><img alt="logo" src={ `/static/media/logo.0541813a.svg` } className="logo" /></div>
     } else {
       return <div></div>
     }
