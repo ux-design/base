@@ -44,7 +44,7 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped header",
+                "classes": "image cropped-zoom-in nopadding header",
                 "id": "main-subtitle-img",
                 "src": "swim.jpg"
             },
@@ -52,7 +52,7 @@
                 "tag": "p",
                 "classes": "paragraph",
                 "id": "main-description",
-                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+                "value": "<b>the quick brown fox jumped over the lazy dog</b> the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
             },
             {
                 "tag": "h2",
@@ -62,7 +62,7 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped header",
+                "classes": "image cropped-zoom-in nopadding header",
                 "id": "main-subtitle-img",
                 "src": "swim.jpg"
             },
@@ -80,7 +80,25 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped full",
+                "classes": "image cropped-zoom-out nopadding full",
+                "id": "main-subtitle-img",
+                "src": "swim.jpg"
+            },
+            {
+                "tag": "p",
+                "classes": "paragraph",
+                "id": "useful-links-description",
+                "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
+            },
+            {
+                "tag": "h2",
+                "classes": "subtitle",
+                "id": "useful-links-subtitle",
+                "value": "another image example"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding full",
                 "id": "main-subtitle-img",
                 "src": "swim.jpg"
             },

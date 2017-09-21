@@ -13,7 +13,7 @@ class Content extends Component {
     if ( payload.tag === 'img' ) {
       return <div key={ n } id={payload.id} className={payload.classes} ><div ref={ 'content' + n } style={{ backgroundImage : 'url(http://'+ip+'/images/'+payload.src+')' }} className="image-inner" /></div>;
     } else {
-      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id}>{payload.value}</payload.tag>;
+      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id} dangerouslySetInnerHTML={{ __html : payload.value }}></payload.tag>;
     }
   }
 
