@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './content.css';
 const ip = window.location.hostname;
+var itemsToRender = 10;
+const itemsToRenderStep = 10;
 
 class Content extends Component {
   
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      content : this.props.data.body.content.slice( 0 , itemsToRender ),
+      lastItemIndex : itemsToRender - 1 
+    };
   }
 
   _renderChild( payload , n ) {
@@ -18,14 +23,29 @@ class Content extends Component {
   }
 
   _showElementsOnScroll() {
+    var me = this;
     window.addEventListener('scroll',() => {
+      var lastItem = itemsToRender - 1 ;
       this._showElements();
+      console.log( lastItem )
+      if ( me.refs[ 'content' + lastItem ] ) {
+        if ( window.scrollY > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
+          this._renderNextElements();
+        }
+      }
     });
   }
 
   _showElementsOnResize() {
+    var me = this;
     window.addEventListener('resize',() => {
+      var lastItem = itemsToRender - 1 ;
       this._showElements();
+      if ( me.refs[ 'content' + lastItem ] ) {
+        if ( window.scrollY > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
+          this._renderNextElements();
+        }
+      }
     });
   }
 
@@ -42,6 +62,14 @@ class Content extends Component {
         ++n;
       }
     }
+  }
+
+  _renderNextElements() {
+    var me = this;
+    itemsToRender += itemsToRenderStep ;
+    this.setState({
+      content : this.props.data.body.content.slice( 0 , itemsToRender ),
+    })
   }
 
   _hideElements() {
@@ -66,6 +94,15 @@ class Content extends Component {
     me.refs[ ref ].className = me.refs[ ref ].className.replace(' el-show','');
   }
 
+  componentWillMount() {
+  }
+
+  componentWillReceiveProps( nextProps ) {
+    this.setState({
+      content : nextProps.data.body.content.slice( 0 , itemsToRender )
+    })
+  }
+
   componentDidMount() {
     this._showElementsOnScroll();
     this._showElementsOnResize();
@@ -80,7 +117,7 @@ class Content extends Component {
 
   render() {
     console.log('render')
-    const data = this.props.data.body.content;
+    const data = this.state.content//this.props.data.body.content;
     var result = [];
     var el;
     for( let x in data ){

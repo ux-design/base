@@ -10,7 +10,6 @@ class Block extends Component {
   }
 
   render() {
-    console.log( this.props );
     var animIn = "" , animOut = "";
     if ( this.props.on ) {
         animIn = " bounceIn";
