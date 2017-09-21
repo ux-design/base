@@ -39,7 +39,8 @@ const update = ( page ) => {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
         el_loader.setAttribute('id', 'loader');
-        document.querySelector('body').prepend( el_loader );
+        //document.querySelector('body').prepend( el_loader );
+        document.querySelector('#content').parentNode.insertBefore( el_loader , document.querySelector('#navigation') );
         // inject react to the loader
         // add block on the fly
         var el_block = document.createElement( 'div' );
