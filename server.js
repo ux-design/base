@@ -28,9 +28,6 @@ const forceRendering = true ;
         
     } ) ;
 
-    
-    
-
     app.get( '/:l1' , function( req , res ) {
 
         const { l1 } = req.params;
@@ -91,7 +88,28 @@ const _forcePageRendering = ( payload ) => {
         'brace_style': 'expand',
         'unformatted': ['sub', 'sup', 'b', 'i', 'u']
     }
-    result = result.replace(`</body>`,`<script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><link rel="stylesheet" type="text/css" href="/static/css/${_getProductionCss()}" media="all" /><script type="text/javascript" src="/static/js/${_getProductionJs()}"></script>`);
+    var style = `/static/css/${_getProductionCss()}`;
+    var script = `/static/js/${_getProductionJs()}`;
+    var scriptLoader = `(function () {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '${script}';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+        var c = document.createElement('link');
+        c.type = 'text/css';
+        c.rel = 'stylesheet';
+        c.href = '${style}';
+        c.media = 'all';
+        c.type = 'text/css';
+        c.async = true;
+        var y = document.getElementsByTagName('script')[0];
+        y.parentNode.insertBefore(c, y);
+    })();`;
+
+    // result = result.replace(`</body>`,`<div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: flex;justify-content: center;align-items: center;">loading..</div></body>`);
+    result = result.replace(`</body>`,`<div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: flex;justify-content: center;align-items: center;font-family:helvetica; font-size:36px;">loading..</div><script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><script>${scriptLoader}</script></body>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
