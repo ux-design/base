@@ -14,7 +14,9 @@ const ip = window.location.hostname;
 
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
-document.querySelector( '#first-loader' ).style.display = 'none' ;
+if ( document.querySelector( '#first-loader' ) ) {
+    document.querySelector( '#first-loader' ).style.display = 'none' ;
+}
 
 /*
 // animate title

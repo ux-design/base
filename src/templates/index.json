@@ -16,6 +16,10 @@
                 "link": "/",
                 "selected" : true
             },
+            "learn": { 
+                "name": "learn",
+                "link": "/learn"
+            },
             "video": {
                 "name": "video",
                 "link": "/video"
