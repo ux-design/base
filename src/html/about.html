@@ -10,7 +10,10 @@
   <body>
     <div id="navigation">
       <div id="welcome">
-        <a href="/">welcome</a>
+        <a href="/index">welcome</a>
+      </div>
+      <div id="learn">
+        <a href="/learn">learn</a>
       </div>
       <div id="video">
         <a href="/video">video</a>
@@ -23,13 +26,31 @@
       </div>
     </div>
     <div id="content">
-      <h1 id="main-title" class="title">About</h1>
+      <h1>About</h1>
     </div>
+    <div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: none;justify-content: center;align-items: center;font-family:helvetica; font-size:36px;">loading..</div>
     <script>
-      document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;
+      document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;document.querySelector('#first-loader').style.display = 'flex';
     </script>
-    <link rel="stylesheet" type="text/css" href="/static/css/main.ede01d19.css"
-    media="all" />
-    <script type="text/javascript" src="/static/js/main.09a914a6.js"></script>
+    <script>
+      (function () {
+              var s = document.createElement('script');
+              s.type = 'text/javascript';
+              s.async = true;
+              s.src = '/static/js/main.a2b79ddd.js';
+              var x = document.getElementsByTagName('script')[0];
+              x.parentNode.insertBefore(s, x);
+              var c = document.createElement('link');
+              c.type = 'text/css';
+              c.rel = 'stylesheet';
+              c.href = '/static/css/main.49ec849d.css';
+              c.media = 'all';
+              c.type = 'text/css';
+              c.async = true;
+              var y = document.getElementsByTagName('script')[0];
+              y.parentNode.insertBefore(c, y);
+          })();
+    </script>
+  </body>
 
 </html>

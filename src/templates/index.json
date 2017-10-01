@@ -13,7 +13,7 @@
         "navigation": {
             "welcome": { 
                 "name": "welcome",
-                "link": "/",
+                "link": "/index",
                 "selected" : true
             },
             "learn": { 
@@ -36,44 +36,31 @@
         "content": [
             {
                 "tag": "h1",
-                "classes": "title",
-                "id": "main-title",
                 "value": "Welcome"
             },
             {
                 "tag": "h2",
-                "classes": "subtitle",
-                "id": "main-subtitle",
                 "value": "INTRODUCTION"
             },
             {
                 "tag": "p",
-                "classes": "paragraph",
                 "id": "main-description",
                 "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
             },
             {
                 "tag": "h2",
-                "classes": "subtitle",
-                "id": "why-subtitle",
                 "value": "WHY THIS WEBSITE?"
             },
             {
                 "tag": "p",
-                "classes": "paragraph",
-                "id": "why-description",
                 "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
             },
             {
                 "tag": "h2",
-                "classes": "subtitle",
-                "id": "useful-links-subtitle",
                 "value": "USEFUL LINKS"
             },
             {
                 "tag": "p",
-                "classes": "paragraph",
-                "id": "useful-links-description",
                 "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
             }
         ]

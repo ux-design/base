@@ -13,7 +13,11 @@
         "navigation": {
             "welcome": { 
                 "name": "welcome",
-                "link": "/"
+                "link": "/index"
+            },
+            "learn": { 
+                "name": "learn",
+                "link": "/learn"
             },
             "video": {
                 "name": "video",
@@ -32,20 +36,14 @@
         "content": [
             {
                 "tag": "h1",
-                "classes": "title",
-                "id": "main-title",
                 "value": "Contact"
             },
             {
                 "tag": "h2",
-                "classes": "subtitle",
-                "id": "main-subtitle",
                 "value": "email"
             },
             {
                 "tag": "p",
-                "classes": "paragraph",
-                "id": "main-description",
                 "value": "mazzilli.andrea@gmail.com"
             }
         ]

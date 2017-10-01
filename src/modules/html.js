@@ -60,11 +60,15 @@ const createCONTENT = ( payload , test ) => {
             let tag = el.tag 
             ,   classes = el.classes
             ,   id = el.id 
-            ,   value = el.value ? el.value : '';
+            ,   value = el.value ? el.value : ''
+            ,   attrId = ''
+            ,   attrClass = '';
             if ( tag == 'img' ) {
                 result.push( createIMG( el ) );
             } else {
-                result.push( `<${tag} id="${id}" class="${classes}">${value}</${tag}>` );
+                if ( id ) attrId = `id="${id}"`;
+                if ( classes ) attrClass = `class="${classes}"`;
+                result.push( `<${tag} ${attrId} ${attrClass}>${value}</${tag}>` );
             }
         }
         return `<div id="content">${result.join('')}</div>`;
@@ -75,9 +79,13 @@ const createCONTENT = ( payload , test ) => {
 const createIMG = ( payload , test ) => {
     return use( { payload , callback : ( payload ) => {
         // function start
-        var result = [];
         const { src , classes , id } = payload ; 
-        return `<img id="${id}" src="/images/${src}" alt="${id}"/>`;
+        var result = [], attrId ='', attrAlt = `alt="${src}"`;
+        if ( id ) {
+            attrId = `id="${id}"`;
+            attrAlt = `alt="${id}"`;
+        }
+        return `<img ${attrId} src="/images/${src}" ${attrAlt}/>`;
         // function end
     }} , test );
 }

@@ -13,7 +13,11 @@
         "navigation": {
             "welcome": { 
                 "name": "welcome",
-                "link": "/"
+                "link": "/index"
+            },
+            "learn": { 
+                "name": "learn",
+                "link": "/learn"
             },
             "video": {
                 "name": "video",
@@ -32,8 +36,6 @@
         "content": [
             {
                 "tag": "h1",
-                "classes": "title",
-                "id": "main-title",
                 "value": "About"
             }
         ]

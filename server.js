@@ -1,5 +1,6 @@
 const express = require( 'express' ) ;  
 const app = express() ;  
+var compression = require('compression');
 const dateFormat = require('dateformat');
 const fs = require('fs');
 const server = require( 'http' ).createServer( app ) ;  
@@ -8,6 +9,10 @@ const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
 const forceRendering = true ;
+
+app.use(compression());
+
+
 //const ip = 'localhost';
 
 // API
@@ -109,7 +114,7 @@ const _forcePageRendering = ( payload ) => {
     })();`;
 
     // result = result.replace(`</body>`,`<div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: flex;justify-content: center;align-items: center;">loading..</div></body>`);
-    result = result.replace(`</body>`,`<div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: flex;justify-content: center;align-items: center;font-family:helvetica; font-size:36px;">loading..</div><script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;</script><script>${scriptLoader}</script></body>`);
+    result = result.replace(`</body>`,`<div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: none;justify-content: center;align-items: center;font-family:helvetica; font-size:36px;">loading..</div><script>document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;document.querySelector('#first-loader').style.display = 'flex';</script><script>${scriptLoader}</script></body>`);
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
