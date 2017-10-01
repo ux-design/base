@@ -27,7 +27,7 @@ class Debugger extends Component {
   render() {
     return (
         <div className={ "wrapper debugger-el" }>
-          { this._renderValues() }
+          {/* { this._renderValues() } */}
         </div>
     );
   }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './content.css';
-const ip = window.location.hostname;
+var C = require( '../model/constants' );
 var itemsToRender = 10;
 const itemsToRenderStep = 10;
+const ip = 'http://' + window.location.hostname.replace(':3000','');
+console.log(ip)
 
 class Content extends Component {
   
@@ -14,9 +16,17 @@ class Content extends Component {
     };
   }
 
+  _imageIsLoaded( payload ) {
+    console.log( ip + '/images/'+payload[ 1 ] )
+    this.refs[ payload[ 0 ] ].style.backgroundImage = 'url(' + ip + '/images/'+payload[ 1 ]+')' ;
+  }
+
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return <div key={ n } id={payload.id} className={payload.classes} ><div ref={ 'content' + n } style={{ backgroundImage : 'url(/images/'+payload.src+')' }} className="image-inner" /></div>;
+      return  <div key={ n } id={payload.id} className={payload.classes} >
+                <div ref={ 'content' + n } style={{ backgroundColor : C.COLORS.IMAGE_PRELOAD_BG_COLOR }} className="image-inner" />
+                <img src={ ip + '/images/' + payload.src } onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}/>
+              </div>;
     } else {
       return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id} dangerouslySetInnerHTML={{ __html : payload.value }}></payload.tag>;
     }
@@ -27,7 +37,6 @@ class Content extends Component {
     window.addEventListener('scroll',() => {
       var lastItem = itemsToRender - 1 ;
       this._showElements();
-      console.log( lastItem )
       if ( me.refs[ 'content' + lastItem ] ) {
         if ( window.scrollY > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
           this._renderNextElements();
@@ -65,7 +74,6 @@ class Content extends Component {
   }
 
   _renderNextElements() {
-    var me = this;
     itemsToRender += itemsToRenderStep ;
     this.setState({
       content : this.props.data.body.content.slice( 0 , itemsToRender ),
@@ -116,7 +124,6 @@ class Content extends Component {
   }
 
   render() {
-    console.log('render')
     const data = this.state.content//this.props.data.body.content;
     var result = [];
     var el;

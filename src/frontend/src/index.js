@@ -43,7 +43,6 @@ const animateTitle = ( payload ) => {
 
 // react page loader
 const update = ( page ) => {
-    console.log('update url! ' + page );
     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
