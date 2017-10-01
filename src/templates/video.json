@@ -35,6 +35,10 @@
         },
         "content": [
             {
+                "tag": "h1",
+                "value": "Video"
+            },
+            {
                 "tag": "h2",
                 "value": "infinite scroll"
             },
@@ -108,7 +112,6 @@
             },
             {
                 "tag": "h1",
-                "classes": "title",
                 "value": "Video"
             },
             {
@@ -139,7 +142,6 @@
             },
             {
                 "tag": "h2",
-                "classes": "useful-links-subtitle",
                 "value": "useful links"
             },
             {
@@ -154,7 +156,6 @@
             },
             {
                 "tag": "h2",
-                "classes": "useful-links-subtitle",
                 "value": "another image example"
             },
             {
@@ -164,7 +165,6 @@
             },
             {
                 "tag": "p",
-                "classes": "useful-links-description",
                 "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
             }
         ]

@@ -7,15 +7,19 @@ import Block from './components/block';
 import Content from './components/content';
 import Loader from './components/loader';
 import Debugger from './components/debugger';
-import registerServiceWorker from './registerServiceWorker';
+// import { registerServiceWorker, unregister } from './registerServiceWorker';
+// unregister();
 import Model from './model';
 const ip = window.location.hostname;
 //const ip = 'localhost';
 
+Model.state.page = window.location.pathname;
+
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
 if ( document.querySelector( '#first-loader' ) ) {
-    document.querySelector( '#first-loader' ).style.display = 'none' ;
+    document.querySelector( '#first-loader' ).parentNode.removeChild( document.querySelector( '#first-loader' ) );
+    //document.querySelector( '#first-loader' ).style.display = 'none' ;
 }
 
 /*
@@ -39,6 +43,7 @@ const animateTitle = ( payload ) => {
 
 // react page loader
 const update = ( page ) => {
+    console.log('update url! ' + page );
     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
@@ -77,7 +82,7 @@ const update = ( page ) => {
             setTimeout( () => {
               document.querySelector('#block').style.display = 'none';
             } , 500 );
-            registerServiceWorker();
+            //registerServiceWorker();
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(

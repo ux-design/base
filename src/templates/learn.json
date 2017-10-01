@@ -36,8 +36,6 @@
         "content": [
             {
                 "tag": "h1",
-                "classes": "title",
-                "id": "main-title",
                 "value": "Learn"
             }
         ]

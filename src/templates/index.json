@@ -43,8 +43,12 @@
                 "value": "INTRODUCTION"
             },
             {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "me.jpg"
+            },
+            {
                 "tag": "p",
-                "id": "main-description",
                 "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
             },
             {
