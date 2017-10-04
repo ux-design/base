@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './navigation.css';
+import './animations.css';
 import Model from '../model';
 import '../logo.svg';
+import Animator from '../helpers/animator';
 
 class Navigation extends Component {
   
@@ -29,10 +31,17 @@ class Navigation extends Component {
   _renderLogo() {
     const logo = this.props.data.logo;
     if ( logo !== '' ) {
-      return <div className="logo-container" onClick={ this._link.bind( this , '/' ) }><img alt="logo" src={ `/static/media/logo.0541813a.svg` } className="logo" /></div>
+      return  <div className="logo-container" onClick={ this._link.bind( this , '/' ) }>
+                <img alt="logo" src={ `/static/media/logo.0541813a.svg` } className="logo" ref="logo" onMouseOver={ this._onMouseOver.bind( this , 'logo' ) } />
+              </div>
     } else {
       return <div></div>
     }
+  }
+
+  _onMouseOver( payload ) {
+    var el = this.refs[ payload ] ;
+    Animator( el ).use( 'wiggle' ).removeAfter( 1 );
   }
 
   shouldComponentUpdate( nextProps, nextState ){

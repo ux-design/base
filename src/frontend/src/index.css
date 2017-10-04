@@ -5,6 +5,13 @@ body {
   overflow: visible;
 }
 
+a, a:hover, a:link, a:visited, a:active {
+  color: #009DFF;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #009DFF;
+}
+
 .lock-screen {
   height: 100%;
   overflow: hidden;

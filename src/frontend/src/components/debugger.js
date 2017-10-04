@@ -8,7 +8,7 @@ class Debugger extends Component {
     this.state = {};
   }
 
-  _renderValues() {
+  /* _renderValues() {
     var line =  <div className="line">
                   <div className="key">key</div>
                   <div className="value">value</div>
@@ -22,7 +22,7 @@ class Debugger extends Component {
                     <div className="value">value</div>
                   </div>];
     return result;
-  }
+  } */
 
   render() {
     return (

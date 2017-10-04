@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Model from '../model';
 import './content.css';
+import Animator from '../helpers/animator';
 var C = require( '../model/constants' );
 var itemsToRender = 10;
 const itemsToRenderStep = 10;
 const ip = 'http://' + window.location.hostname.replace(':3000','');
-console.log(ip)
+//console.log(ip)
 
 class Content extends Component {
   
@@ -18,7 +19,7 @@ class Content extends Component {
   }
 
   _imageIsLoaded( payload ) {
-    console.log( ip + '/images/'+payload[ 1 ] )
+    //console.log( ip + '/images/'+payload[ 1 ] )
     this.refs[ payload[ 0 ] ].style.backgroundImage = 'url(' + ip + '/images/'+payload[ 1 ]+')' ;
   }
 
@@ -28,14 +29,22 @@ class Content extends Component {
     }
   }
 
+  _onMouseOver( payload ) {
+    var el = this.refs[ payload ] ;
+    console.log(el.tagName.toLowerCase())
+    if ( el.tagName.toLowerCase() === 'h2' || el.tagName.toLowerCase() === 'div' ) {
+      Animator( el ).use( 'wiggle' ).removeAfter( 1 );
+    }
+  }
+
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return  <div key={ n } id={payload.id} className={payload.classes} onClick={ this._onClick.bind( this, payload ) }>
+      return  <div ref={ "image" + n } onTouchStart={ this._onMouseOver.bind( this, 'content' + n ) } onMouseOver={ this._onMouseOver.bind( this, 'image' + n ) } key={ n } id={payload.id} className={payload.classes} onClick={ this._onClick.bind( this, payload ) }>
                 <div ref={ 'content' + n } style={{ backgroundColor : C.COLORS.IMAGE_PRELOAD_BG_COLOR }} className="image-inner" />
                 <img src={ ip + '/images/' + payload.src } onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}/>
               </div>;
     } else {
-      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} id={payload.id} dangerouslySetInnerHTML={{ __html : payload.value }}></payload.tag>;
+      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} onTouchStart={ this._onMouseOver.bind( this, 'content' + n ) } onMouseOver={ this._onMouseOver.bind( this, 'content' + n ) } id={payload.id} dangerouslySetInnerHTML={{ __html : payload.value }}></payload.tag>;
     }
   }
 
