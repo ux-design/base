@@ -5,6 +5,7 @@ import './bower_components/font-awesome/css/font-awesome.min.css';
 import Navigation from './components/navigation';
 import Block from './components/block';
 import Content from './components/content';
+import Viewer from './components/viewer';
 import Loader from './components/loader';
 import Debugger from './components/debugger';
 // import { registerServiceWorker, unregister } from './registerServiceWorker';
@@ -55,6 +56,9 @@ const update = ( page ) => {
         el_block.setAttribute('id', 'block');
         //console.log(document.querySelector('#content').parentNode.insertBefore);
         document.querySelector('#content').parentNode.insertBefore( el_block , document.querySelector('#content').nextSibling );
+        var el_viewer = document.createElement( 'div' );
+        el_viewer.setAttribute('id', 'viewer');
+        document.querySelector('#content').parentNode.insertBefore( el_viewer , document.querySelector('#content').nextSibling );
         // inject react to the block
     } else {
         document.querySelector('#block').style.display = 'flex';
@@ -91,6 +95,11 @@ const update = ( page ) => {
 // core
 
 setInterval( () => {
+    // show the viewer
+    if ( Model.state.viewer.data ) {
+        ReactDOM.render(<Viewer on data={ Model.state.viewer.data }/>, document.getElementById('viewer'));    
+        document.querySelector('#viewer').style.display = 'flex';    
+    }
     // page loader
     if ( typeof Model.state.page !== 'undefined' ){
         var url = Model.state.page.substr(1,Model.state.page.length);

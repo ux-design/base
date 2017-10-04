@@ -1,0 +1,25 @@
+#viewer .wrapper {
+  color: white;
+}
+
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+
+  #viewer .wrapper {
+    
+  }
+
+
+}
+
+/* desktop */
+
+@media screen and (min-width: 768px) {
+
+  #viewer .wrapper {
+
+  }
+
+}

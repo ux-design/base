@@ -15,6 +15,9 @@ const Model = {
         pageLoaded: false,
         isMobile: _mobilecheck(),
         debugger: false,
+        viewer: {
+            visible: true
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Model from '../model';
 import './content.css';
 var C = require( '../model/constants' );
 var itemsToRender = 10;
@@ -12,7 +13,7 @@ class Content extends Component {
     super(props);
     this.state = {
       content : this.props.data.body.content.slice( 0 , itemsToRender ),
-      lastItemIndex : itemsToRender - 1 
+      lastItemIndex : itemsToRender - 1
     };
   }
 
@@ -21,9 +22,15 @@ class Content extends Component {
     this.refs[ payload[ 0 ] ].style.backgroundImage = 'url(' + ip + '/images/'+payload[ 1 ]+')' ;
   }
 
+  _onClick( payload ) {
+    if ( payload.classes.match( 'click-show-fullscreen' ) ) {
+      Model.state.viewer.data = { type : payload.tag , url : payload.src };
+    }
+  }
+
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return  <div key={ n } id={payload.id} className={payload.classes} >
+      return  <div key={ n } id={payload.id} className={payload.classes} onClick={ this._onClick.bind( this, payload ) }>
                 <div ref={ 'content' + n } style={{ backgroundColor : C.COLORS.IMAGE_PRELOAD_BG_COLOR }} className="image-inner" />
                 <img src={ ip + '/images/' + payload.src } onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}/>
               </div>;

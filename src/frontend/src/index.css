@@ -31,6 +31,19 @@ body {
   z-index: 100;
 }
 
+#viewer {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0,0,0,1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 #debugger {
   position: fixed;
   top: 0px;
@@ -93,6 +106,10 @@ body {
       
   }
 
+  #viewer {
+    
+  }
+
   #navigation {
     display: flex;
     height: 100%;
@@ -143,6 +160,10 @@ body {
 
   #overlay {
       
+  }
+
+  #viewer {
+    
   }
 
   #navigation {
