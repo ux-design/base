@@ -40,12 +40,17 @@
             },
             {
                 "tag": "h2",
-                "value": "INTRODUCTION"
+                "value": "INTRODUCTION",
+                "rollover": "anim-wiggle",
+                "rolloverRemoveAfter": 1
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-out nopadding header click-show-fullscreen",
-                "src": "me.jpg"
+                "classes": "image cropped-zoom-out nopadding header",
+                "src": "me.jpg",
+                "click": "show-fullscreen",
+                "rollover": "trans-zoom-in",
+                "rolloverRemoveAfter": 0.5
             },
             {
                 "tag": "p",

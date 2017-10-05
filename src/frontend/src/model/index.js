@@ -7,6 +7,7 @@ const _mobilecheck = () => {
 const Model = {
     state : {
         toggleMenu: false,
+        toggleViewer: false,
         menu: false,
         data: null,
         scrollY: 0,

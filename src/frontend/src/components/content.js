@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Model from '../model';
 import './content.css';
 import Animator from '../helpers/animator';
+import ImagePreloader from '../helpers/imagePreloader';
 var C = require( '../model/constants' );
 var itemsToRender = 10;
 const itemsToRenderStep = 10;
 const ip = 'http://' + window.location.hostname.replace(':3000','');
-//console.log(ip)
 
 class Content extends Component {
   
@@ -18,33 +18,100 @@ class Content extends Component {
     };
   }
 
-  _imageIsLoaded( payload ) {
-    //console.log( ip + '/images/'+payload[ 1 ] )
-    this.refs[ payload[ 0 ] ].style.backgroundImage = 'url(' + ip + '/images/'+payload[ 1 ]+')' ;
+  _intervals = {}
+
+  _createInterval( payload , ref ) {
+    var rnd = parseInt( Math.random() * 1000 );
+    var imageUrl = payload;
+    this._intervals[ rnd ] = setInterval( () => {
+      if ( this.refs[ ref ] ) {
+        var el = this.refs[ ref ].children[ 1 ].children[ 0 ];
+        if ( ImagePreloader.images[ imageUrl ] ) {
+          var perc = ImagePreloader.images[ imageUrl ].completedPercentage;
+          el.innerHTML = perc + '<span style="font-size:10px;">%</span>';
+        }
+      }
+      if ( ImagePreloader.images[ imageUrl ].completedPercentage === 100 ) {
+        clearInterval( this._intervals[ rnd ] );
+        this.refs[ ref ].style.backgroundImage = 'url(' + ImagePreloader.images[ imageUrl ].src + ')' ;
+        this.refs[ ref ].children[ 0 ].style.display = 'none' ;
+        this.refs[ ref ].children[ 1 ].style.display = 'none' ;
+      }
+    },100);
   }
 
+  // _imageIsLoaded( payload ) {
+  //   this.refs[ payload[ 0 ] ].style.backgroundImage = 'url(' + ip + '/images/'+payload[ 1 ]+')' ;
+  //   this.refs[ payload[ 0 ] ].children[ 0 ].style.display = 'none' ;
+  // }
+
   _onClick( payload ) {
-    if ( payload.classes.match( 'click-show-fullscreen' ) ) {
+    if ( payload.click === 'show-fullscreen' ) {
       Model.state.viewer.data = { type : payload.tag , url : payload.src };
+      Model.state.viewer.visible = true ;
+      Model.state.toggleViewer = true;
     }
   }
 
   _onMouseOver( payload ) {
-    var el = this.refs[ payload ] ;
-    console.log(el.tagName.toLowerCase())
-    if ( el.tagName.toLowerCase() === 'h2' || el.tagName.toLowerCase() === 'div' ) {
-      Animator( el ).use( 'wiggle' ).removeAfter( 1 );
-    }
+    var el = this.refs[ payload[ 1 ] ] ;
+    if ( el.tagName.toLowerCase() === 'div' ) el = el.children[0];
+    Animator( el ).use( payload[ 0 ].rollover ).removeAfter( payload[ 0 ].rolloverRemoveAfter );
   }
 
   _renderChild( payload , n ) {
     if ( payload.tag === 'img' ) {
-      return  <div ref={ "image" + n } onTouchStart={ this._onMouseOver.bind( this, 'content' + n ) } onMouseOver={ this._onMouseOver.bind( this, 'image' + n ) } key={ n } id={payload.id} className={payload.classes} onClick={ this._onClick.bind( this, payload ) }>
-                <div ref={ 'content' + n } style={{ backgroundColor : C.COLORS.IMAGE_PRELOAD_BG_COLOR }} className="image-inner" />
-                <img src={ ip + '/images/' + payload.src } onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}/>
+      const props = {
+              key : n ,
+              id : payload.id ,
+              className : payload.classes ,
+              ref :  "image" + n
+      }
+      if ( payload.rollover ) {
+        props.onTouchStart = this._onMouseOver.bind( this, [ payload , 'image' + n ] );
+        props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'image' + n ] );
+      }
+      if ( payload.click ) {
+        props.onClick = this._onClick.bind( this, payload )
+        props.style={ cursor : "pointer" };
+      }
+      var imageUrl = ip + '/images/' + payload.src ;
+      ImagePreloader.load( imageUrl );
+      this._createInterval( imageUrl , 'content' + n );
+      return  <div {...props}>
+                <div 
+                  ref={ 'content' + n } 
+                  style={{ backgroundColor : C.COLORS.IMAGE_PRELOAD_BG_COLOR , display : 'flex' , alignItems : 'center', justifyContent : 'center' }} 
+                  className="image-inner" 
+                >
+                  <div className="image-preloader" />
+                  <div className="image-preloader-perc">
+                    <div className="text"></div>
+                  </div>
+                </div>
+                {/* <img 
+                  src={ imageUrl } 
+                  onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}
+                /> */}
               </div>;
     } else {
-      return <payload.tag key={ n } style={{ opacity : 0 }} ref={ 'content' + n } className={payload.classes} onTouchStart={ this._onMouseOver.bind( this, 'content' + n ) } onMouseOver={ this._onMouseOver.bind( this, 'content' + n ) } id={payload.id} dangerouslySetInnerHTML={{ __html : payload.value }}></payload.tag>;
+      const props = {
+              key :  n ,
+              style : { opacity : 0 },
+              ref : 'content' + n ,
+              className : payload.classes,
+              id : payload.id ,
+              dangerouslySetInnerHTML : { __html : payload.value } ,
+      }
+      if ( payload.rollover ) {
+        props.onTouchStart = this._onMouseOver.bind( this, [ payload , 'content' + n ] );
+        props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'content' + n ] );
+      }
+      if ( payload.click ) {
+        props.onClick = this._onClick.bind( this, payload )
+        props.style={ cursor : "pointer" };
+      }
+      return  <payload.tag {...props}></payload.tag>;
     }
   }
 

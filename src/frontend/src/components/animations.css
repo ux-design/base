@@ -9,11 +9,11 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
-.wiggle {
-  animation: wiggle 1s cubic-bezier(.36,.07,.19,.97) both;
+.anim-wiggle {
+  animation: anim-wiggle 1s cubic-bezier(.36,.07,.19,.97) both;
 }
 
-@keyframes wiggle {
+@keyframes anim-wiggle {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
@@ -29,4 +29,10 @@
   40%, 60% {
     transform: translate3d(4px, 0, 0);
   }
+}
+
+.trans-zoom-in {
+  transform: scale(1.1,1.1)!important;
+  transition: all .3s!important;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }

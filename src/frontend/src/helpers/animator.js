@@ -7,11 +7,13 @@ const Animator = ( element ) => {
                 };
                 return {
                     removeAfter : ( seconds ) => {
-                        setTimeout( () => {
-                            element.className = element.className
-                                .replace( ` ${animation}` , '' )
-                                .replace('  ' , ' ' );
-                        } , seconds * 1000 );
+                        if ( typeof seconds !== 'undefined' ) {
+                            setTimeout( () => {
+                                element.className = element.className
+                                    .replace( ` ${animation}` , '' )
+                                    .replace('  ' , ' ' );
+                            } , seconds * 1000 );
+                        }
                     }
                 }
             }

@@ -2,6 +2,12 @@
   color: white;
 }
 
+#viewer .viewer-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
 /* mobile */
 

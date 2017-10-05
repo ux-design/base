@@ -39,8 +39,47 @@
                 "value": "Video"
             },
             {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "me.jpg"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "swim.jpg"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "me.jpg"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "swim.jpg"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "swim.jpg"
+            },
+            {
                 "tag": "h2",
-                "value": "infinite scroll"
+                "value": "picture"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-out nopadding header",
+                "src": "swim.jpg",
+                "click": "show-fullscreen",
+                "rollover": "trans-zoom-in",
+                "rolloverRemoveAfter": 1
+            },
+            {
+                "tag": "h2",
+                "value": "infinite scroll",
+                "rollover": "anim-wiggle",
+                "rolloverRemoveAfter": 1              
             },
             {
                 "tag": "p",
@@ -109,10 +148,6 @@
             {
                 "tag": "p",
                 "value": "the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped over the lazy dog "
-            },
-            {
-                "tag": "h1",
-                "value": "Video"
             },
             {
                 "tag": "h2",
@@ -156,12 +191,17 @@
             },
             {
                 "tag": "h2",
-                "value": "another image example"
+                "value": "ERROR HERE?"
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding full",
-                "src": "swim.jpg"
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "me.jpg"
+            },
+            {
+                "tag": "img",
+                "classes": "image cropped-zoom-in nopadding header",
+                "src": "me.jpg"
             },
             {
                 "tag": "p",

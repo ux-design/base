@@ -96,10 +96,20 @@ const update = ( page ) => {
 
 setInterval( () => {
     // show the viewer
-    if ( Model.state.viewer.data ) {
-        ReactDOM.render(<Viewer on data={ Model.state.viewer.data }/>, document.getElementById('viewer'));    
-        document.querySelector('#viewer').style.display = 'flex';    
+    if ( Model.state.toggleViewer ) {
+        Model.state.toggleViewer = false;
+        if ( Model.state.viewer.data ) {
+            ReactDOM.render(<Viewer on data={ Model.state.viewer.data }/>, document.getElementById('viewer'));    
+            document.querySelector('#viewer').style.display = 'flex';    
+            console.log( 'viewer on' )
+        }
+        if ( !Model.state.viewer.visible ) {
+            ReactDOM.render(<div></div>, document.getElementById('viewer'));    
+            document.querySelector('#viewer').style.display = 'none';   
+            console.log( 'viewer off' ) 
+        }
     }
+    
     // page loader
     if ( typeof Model.state.page !== 'undefined' ){
         var url = Model.state.page.substr(1,Model.state.page.length);
