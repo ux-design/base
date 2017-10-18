@@ -1,0 +1,126 @@
+#chatbox .wrapper {
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+#chatbox div {
+  /* border: dotted 1px red; */
+}
+
+#chatbox .header {
+  
+}
+
+#chatbox .content {
+  overflow: scroll;
+}
+
+#chatbox .content .visitor{
+  text-align: right;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 10px 10px 0px 10px;
+  background-color: grey;
+  color: white;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+#chatbox .content .site{
+  text-align: left;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 10px 10px 10px 0px;
+  background-color: #ff0050;
+  color: white;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+#chatbox .footer {
+  display: flex;
+  height: 100px;
+  border-top: solid 1px grey;
+  padding: 5px 0px 0px 0px;
+}
+
+#chatbox .text {
+  flex: 5;
+  margin: 0px;
+  border: 0px;
+  resize: none!important;
+  overflow: scroll;
+  outline: none;
+}
+
+#chatbox .footer .send {
+  background-color: lightgrey;
+  color: grey;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+
+  #chatbox .content{
+    padding-bottom: 50px;
+  }
+
+  #chatbox .content .visitor, #chatbox .content .site {
+    font-size: 18px;
+  }
+
+  #chatbox .footer{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 5px;
+    background-color: white;
+    height: 50px;
+  }
+
+  #chatbox .footer .text {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px; 
+  }
+
+  #chatbox .footer .send {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+}
+
+/* desktop */
+
+@media screen and (min-width: 768px) {
+
+  #chatbox .wrapper {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    bottom: 10px;
+    right: 10px;
+    border: dashed 1px grey;
+  }
+
+  #chatbox .content {
+    font-size: 13px;
+  }
+
+  #chatbox .content {
+    font-size: 13px;
+  }
+
+}

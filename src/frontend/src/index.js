@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import io from 'socket.io-client';
 import './index.css';
 import './bower_components/font-awesome/css/font-awesome.min.css';
 import Navigation from './components/navigation';
@@ -13,6 +14,7 @@ import Debugger from './components/debugger';
 import Model from './model';
 const ip = window.location.hostname;
 //const ip = 'localhost';
+const socket = io(ip);
 
 Model.state.page = window.location.pathname;
 
@@ -44,6 +46,7 @@ const animateTitle = ( payload ) => {
 
 // react page loader
 const update = ( page ) => {
+    socket.emit('log',`${socket.id} > ${page}`);
     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );

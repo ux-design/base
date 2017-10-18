@@ -85,7 +85,7 @@ const createIMG = ( payload , test ) => {
             attrId = `id="${id}"`;
             attrAlt = `alt="${id}"`;
         }
-        return `<img ${attrId} src="/images/${src}" ${attrAlt}/>`;
+        return `<img ${attrId} src="/images/${src}/small" ${attrAlt}/>`;
         // function end
     }} , test );
 }

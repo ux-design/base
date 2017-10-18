@@ -9,6 +9,19 @@ const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
 const forceRendering = true ;
+const Jimp = require( 'jimp' );
+
+io.on('connection', socket => {
+    console.log('connected!')
+    socket.on('message', data => {
+        console.log(data);
+        socket.broadcast.emit( 'message' ,data );
+    });
+    socket.on('log', data => {
+        console.log(data);
+    });
+});
+
 
 app.use(compression());
 
@@ -59,6 +72,23 @@ app.use(compression());
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/jpeg');
         res.sendFile( __dirname + `/src/images/${image}` );
+        
+    } ) ;
+
+    app.get( '/images/:image/:quality' , function( req , res ) {
+        
+        const { image , quality } = req.params;
+        Jimp.read(`./src/images/${image}`, function (err, resource) {
+            if (err) throw err;
+            const { width , height } = resource.bitmap ;
+            const rapp = parseInt( width / height * 100 ) / 100;
+            resource.quality(60)                 // set JPEG quality
+                    .resize(300,parseInt(300/rapp))
+                    .write(`./src/images/${quality}/${image}`); // save
+        });
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.sendFile( __dirname + `/src/images/${quality}/${image}` );
         
     } ) ;
 

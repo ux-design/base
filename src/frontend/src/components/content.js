@@ -3,6 +3,7 @@ import Model from '../model';
 import './content.css';
 import Animator from '../helpers/animator';
 import ImagePreloader from '../helpers/imagePreloader';
+import ChatBox from './chatbox';
 var C = require( '../model/constants' );
 var itemsToRender = 10;
 const itemsToRenderStep = 10;
@@ -94,6 +95,22 @@ class Content extends Component {
                   onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}
                 /> */}
               </div>;
+    } else if ( payload.tag === 'chatbox' ) {
+      const props = {
+              key : n ,
+              id : payload.id ,
+              className : payload.classes ,
+              ref :  "chatbox" + n
+      }
+      if ( payload.rollover ) {
+        props.onTouchStart = this._onMouseOver.bind( this, [ payload , 'image' + n ] );
+        props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'image' + n ] );
+      }
+      if ( payload.click ) {
+        props.onClick = this._onClick.bind( this, payload )
+        props.style={ cursor : "pointer" };
+      }
+      return  <ChatBox {...props} />;
     } else {
       const props = {
               key :  n ,

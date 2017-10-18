@@ -1,12 +1,12 @@
 {
-    "file": "contact.html",
+    "file": "chat.html",
     "language": "en",
-    "url": "/contact",
+    "url": "/chat",
     "meta": [ 
         "<meta charset=\"utf-8\" />",
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
     ],
-    "title": "Andrea Mazzilli - contact",
+    "title": "Andrea Mazzilli - chat",
     "style": "",
     "logo": "logo.svg",
     "body": {
@@ -36,31 +36,15 @@
         "content": [
             {
                 "tag": "h1",
-                "value": "Contact"
+                "value": "Chat"
             },
             {
                 "tag": "h2",
-                "value": "via email"
+                "value": "message"
             },
             {
-                "tag": "p",
-                "value": "mazzilli.andrea@gmail.com"
-            },
-            {
-                "tag": "h2",
-                "value": "via direct message"
-            },
-            {
-                "tag": "p",
-                "value": "<a href=\"/chat\">start chat now</a>"
-            },
-            {
-                "tag": "h2",
-                "value": "via skype"
-            },
-            {
-                "tag": "p",
-                "value": "andrea.mazzilli"
+                "tag": "chatbox",
+                "value": "your message here.."
             }
         ]
     }
