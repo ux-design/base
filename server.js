@@ -1,4 +1,5 @@
 const express = require( 'express' ) ;  
+const cors = require('cors');
 const app = express() ;  
 var compression = require('compression');
 const dateFormat = require('dateformat');
@@ -24,7 +25,8 @@ io.on('connection', socket => {
 
 
 app.use(compression());
-
+app.use(cors());
+app.options(cors());
 
 //const ip = 'localhost';
 
