@@ -37,7 +37,7 @@ if ( document.querySelector( '#first-loader' ) ) {
 
 // react page loader
 const update = ( page ) => {
-    /* socket.emit('log',`${socket.id} > ${page}`);
+    socket.emit('log',`${socket.id} > ${page}`);
     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
@@ -57,8 +57,8 @@ const update = ( page ) => {
     } else {
         document.querySelector('#block').style.display = 'flex';
     }
-    render(<Loader on />, document.getElementById('loader'));
-    render(<Block on data={ Model.state.data } />, document.getElementById('block'));
+    //render(<Loader on />, document.getElementById('loader'));
+    //render(<Block on data={ Model.state.data } />, document.getElementById('block'));
     Model.state.menu = true ;
     Model.state.toggleMenu = true ;
     fetch(`http://${ip}/templates/${page}`, {
@@ -68,10 +68,10 @@ const update = ( page ) => {
     }).then( ( data ) => {
         Model.state.data = data;
         setTimeout( ()=>{
-            render(<Loader />, document.getElementById('loader'));
-            render(<Block data={ Model.state.data } />, document.getElementById('block'));
-            render(<Navigation data={ data } />, document.getElementById('navigation'));
-            render(<Content data={ data } />, document.getElementById('content'));
+            //render(<Loader />, document.getElementById('loader'));
+            //render(<Block data={ Model.state.data } />, document.getElementById('block'));
+            //render(<Navigation data={ data } />, document.getElementById('navigation'));
+            //render(<Content data={ data } />, document.getElementById('content'));
             document.title = data.title;
             //animateTitle( data.title );
             document.querySelector('#navigation').style.opacity = 1;
@@ -83,7 +83,7 @@ const update = ( page ) => {
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
-    }); */
+    });
 }
 
 // core
@@ -172,10 +172,7 @@ if ( iOS ) {
 
 const _clearBody = () => {
     if ( document.querySelector('#navigation') ) document.querySelector('#navigation').remove()
-    if ( document.querySelector('#loader') ) document.querySelector('#loader').remove()
     if ( document.querySelector('#content') ) document.querySelector('#content').remove()
-    if ( document.querySelector('#viewer') ) document.querySelector('#viewer').remove()
-    if ( document.querySelector('#block') ) document.querySelector('#block').remove()
 }
 
 // add app to body

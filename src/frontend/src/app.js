@@ -14,14 +14,13 @@ import Debugger from './components/debugger'
 
 class App extends Component {
     render (props) {
-        console.log(this.props)
         return  (
             <div>
-                <Loader {...this.props}/>
+                <Loader {...this.props} on/>
                 <Navigation {...this.props}/>
                 <Content {...this.props}/>
                 <Viewer {...this.props}/>
-                <Block {...this.props}/>
+                <Block {...this.props} on/>
             </div>
         )
     }
