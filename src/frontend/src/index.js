@@ -1,19 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import io from 'socket.io-client';
-import './index.css';
-import './bower_components/font-awesome/css/font-awesome.min.css';
-import Navigation from './components/navigation';
-import Block from './components/block';
-import Content from './components/content';
-import Viewer from './components/viewer';
-import Loader from './components/loader';
-import Debugger from './components/debugger';
-// import { registerServiceWorker, unregister } from './registerServiceWorker';
+// react
+import React from 'react'
+import { render } from 'react-dom'
+// redux
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { logger } from 'redux-logger'
+import reducer from './reducers';
+// rx
+import 'rxjs'
+import { createEpicMiddleware, combineEpics } from 'redux-observable'
+// socket
+import io from 'socket.io-client'
+// css
+import './index.css'
+// app
+import App from './app'
+// import { registerServiceWorker, unregister } from './registerServiceWorker'
 // unregister();
-import Model from './model';
+import Model from './model'
+const store = createStore( reducer );
+
 const ip = window.location.hostname;
-//const ip = 'localhost';
+//const ip = 'localhost'
 const socket = io(ip);
 
 Model.state.page = window.location.pathname;
@@ -25,28 +33,11 @@ if ( document.querySelector( '#first-loader' ) ) {
     //document.querySelector( '#first-loader' ).style.display = 'none' ;
 }
 
-/*
-// animate title
-const animateTitle = ( payload ) => {
-  document.title = '';
-  Model.state.title = '';
-  for ( let x in payload ) {
-    var letter = payload[ x ] ;
-    setTitle( letter , ( x * 250 ) );
-  }
-} */
 
-/* const setTitle = ( payload , time ) => {
-  var letter = payload ;
-  setTimeout( () => {
-    Model.state.title += letter;
-    document.title = Model.state.title + '_';
-  }, time );
-} */
 
 // react page loader
 const update = ( page ) => {
-    socket.emit('log',`${socket.id} > ${page}`);
+    /* socket.emit('log',`${socket.id} > ${page}`);
     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
@@ -66,8 +57,8 @@ const update = ( page ) => {
     } else {
         document.querySelector('#block').style.display = 'flex';
     }
-    ReactDOM.render(<Loader on />, document.getElementById('loader'));
-    ReactDOM.render(<Block on data={ Model.state.data } />, document.getElementById('block'));
+    render(<Loader on />, document.getElementById('loader'));
+    render(<Block on data={ Model.state.data } />, document.getElementById('block'));
     Model.state.menu = true ;
     Model.state.toggleMenu = true ;
     fetch(`http://${ip}/templates/${page}`, {
@@ -77,10 +68,10 @@ const update = ( page ) => {
     }).then( ( data ) => {
         Model.state.data = data;
         setTimeout( ()=>{
-            ReactDOM.render(<Loader />, document.getElementById('loader'));
-            ReactDOM.render(<Block data={ Model.state.data } />, document.getElementById('block'));
-            ReactDOM.render(<Navigation data={ data } />, document.getElementById('navigation'));
-            ReactDOM.render(<Content data={ data } />, document.getElementById('content'));
+            render(<Loader />, document.getElementById('loader'));
+            render(<Block data={ Model.state.data } />, document.getElementById('block'));
+            render(<Navigation data={ data } />, document.getElementById('navigation'));
+            render(<Content data={ data } />, document.getElementById('content'));
             document.title = data.title;
             //animateTitle( data.title );
             document.querySelector('#navigation').style.opacity = 1;
@@ -92,22 +83,22 @@ const update = ( page ) => {
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
-    });
+    }); */
 }
 
 // core
 
 setInterval( () => {
     // show the viewer
-    if ( Model.state.toggleViewer ) {
+    /* if ( Model.state.toggleViewer ) {
         Model.state.toggleViewer = false;
         if ( Model.state.viewer.data ) {
-            ReactDOM.render(<Viewer on data={ Model.state.viewer.data }/>, document.getElementById('viewer'));    
+            render(<Viewer on data={ Model.state.viewer.data }/>, document.getElementById('viewer'));    
             document.querySelector('#viewer').style.display = 'flex';    
             console.log( 'viewer on' )
         }
         if ( !Model.state.viewer.visible ) {
-            ReactDOM.render(<div></div>, document.getElementById('viewer'));    
+            render(<div></div>, document.getElementById('viewer'));    
             document.querySelector('#viewer').style.display = 'none';   
             console.log( 'viewer off' ) 
         }
@@ -152,7 +143,7 @@ setInterval( () => {
             var tempDebugger = document.createElement('div');
             tempDebugger.id = 'debugger';
             document.querySelector('body').appendChild( tempDebugger );
-            ReactDOM.render(<Debugger data={ Model.state } />, document.getElementById('debugger'));
+            render(<Debugger data={ Model.state } />, document.getElementById('debugger'));
             console.log('creating debugger..');
         }
     } else {
@@ -160,7 +151,7 @@ setInterval( () => {
             document.querySelector('#debugger').remove();
             console.log('destroying debugger..');
         }
-    }
+    } */
     
 }, 20 );
 
@@ -176,3 +167,37 @@ if ( iOS ) {
         }
     }, 200 );
 }
+
+// remove body content
+
+const _clearBody = () => {
+    if ( document.querySelector('#navigation') ) document.querySelector('#navigation').remove()
+    if ( document.querySelector('#loader') ) document.querySelector('#loader').remove()
+    if ( document.querySelector('#content') ) document.querySelector('#content').remove()
+    if ( document.querySelector('#viewer') ) document.querySelector('#viewer').remove()
+    if ( document.querySelector('#block') ) document.querySelector('#block').remove()
+}
+
+// add app to body
+
+const _addDiv = ( id ) => {
+    var app = document.createElement( 'div' );
+    app.setAttribute('id', id );
+    document.querySelector('body').prepend( app );
+}
+
+// init
+
+const _init = () => {
+    _clearBody()
+    _addDiv('app')
+}
+
+_init();
+
+render(
+    <Provider store={ store }>
+      <App />
+    </Provider>
+    , document.querySelector('#app'));
+  
