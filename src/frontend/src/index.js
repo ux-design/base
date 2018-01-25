@@ -1,30 +1,19 @@
 // react
 import React from 'react'
 import { render } from 'react-dom'
-// redux
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import { logger } from 'redux-logger'
-import reducer from './reducers';
-// rx
-import 'rxjs'
-import { createEpicMiddleware, combineEpics } from 'redux-observable'
-// socket
+import store from './store'
 import io from 'socket.io-client'
-// css
 import './index.css'
-// app
 import App from './app'
 // import { registerServiceWorker, unregister } from './registerServiceWorker'
 // unregister();
-import Model from './model'
-const store = createStore( reducer );
 
 const ip = window.location.hostname;
 //const ip = 'localhost'
 const socket = io(ip);
 
-Model.state.page = window.location.pathname;
+//Model.state.page = window.location.pathname;
 
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
@@ -38,7 +27,7 @@ if ( document.querySelector( '#first-loader' ) ) {
 // react page loader
 const update = ( page ) => {
     socket.emit('log',`${socket.id} > ${page}`);
-    if ( !document.getElementById('loader') ) {
+    /* if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
         el_loader.setAttribute('id', 'loader');
@@ -83,7 +72,7 @@ const update = ( page ) => {
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
-    });
+    }); */
 }
 
 // core
@@ -158,13 +147,13 @@ setInterval( () => {
 if ( iOS ) {
     setInterval( () => {
         // scrolling detection to fix ios fixed style bug
-        Model.state.scrollY = ( window.scrollY - Model.state.scrollYOld );
+        /* Model.state.scrollY = ( window.scrollY - Model.state.scrollYOld );
         Model.state.scrollYOld = window.scrollY;
         if ( Model.state.scrollY === 0 || Model.state.scrollY < 0 ) {
           document.querySelector('#navigation').style.position = 'fixed'; 
         } else {
           document.querySelector('#navigation').style.position = 'absolute'; 
-        }
+        } */
     }, 200 );
 }
 

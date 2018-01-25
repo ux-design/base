@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-// css
+import actions from './actions'
 import './index.css';
 import './bower_components/font-awesome/css/font-awesome.min.css'
 // components
@@ -14,12 +13,13 @@ import Debugger from './components/debugger'
 
 class App extends Component {
     render (props) {
+        this.props.route('index')
         return  (
             <div>
                 <Loader {...this.props} on/>
-                <Navigation {...this.props}/>
+                {/* <Navigation {...this.props}/>
                 <Content {...this.props}/>
-                <Viewer {...this.props}/>
+                <Viewer {...this.props}/> */}
                 <Block {...this.props} on/>
             </div>
         )
@@ -29,4 +29,12 @@ class App extends Component {
 const mapState = state => {
     return state
 }
-export default connect(mapState)(App)
+
+const mapDispatch = (dispatch) => {
+    return {
+        route: (page) => { 
+            dispatch( actions( 'ROUTE', page ) ) 
+        }
+    }
+}
+export default connect(mapState, mapDispatch)(App)
