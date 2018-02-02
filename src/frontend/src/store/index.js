@@ -1,10 +1,13 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import { logger } from 'redux-logger'
 import reducer from '../reducers'
-import epics from '../epics'
 import { createEpicMiddleware, combineEpics } from 'redux-observable'
+import { APP_INIT, LOAD_PAGE } from '../epics'
 
+const epics = combineEpics( APP_INIT, LOAD_PAGE )
 const epicMiddleware = createEpicMiddleware(epics)
-const store = createStore( reducer, applyMiddleware(logger, epicMiddleware) )
+const store = createStore( reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger, epicMiddleware) )
+
+store.dispatch({type: 'APP_INIT'})
 
 export default store

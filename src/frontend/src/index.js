@@ -1,4 +1,3 @@
-// react
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -6,8 +5,6 @@ import store from './store'
 import io from 'socket.io-client'
 import './index.css'
 import App from './app'
-// import { registerServiceWorker, unregister } from './registerServiceWorker'
-// unregister();
 
 const ip = window.location.hostname;
 //const ip = 'localhost'

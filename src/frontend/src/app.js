@@ -13,21 +13,30 @@ import Debugger from './components/debugger'
 
 class App extends Component {
     render (props) {
-        this.props.route('index')
+        const { preloaderIsVisible } = this.props
+        console.log( preloaderIsVisible )
         return  (
             <div>
-                <Loader {...this.props} on/>
+                { preloaderIsVisible
+                    ? <Loader {...this.props} on/>
+                    : null
+                }
                 {/* <Navigation {...this.props}/>
                 <Content {...this.props}/>
                 <Viewer {...this.props}/> */}
-                <Block {...this.props} on/>
+                { preloaderIsVisible
+                    ? <Block {...this.props} on/>
+                    : null
+                }
             </div>
         )
     }
 }
 
 const mapState = state => {
-    return state
+    return {
+        preloaderIsVisible: state.get('preloader').get('visible')
+    }
 }
 
 const mapDispatch = (dispatch) => {
