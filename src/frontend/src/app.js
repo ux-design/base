@@ -14,16 +14,15 @@ import Debugger from './components/debugger'
 class App extends Component {
     render (props) {
         const { preloaderIsVisible } = this.props
-        console.log( preloaderIsVisible )
         return  (
             <div>
                 { preloaderIsVisible
                     ? <Loader {...this.props} on/>
                     : null
                 }
-                {/* <Navigation {...this.props}/>
+                <Navigation {...this.props}/>
                 <Content {...this.props}/>
-                <Viewer {...this.props}/> */}
+                <Viewer {...this.props}/>
                 { preloaderIsVisible
                     ? <Block {...this.props} on/>
                     : null

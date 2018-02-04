@@ -43,6 +43,7 @@ class Navigation extends Component {
   }
 
   render() {
+    console.log(this.props)
     const data = this.props.data.body.navigation;
     var result = [];
     var el, selected = '';

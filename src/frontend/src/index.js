@@ -22,9 +22,9 @@ if ( document.querySelector( '#first-loader' ) ) {
 
 
 // react page loader
-const update = ( page ) => {
+/*const update = ( page ) => {
     socket.emit('log',`${socket.id} > ${page}`);
-    /* if ( !document.getElementById('loader') ) {
+     if ( !document.getElementById('loader') ) {
         // add loader on the fly
         var el_loader = document.createElement( 'div' );
         el_loader.setAttribute('id', 'loader');
@@ -69,8 +69,8 @@ const update = ( page ) => {
         }, 5 ) ;
     }).catch( ( err ) => {
         // Error :(
-    }); */
-}
+    }); 
+}*/
 
 // core
 
