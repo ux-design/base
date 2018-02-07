@@ -4,7 +4,9 @@ import Immutable from 'immutable'
 const initialState = Immutable.fromJS({
   app: {
       ready: false,
-      route: null
+      route: null,
+      logo: '',
+      content: null
   },
   preloader: {
     visible: true
@@ -38,10 +40,25 @@ const preloaderShow = (state) => {
   return newState
 }
 
-const updateContet = (state, payload) => {
+const updateRoute = (state, payload) => {
+  let app = state.get('app')
+  app = app.set('route', payload)
+  let newState = state.set('app', app)
+  return newState
+}
+
+const templateLoad = (state, payload) => {
   let content = state.get('content')
   content = content.set(payload.url, payload.data)
   let newState = state.set('content', content)
+  return newState
+}
+
+const templateRender = (state, payload) => {
+  let app = state.get('app')
+  app = app.set('content', state.get('content').get('http://localhost/templates' + state.get('app').get('route')))
+  let newState = state.set('app', app)
+  console.log(payload)
   return newState
 }
 
@@ -53,8 +70,12 @@ export default ( state = initialState, action ) => {
       return preloaderHide(state)
     case "PRELOADER_SHOW":
       return preloaderShow(state)
-    case "UPDATE_CONTENT":
-      return updateContet(state, action.payload)
+    case "ROUTE_UPDATE":
+      return updateRoute(state, action.payload)
+    case "TEMPLATE_LOAD":
+      return templateLoad(state, action.payload)
+    case "TEMPLATE_RENDER":
+      return templateRender(state)
     default:
       return state
   }

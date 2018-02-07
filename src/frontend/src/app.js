@@ -14,15 +14,20 @@ import Debugger from './components/debugger'
 class App extends Component {
     render (props) {
         const { preloaderIsVisible } = this.props
+        console.log( this.props )
         return  (
             <div>
                 { preloaderIsVisible
                     ? <Loader {...this.props} on/>
                     : null
                 }
-                <Navigation {...this.props}/>
-                <Content {...this.props}/>
-                <Viewer {...this.props}/>
+                { this.props.app.content
+                    ? [<Navigation {...this.props}/>,
+                      <Content {...this.props}/>,
+                      <Viewer {...this.props}/>]
+                    : null
+                }
+                
                 { preloaderIsVisible
                     ? <Block {...this.props} on/>
                     : null
@@ -33,9 +38,7 @@ class App extends Component {
 }
 
 const mapState = state => {
-    return {
-        preloaderIsVisible: state.get('preloader').get('visible')
-    }
+    return state.toJS()
 }
 
 const mapDispatch = (dispatch) => {

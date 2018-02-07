@@ -11,7 +11,7 @@ const load = url => {
         .catch( err => { return Rx.Observable.of({ response: {}, request: { url: url} }) })
         .map( data => {
             return {
-                action: 'load',
+                action: 'LOAD',
                 data: data
             }
         })
@@ -28,20 +28,32 @@ const APP_INIT = action$ =>
             load('http://localhost/templates/contact'),
             load('http://localhost/templates/about'),
             Rx.Observable.empty()
+                .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),
+            Rx.Observable.empty()
+                .startWith({ action: 'TEMPLATE_RENDER' }),
+            Rx.Observable.empty()
                 .startWith({ action: 'APP_INIT_COMPLETE' })
         )
     })
     .map( data => {
         switch ( data.action ) {
-            case"load":
+            case'LOAD':
             return {
-                type: 'UPDATE_CONTENT',
+                type: 'TEMPLATE_LOAD',
                 payload: { data: data.data.response, url: data.data.request.url }
             }
-            case"APP_INIT_COMPLETE":
+            case'APP_INIT_COMPLETE':
             return {
-                type: 'PRELOADER_HIDE',
-                payload: {}
+                type: 'PRELOADER_HIDE'
+            }
+            case'ROUTE_UPDATE':
+            return {
+                type: 'ROUTE_UPDATE',
+                payload: data.payload
+            }
+            case'TEMPLATE_RENDER':
+            return {
+                type: 'TEMPLATE_RENDER'
             }
         }
     })
