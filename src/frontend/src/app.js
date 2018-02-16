@@ -9,26 +9,27 @@ import Block from './components/block'
 import Content from './components/content'
 import Viewer from './components/viewer'
 import Loader from './components/loader'
-import Debugger from './components/debugger'
+/* import Debugger from './components/debugger' */
 
 class App extends Component {
     render (props) {
-        const { preloaderIsVisible } = this.props
-        console.log( this.props )
+        const { app } = this.props
         return  (
             <div>
-                { preloaderIsVisible
+                { 1 === 2
                     ? <Loader {...this.props} on/>
                     : null
                 }
-                { this.props.app.content
-                    ? [<Navigation {...this.props}/>,
-                      <Content {...this.props}/>,
-                      <Viewer {...this.props}/>]
+                { app.content
+                    ? [<Navigation key="navigation" {...app.content.body.navigation}/>,
+                      <Content key="content" {...app.content.body.content}/>]
                     : null
                 }
-                
-                { preloaderIsVisible
+                { 1 === 2
+                    ? <Viewer {...this.props}/>
+                    : null
+                }
+                { 1 === 2
                     ? <Block {...this.props} on/>
                     : null
                 }

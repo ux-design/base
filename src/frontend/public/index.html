@@ -54,7 +54,12 @@
         lazy dog the quick brown fox jumped over the lazy dog the quick brown fox jumped
         over the lazy dog the quick brown fox jumped over the lazy dog</p>
     </div>
+    <div id="first-loader" style="position:absolute;top:0px;bottom:0px;left:0px;right:0px;background-color:white;z-index:1000000;display: none;justify-content: center;align-items: center;font-family:helvetica; font-size:36px;">
+      loading..
+    </div>
     <script>
-      document.querySelector('#navigation').style.opacity = 0;document.querySelector('#content').style.opacity = 0;
+      document.querySelector('#navigation').style.opacity = 0;
+      document.querySelector('#content').style.opacity = 0;
+      document.querySelector('#first-loader').style.display = 'flex';
     </script>
 </html>

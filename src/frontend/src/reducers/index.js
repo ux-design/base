@@ -1,5 +1,5 @@
-import actions from '../actions/'
 import Immutable from 'immutable'
+const ip = window.location.hostname
 
 const initialState = Immutable.fromJS({
   app: {
@@ -11,10 +11,7 @@ const initialState = Immutable.fromJS({
   preloader: {
     visible: true
   },
-  navigation: {
-
-  },
-  content: {
+  templates: {
     
   }
 })
@@ -48,17 +45,16 @@ const updateRoute = (state, payload) => {
 }
 
 const templateLoad = (state, payload) => {
-  let content = state.get('content')
-  content = content.set(payload.url, payload.data)
-  let newState = state.set('content', content)
+  let templates = state.get('templates')
+  templates = templates.set(payload.url, payload.data)
+  let newState = state.set('templates', templates)
   return newState
 }
 
 const templateRender = (state, payload) => {
   let app = state.get('app')
-  app = app.set('content', state.get('content').get('http://localhost/templates' + state.get('app').get('route')))
+  app = app.set('content', state.get('templates').get('http://'+ip+'/templates' + state.get('app').get('route')))
   let newState = state.set('app', app)
-  console.log(payload)
   return newState
 }
 

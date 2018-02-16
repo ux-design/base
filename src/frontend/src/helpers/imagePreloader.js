@@ -13,7 +13,7 @@ Image.prototype.load = function(url){
         thisImg.src = reader.result
     })
     xmlHTTP.onprogress = function(e) {
-        thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
+        thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100, 10);
     };
     xmlHTTP.onloadstart = function() {
         thisImg.completedPercentage = 0;

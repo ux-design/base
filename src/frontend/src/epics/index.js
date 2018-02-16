@@ -1,5 +1,5 @@
 import Rx from 'rxjs'
-
+const ip = window.location.hostname;
 // observables
 
 const load = url => {
@@ -23,16 +23,18 @@ const APP_INIT = action$ =>
     action$.ofType( 'APP_INIT' )
     .mergeMap( action => {
         return Rx.Observable.concat(
-            load('http://localhost/templates/index'),
-            load('http://localhost/templates/video'),
-            load('http://localhost/templates/contact'),
-            load('http://localhost/templates/about'),
+            load('http://'+ip+'/templates/index'),
+            load('http://'+ip+'/templates/video'),
+            load('http://'+ip+'/templates/contact'),
+            load('http://'+ip+'/templates/about'),
             Rx.Observable.empty()
                 .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),
             Rx.Observable.empty()
                 .startWith({ action: 'TEMPLATE_RENDER' }),
             Rx.Observable.empty()
-                .startWith({ action: 'APP_INIT_COMPLETE' })
+                .startWith({ action: 'APP_READY' }),
+            Rx.Observable.empty()
+                .startWith({ action: 'PRELOADER_HIDE' })
         )
     })
     .map( data => {
@@ -42,7 +44,11 @@ const APP_INIT = action$ =>
                 type: 'TEMPLATE_LOAD',
                 payload: { data: data.data.response, url: data.data.request.url }
             }
-            case'APP_INIT_COMPLETE':
+            case'APP_READY':
+            return {
+                type: 'APP_READY'
+            }
+            case'PRELOADER_HIDE':
             return {
                 type: 'PRELOADER_HIDE'
             }
@@ -55,20 +61,11 @@ const APP_INIT = action$ =>
             return {
                 type: 'TEMPLATE_RENDER'
             }
+            default:
+            return {}
         }
     })
-
-const APP_INIT_COMPLETE = action$ => {
-    action$.ofType( 'APP_INIT_COMPLETE' )
-    .map( data => { 
-        return {
-            type: 'PRELOADER_HIDE',
-            payload: {}
-        }
-    })
-}
 
 export { 
-    APP_INIT,
-    APP_INIT_COMPLETE
+    APP_INIT
 }
