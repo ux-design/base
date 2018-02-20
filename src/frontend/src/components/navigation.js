@@ -20,7 +20,7 @@ class Navigation extends Component {
   }
 
   _toggleMenu() {
-    Model.state.toggleMenu = true
+    console.log(this.props)
   }
 
   _link( payload ) {
@@ -43,7 +43,7 @@ class Navigation extends Component {
   }
 
   render() {
-    const links = this.props
+    const links = this.props.app.content.body.navigation
     var result = []
     var el, selected = ''
     for( let x in links ){

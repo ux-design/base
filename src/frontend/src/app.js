@@ -13,19 +13,19 @@ import Loader from './components/loader'
 
 class App extends Component {
     render (props) {
-        const { app } = this.props
+        console.log(this.props)
         return  (
             <div>
                 { 1 === 2
                     ? <Loader {...this.props} on/>
                     : null
                 }
-                { app.content
-                    ? [<Navigation key="navigation" {...app.content.body.navigation}/>,
-                      <Content key="content" {...app.content.body.content}/>]
+                { this.props.app.content
+                    ? [<Navigation key="navigation" {...this.props}/>,
+                      <Content key="content" {...this.props}/>]
                     : null
                 }
-                { 1 === 2
+                { this.props.viewer.visible
                     ? <Viewer {...this.props}/>
                     : null
                 }
@@ -44,8 +44,11 @@ const mapState = state => {
 
 const mapDispatch = (dispatch) => {
     return {
-        route: (page) => { 
+        route: page => { 
             dispatch( actions( 'ROUTE', page ) ) 
+        },
+        clickImage: image => {
+            dispatch( actions( 'VIEWER_SHOW_IMAGE', image ))
         }
     }
 }

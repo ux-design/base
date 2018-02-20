@@ -11,9 +11,14 @@ const initialState = Immutable.fromJS({
   preloader: {
     visible: true
   },
-  templates: {
-    
-  }
+  viewer: {
+    visible: false,
+    content: {
+      type: null,
+      url: null
+    }
+  },
+  templates: {}
 })
 
 const appReady = (state) => {
@@ -51,10 +56,22 @@ const templateLoad = (state, payload) => {
   return newState
 }
 
-const templateRender = (state, payload) => {
+const templateRender = (state) => {
   let app = state.get('app')
   app = app.set('content', state.get('templates').get('http://'+ip+'/templates' + state.get('app').get('route')))
   let newState = state.set('app', app)
+  return newState
+}
+
+const viewerShowImage = (state, payload) => {
+  let viewer = state.get('viewer')
+  const content = {
+    type: 'image',
+    url: payload.src
+  } 
+  viewer = viewer.set('content', content)
+  viewer = viewer.set('visible', true)
+  let newState = state.set('viewer', viewer)
   return newState
 }
 
@@ -72,6 +89,8 @@ export default ( state = initialState, action ) => {
       return templateLoad(state, action.payload)
     case "TEMPLATE_RENDER":
       return templateRender(state)
+    case "VIEWER_SHOW_IMAGE":
+      return viewerShowImage(state, action.payload)
     default:
       return state
   }

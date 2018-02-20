@@ -32,11 +32,9 @@ class Content extends Component {
     },100)
   }
 
-  _onClick( payload ) {
+  _onClickImage( payload ) {
     if ( payload.click === 'show-fullscreen' ) {
-      Model.state.viewer.data = { type : payload.tag , url : payload.src }
-      Model.state.viewer.visible = true 
-      Model.state.toggleViewer = true
+      this.props.clickImage(payload)
     }
   }
 
@@ -59,7 +57,7 @@ class Content extends Component {
         props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'image' + n ] )
       }
       if ( payload.click ) {
-        props.onClick = this._onClick.bind( this, payload )
+        props.onClick = this._onClickImage.bind( this, payload )
         props.style={ cursor : "pointer" }
       }
       var imageUrl = urls.images + payload.src 
@@ -93,7 +91,7 @@ class Content extends Component {
         props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'image' + n ] )
       }
       if ( payload.click ) {
-        props.onClick = this._onClick.bind( this, payload )
+        props.onClick = this._onClickImage.bind( this, payload )
         props.style={ cursor : "pointer" }
       }
       return  <ChatBox {...props} />
@@ -111,7 +109,7 @@ class Content extends Component {
         props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'content' + n ] )
       }
       if ( payload.click ) {
-        props.onClick = this._onClick.bind( this, payload )
+        props.onClick = this._onClickImage.bind( this, payload )
         props.style={ cursor : "pointer" }
       }
       return  <payload.tag {...props}></payload.tag>
@@ -210,7 +208,7 @@ class Content extends Component {
   }
 
   render() {
-    const elements = this.props
+    const elements = this.props.app.content.body.content
     var result = []
     var el
     for( let x in elements ){
