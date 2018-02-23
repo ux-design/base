@@ -208,7 +208,7 @@ class Content extends Component {
   }
 
   render() {
-    const elements = this.props.app.content.body.content
+    const elements = this.props.app.get('content').body.content
     var result = []
     var el
     for( let x in elements ){

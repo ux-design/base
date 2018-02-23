@@ -29,7 +29,7 @@ class App extends Component {
                     ? <Viewer {...this.props}/>
                     : null
                 }
-                { this.props.preloader.visible
+                { this.props.preloader.get('visible')
                     ? <Block {...this.props} on/>
                     : null
                 }

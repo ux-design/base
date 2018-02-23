@@ -4,7 +4,7 @@
   stroke-linejoin: round;
   stroke-width: 10px;
   stroke-dasharray: 200;
-  stroke-dashoffset: 0;
+  stroke-dashoffset: 0;  
 }
 .logo--blue {
   stroke: #1aa1fc;
@@ -51,4 +51,12 @@
 .draw--delay-m2 {
   -webkit-animation-delay: 0.9s;
   animation-delay: 0.9s;
+}
+.logo-container {
+  
+}
+
+.logo-container--large {
+  width: 100px;
+  height: 100px;
 }

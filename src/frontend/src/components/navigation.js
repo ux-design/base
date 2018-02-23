@@ -44,7 +44,7 @@ class Navigation extends Component {
   } */
 
   render() {
-    const links = this.props.app.content.body.navigation
+    const links = this.props.app.get('content').body.navigation
     var result = []
     var el, selected = ''
     for( let x in links ){
