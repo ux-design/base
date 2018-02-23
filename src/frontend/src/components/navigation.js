@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './navigation.css'
 import './animations.css'
-import Model from '../model'
 import { urls } from '../model/constants'
+import Logo from './logo'
 
 class Navigation extends Component {
   
@@ -11,7 +11,7 @@ class Navigation extends Component {
     this.state = {}
   }
 
-  _renderChild( payload ) {
+  _renderChild = ( payload ) => {
     var result
     payload.link
       ? result = <span>{ payload.name }</span>
@@ -19,28 +19,29 @@ class Navigation extends Component {
     return result
   }
 
-  _toggleMenu() {
+  _toggleMenu = () => {
     console.log(this.props)
+    this.props.preloaderShow()
   }
 
-  _link( payload ) {
-    Model.state.page = payload
+  _link = ( payload ) => {
+    //Model.state.page = payload
   }
 
-  _renderLogo() {
+  _renderLogo = () => {
     const logo = this.props.logo
     if ( logo !== '' ) {
       return  <div className="logo-container" onClick={ this._link.bind( this , '/' ) }>
-                <img alt="logo" src={ `${urls.vectors}logo.svg` } className="logo" ref="logo" />
+                <Logo draw />
               </div>
     } else {
       return <div></div>
     }
   }
 
-  shouldComponentUpdate( nextProps, nextState ){
+/*   shouldComponentUpdate( nextProps, nextState ){
     return JSON.stringify(nextProps) !== JSON.stringify(this.props)
-  }
+  } */
 
   render() {
     const links = this.props.app.content.body.navigation

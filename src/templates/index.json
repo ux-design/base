@@ -48,7 +48,7 @@
             {
                 "tag": "img",
                 "classes": "image cropped-zoom-out nopadding header",
-                "src": "me.jpg",
+                "src": "swim.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
                 "rolloverRemoveAfter": 0.5

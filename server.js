@@ -77,6 +77,15 @@ app.options(cors());
         
     } ) ;
 
+    app.get( '/svg/:svg' , function( req , res ) {
+        
+        const { svg } = req.params;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'image/svg+xml');
+        res.sendFile( __dirname + `/src/svg/${svg}.svg` );
+        
+    } ) ;
+
     app.get( '/images/:image/:quality' , function( req , res ) {
         
         const { image , quality } = req.params;
@@ -93,6 +102,35 @@ app.options(cors());
         res.sendFile( __dirname + `/src/images/${quality}/${image}` );
         
     } ) ;
+
+    /* app.get( '/google/images/:search' , ( req, res ) => {
+        const { search } = req.params;
+    
+        http.get('http://www.google.nl/search?q='+search+'&gbv=1&prmd=ivns&source=lnms&tbm=isch&sa=X', (resp) => {
+            let data = '';
+            
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+            
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                var imgs = data.match(/<img.*?src="(.*?)"/g);
+                var result = [];
+                imgs.map((el)=>{
+                    result.push(el.split('src="')[1].split('"')[0])
+                })
+                res.send(result);
+            });
+            
+            }).on("error", (err) => {
+            console.log("Error: " + err.message);
+        });
+        
+    
+    } ) ; */
+    
 
 // functions  
 

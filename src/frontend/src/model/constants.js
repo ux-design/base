@@ -6,5 +6,5 @@ export const colors = {
 }
 export const urls =  {
     images: ip + '/images/',
-    vectors: ip + '/vectors/'
+    vectors: ip + '/svg/'
 }

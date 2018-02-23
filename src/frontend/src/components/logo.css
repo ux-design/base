@@ -1,0 +1,54 @@
+.logo {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 10px;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+}
+.logo--blue {
+  stroke: #1aa1fc;
+}  
+.logo--pink {
+  stroke: #ff06a6;
+}
+.draw {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+.draw--letter-a {
+  -webkit-animation-name: draw--letter-a;
+  animation-name: draw--letter-a;
+}
+@-webkit-keyframes draw--letter-a {
+  from { opacity: 0; stroke-dashoffset: 200; }
+  to { opacity: 1; stroke-dashoffset: 80; }
+}
+@keyframes draw--letter-a {
+  from { opacity: 0; stroke-dashoffset: 200; }
+  to { opacity: 1; stroke-dashoffset: 80; }
+}
+.draw--letter-m {
+  -webkit-animation-name: draw--letter-m;
+  animation-name: draw--letter-m;
+}
+@-webkit-keyframes draw--letter-m {
+  from { opacity: 0; stroke-dashoffset: 200; }
+  to { opacity: 1; stroke-dashoffset: 150; }
+}
+@keyframes draw--letter-m {
+  from { opacity: 0; stroke-dashoffset: 200; }
+  to { opacity: 1; stroke-dashoffset: 150; }
+}
+.draw--delay-m {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+.draw--delay-m2 {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
