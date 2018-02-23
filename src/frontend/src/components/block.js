@@ -24,11 +24,9 @@ class Block extends Component {
 
   _restartLogo () {
     this.setState({draw: !this.state.draw})
-    console.log(this.state)
   }
 
   render() {
-    console.log(this.state)
     var animIn = "" , animOut = ""
     if ( this.props.on ) {
         animIn = " bounceIn"

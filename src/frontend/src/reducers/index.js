@@ -32,6 +32,9 @@ const preloaderHide = (state) => {
   let preloader = state.get('preloader')
   preloader = preloader.set('visible', false)
   let newState = state.set('preloader', preloader)
+  document.querySelector('body').style.overflow='auto'
+  document.ontouchmove = function (e) {
+  }
   return newState
 }
 
@@ -39,6 +42,10 @@ const preloaderShow = (state) => {
   let preloader = state.get('preloader')
   preloader = preloader.set('visible', true)
   let newState = state.set('preloader', preloader)
+  document.querySelector('body').style.overflow='hidden'
+  document.ontouchmove = function (e) {
+    e.preventDefault();
+  }
   return newState
 }
 
