@@ -26,10 +26,10 @@ class Content extends Component {
         }
       }
       if ( ImagePreloader.images[ imageUrl ].completedPercentage === 100 ) {
-        clearInterval( this._intervals[ rnd ] )
         this.refs[ ref ].style.backgroundImage = 'url(' + ImagePreloader.images[ imageUrl ].src + ')' 
         this.refs[ ref ].children[ 0 ].style.display = 'none' 
         this.refs[ ref ].children[ 1 ].style.display = 'none' 
+        clearInterval( this._intervals[ rnd ] )
       }
     },100)
   }
