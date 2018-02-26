@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import actions from '../actions'
 import './navigation.css'
 import './animations.css'
 import { urls } from '../model/constants'
@@ -20,57 +22,56 @@ class Navigation extends Component {
   }
 
   _toggleMenu = () => {
-    console.log(this.props)
-    this.props.preloaderShow()
+    console.log(this.props.menuIsOpen)
+    this.props.fire('NAVIGATION_MENU_CLICK', this.props.menuIsOpen)
   }
 
   _link = ( payload ) => {
-    //Model.state.page = payload
+    this.props.fire('PAGE_LOAD', payload)
   }
-
-  _renderLogo = () => {
-    const logo = this.props.logo
-    if ( logo !== '' ) {
-      return  <div className="logo-container" onClick={ this._link.bind( this , '/' ) }>
-                <Logo draw />
-              </div>
-    } else {
-      return <div></div>
-    }
-  }
-
-/*   shouldComponentUpdate( nextProps, nextState ){
-    return JSON.stringify(nextProps) !== JSON.stringify(this.props)
-  } */
 
   render() {
-    const links = this.props.app.get('content').body.navigation
+    console.log(this.props)
+    console.log('navigation.js > render')
+    const menuIsOpen = this.props.menuIsOpen
+    const links = this.props.content.body.navigation
     var result = []
     var el, selected = ''
     for( let x in links ){
       el = links[ x ]
       el.selected
-        ? selected = 'selected'
+        ? selected = 'navigation__link--selected'
         : selected = ''
-      result.push( <div key={ x } className={ `navigation-el ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div> )
+      result.push( <div key={ x } className={ `navigation__link ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div> )
     }
     return (
-      <div id="navigation">
-        <div className="wrapper">
-          { this._renderLogo() }
-          <div className="links">
-            { result }
-          </div>
-          <div className="menu-button" onClick={ this._toggleMenu }>
-            <i className="fa fa-bars menu__icon" aria-hidden="true"></i>
-          </div>
-          <div className="menu-close" onClick={ this._toggleMenu }>
-            <i className="fa fa-times menu__icon" aria-hidden="true"></i>
-          </div>
+      <div className={`navigation ${menuIsOpen?'navigation--fullscreen':null}`}>
+        <div className="navigation__logo" onClick={this._link.bind(this, '/index')}>
+          <Logo className="logo logo--small" draw />
+        </div> 
+        <div className={`navigation__links ${menuIsOpen?'navigation__links--show':null}`}>
+          { result }
+        </div>
+        <div className="navigation__toggle" onClick={ this._toggleMenu }>
+          <i className="fa fa-bars" aria-hidden="true"></i>
         </div>
       </div>
     )
   }
 }
 
-export default Navigation
+const mapState = state => {
+  return {
+      content: state.app.get('content'),
+      menuIsOpen: state.navigation.get('menuIsOpen')
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+      fire: (action, payload) => {
+          dispatch(actions(action, payload))
+      }
+  }
+}
+export default connect(mapState, mapDispatch)(Navigation)

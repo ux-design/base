@@ -17,20 +17,20 @@ class App extends Component {
         return  (
             <div>
                 { 1 === 2
-                    ? <Loader {...this.props} on/>
+                    ? <Loader {...this.props} on />
                     : null
                 }
                 { this.props.app.get('content')
-                    ? [<Navigation key="navigation" {...this.props}/>,
-                      <Content key="content" {...this.props}/>]
+                    ? [<Navigation key="navigation" />,
+                      <Content key="content" />]
                     : null
                 }
                 { this.props.viewer.visible
-                    ? <Viewer {...this.props}/>
+                    ? <Viewer {...this.props} />
                     : null
                 }
                 { this.props.preloader.get('visible')
-                    ? <Block {...this.props} on/>
+                    ? <Block {...this.props} on />
                     : null
                 }
             </div>
@@ -40,23 +40,16 @@ class App extends Component {
 
 const mapState = state => {
     return {
-        app: state.get('app'),
-        viewer: state.get('viewer'),
-        preloader: state.get('preloader'),
-        templates: state.get('templates')
+        app: state.app,
+        viewer: state.viewer,
+        preloader: state.block.get('preloader')
     }
 }
 
 const mapDispatch = (dispatch) => {
     return {
-        routeUpdate: page => { 
-            dispatch( actions( 'ROUTE_UPDATE', page ) ) 
-        },
-        preloaderShow: page => { 
-            dispatch( actions( 'PRELOADER_SHOW' ) ) 
-        },
-        clickImage: image => {
-            dispatch( actions( 'VIEWER_SHOW_IMAGE', image ))
+        fire: (action, payload) => {
+            dispatch(actions(action, payload))
         }
     }
 }

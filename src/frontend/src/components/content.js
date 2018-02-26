@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import actions from '../actions'
 import Model from '../model'
 import './content.css'
 import Animator from '../helpers/animator'
@@ -160,7 +162,7 @@ class Content extends Component {
   _renderNextElements() {
     itemsToRender += itemsToRenderStep 
     this.setState({
-      content : this.props.data.body.content.slice( 0 , itemsToRender ),
+      content : this.props.content.body.content.slice( 0 , itemsToRender ),
     })
   }
 
@@ -206,9 +208,14 @@ class Content extends Component {
     this._showElements()
     console.log('componentDidUpdate')
   }
+  shouldComponentUpdate(nextProps) {
+    return this.props != nextProps
+  }
 
   render() {
-    const elements = this.props.app.get('content').body.content
+    console.log(this.props)
+    console.log('content.js > render')
+    const elements = this.props.content.body.content
     var result = []
     var el
     for( let x in elements ){
@@ -225,4 +232,17 @@ class Content extends Component {
   }
 }
 
-export default Content
+const mapState = state => {
+  return {
+      content: state.app.get('content')
+  }
+}
+
+const mapDispatch = (dispatch) => {
+  return {
+      fire: (action, payload) => {
+          dispatch(actions(action, payload))
+      }
+  }
+}
+export default connect(mapState, mapDispatch)(Content)

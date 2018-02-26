@@ -38,7 +38,7 @@ class Block extends Component {
           </div>
           { this.state.draw }
           <div className="loader-foreground" onClick={this._click}>
-            <Logo className="logo-container logo-container--large" style={{ display: 'flex'}} draw={this.state.draw} />
+            <Logo className="logo-container logo--large" style={{ display: 'flex'}} draw={this.state.draw} />
             <p className="loading">LOADING</p>
           </div>
         </div>
