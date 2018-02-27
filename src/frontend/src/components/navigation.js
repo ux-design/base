@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import actions from '../actions'
 import './navigation.css'
 import './animations.css'
-import { urls } from '../model/constants'
 import Logo from './logo'
 
 class Navigation extends Component {
@@ -22,7 +21,6 @@ class Navigation extends Component {
   }
 
   _toggleMenu = () => {
-    console.log(this.props.menuIsOpen)
     this.props.fire('NAVIGATION_MENU_CLICK', this.props.menuIsOpen)
   }
 
@@ -31,7 +29,6 @@ class Navigation extends Component {
   }
 
   render() {
-    console.log(this.props)
     console.log('navigation.js > render')
     const menuIsOpen = this.props.menuIsOpen
     const links = this.props.content.body.navigation
@@ -45,12 +42,17 @@ class Navigation extends Component {
       result.push( <div key={ x } className={ `navigation__link ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div> )
     }
     return (
-      <div className={`navigation ${menuIsOpen?'navigation--fullscreen':null}`}>
+      <div className={`navigation ${menuIsOpen?'navigation--fullscreen':''}`}>
         <div className="navigation__logo" onClick={this._link.bind(this, '/index')}>
           <Logo className="logo logo--small" draw />
         </div> 
-        <div className={`navigation__links ${menuIsOpen?'navigation__links--show':null}`}>
+        <div className={`navigation__links ${menuIsOpen?'navigation__links--show':''}`} style={menuIsOpen ? {transform: 'scale(1)'} : {}} >
           { result }
+        </div>
+        <div className="centered fullscreen">
+          <div className="navigation__null">
+            <div className="navigation__background" style={menuIsOpen ? {transform: 'scale(0.4)'} : {}} />
+          </div>
         </div>
         <div className="navigation__toggle" onClick={ this._toggleMenu }>
           <i className="fa fa-bars" aria-hidden="true"></i>

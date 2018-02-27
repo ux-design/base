@@ -13,7 +13,7 @@ const forceRendering = true ;
 const Jimp = require( 'jimp' );
 
 io.on('connection', socket => {
-    console.log('connected!')
+    console.log(socket.request.connection.remoteAddress + ' connected')
     socket.on('message', data => {
         console.log(data);
         socket.broadcast.emit( 'message' ,data );

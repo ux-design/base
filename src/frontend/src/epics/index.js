@@ -1,5 +1,7 @@
 import Rx from 'rxjs'
+import io from 'socket.io-client'
 const ip = window.location.hostname;
+const socket = io(ip)
 // observables
 
 const load = url => {
@@ -21,6 +23,11 @@ const load = url => {
 
 const APP_INIT = action$ =>
   action$.ofType( 'APP_INIT' )
+  .do( action => {
+    if ( document.querySelector( '#first-loader' ) ) {
+      document.querySelector( '#first-loader' ).parentNode.removeChild( document.querySelector( '#first-loader' ) )
+    }
+  })
   .mergeMap( action => {
     return Rx.Observable.concat(
       Rx.Observable.empty()

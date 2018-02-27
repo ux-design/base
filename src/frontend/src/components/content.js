@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
-import Model from '../model'
 import './content.css'
 import Animator from '../helpers/animator'
 import ImagePreloader from '../helpers/imagePreloader'
@@ -9,6 +8,8 @@ import ChatBox from './chatbox'
 import { colors, urls } from '../model/constants'
 var itemsToRender = 10
 const itemsToRenderStep = 10
+
+window.ImagePreloader = ImagePreloader
 
 class Content extends Component {
   
@@ -206,14 +207,9 @@ class Content extends Component {
   componentDidUpdate( nextProps ) {
     this._hideElements()
     this._showElements()
-    console.log('componentDidUpdate')
-  }
-  shouldComponentUpdate(nextProps) {
-    return this.props != nextProps
   }
 
   render() {
-    console.log(this.props)
     console.log('content.js > render')
     const elements = this.props.content.body.content
     var result = []

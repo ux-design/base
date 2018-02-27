@@ -2,22 +2,10 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-import io from 'socket.io-client'
 import './index.css'
 import App from './app'
 
-const ip = window.location.hostname
-//const ip = 'localhost'
-/* const socket = io(ip) */
-
-//Model.state.page = window.location.pathname
-
 const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
-
-if ( document.querySelector( '#first-loader' ) ) {
-    document.querySelector( '#first-loader' ).parentNode.removeChild( document.querySelector( '#first-loader' ) )
-    //document.querySelector( '#first-loader' ).style.display = 'none' 
-}
 
 // react page loader
 /*const update = ( page ) => {
