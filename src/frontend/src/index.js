@@ -143,8 +143,8 @@ if ( iOS ) {
 // remove body content
 
 const _clearBody = () => {
-    if ( document.querySelector('#navigation') ) document.querySelector('#navigation').remove()
-    if ( document.querySelector('#content') ) document.querySelector('#content').remove()
+    if ( document.querySelector('#navigation') ) document.querySelector('#navigation').parentNode.removeChild('#navigation');
+    if ( document.querySelector('#content') ) document.querySelector('#content').parentNode.removeChild('#content')
 }
 
 // add app to body
