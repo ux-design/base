@@ -125,7 +125,7 @@ class Content extends Component {
       var lastItem = itemsToRender - 1 
       this._showElements()
       if ( me.refs[ 'content' + lastItem ] ) {
-        if ( window.scrollY > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
+        if ( window.pageYOffset > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
           this._renderNextElements()
         }
       }
@@ -138,7 +138,7 @@ class Content extends Component {
       var lastItem = itemsToRender - 1 
       this._showElements()
       if ( me.refs[ 'content' + lastItem ] ) {
-        if ( window.scrollY > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
+        if ( window.pageYOffset > me.refs[ 'content' + lastItem ].offsetTop - window.innerHeight + 40 ) {
           this._renderNextElements()
         }
       }
@@ -149,11 +149,11 @@ class Content extends Component {
     var me = this
     var n = 0
     for ( let x in this.refs ) {
-      if ( window.scrollY > me.refs[ x ].offsetTop - window.innerHeight + 40 ) {
+      if ( window.pageYOffset > me.refs[ x ].offsetTop - window.innerHeight + 40 ) {
         this._elShow( x, n )
         ++n
       }
-      if ( window.scrollY < me.refs[ x ].offsetTop - window.innerHeight - 40 ) {
+      if ( window.pageYOffset < me.refs[ x ].offsetTop - window.innerHeight - 40 ) {
         this._elHide( x, n )
         ++n
       }
