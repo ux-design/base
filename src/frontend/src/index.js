@@ -153,8 +153,9 @@ const _clearBody = () => {
 
 const _addDiv = ( id ) => {
     var app = document.createElement( 'div' )
+    var loader = document.querySelector('#first-loader')
     app.setAttribute('id', id )
-    document.querySelector('body').prepend( app )
+    document.querySelector('body').insertBefore(app, loader)
 }
 
 // init
