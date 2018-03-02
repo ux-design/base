@@ -37,7 +37,7 @@ class Content extends Component {
 
   _onClickImage( payload ) {
     if ( payload.click === 'show-fullscreen' ) {
-      this.props.clickImage(payload)
+      this.props.fire('VIEWER_SHOW_IMAGE_FULLSCREEN', payload)
     }
   }
 

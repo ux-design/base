@@ -67,10 +67,10 @@ a, a:hover, a:link, a:visited, a:active {
   left: 0px;
   right: 0px;
   background-color: rgba(0,0,0,1);
-  display: none;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  display: flex;
 }
 
 #debugger {
