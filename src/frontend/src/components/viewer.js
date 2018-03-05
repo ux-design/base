@@ -7,7 +7,7 @@ const ip = 'http://' + window.location.hostname.replace(':3000','')
 
 class Viewer extends Component {
   _onClick = () => {
-    this.props.fire('VIEWER_HIDE')
+    this.props.fire('VIEWER_CLOSE')
   }
   _closeViewer() {
   }

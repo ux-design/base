@@ -40,13 +40,13 @@ const APP_INIT = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),
       Rx.Observable.empty()
+        .delay(1000),
+      Rx.Observable.empty()
+        .startWith({ action: 'PRELOADER_HIDE' }),
+      Rx.Observable.empty()
         .startWith({ action: 'TEMPLATE_RENDER' }),
       Rx.Observable.empty()
-        .startWith({ action: 'APP_READY' }),
-      Rx.Observable.empty()
-        .delay(3000),
-      Rx.Observable.empty()
-        .startWith({ action: 'PRELOADER_HIDE' })
+        .startWith({ action: 'APP_READY' })
     )
   })
   .map( data => {
@@ -74,7 +74,7 @@ const APP_INIT = action$ =>
     }
   })
 
-const NAVIGATION_MENU_CLICK = action$ =>
+  const NAVIGATION_MENU_CLICK = action$ =>
   action$.ofType( 'NAVIGATION_MENU_CLICK' )
   .mergeMap( action => {
     return Rx.Observable.concat(
@@ -112,11 +112,11 @@ const PAGE_LOAD = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: action.payload }),
       Rx.Observable.empty()
-        .startWith({ action: 'TEMPLATE_RENDER' }),
+        .delay(1000),
       Rx.Observable.empty()
         .startWith({ action: 'APP_SCROLL_TOP' }),
       Rx.Observable.empty()
-        .delay(3000),
+        .startWith({ action: 'TEMPLATE_RENDER' }),
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_HIDE' })
     )
@@ -145,8 +145,52 @@ const PAGE_LOAD = action$ =>
     }
   })
 
+  const VIEWER_SHOW = action$ =>
+  action$.ofType( 'VIEWER_SHOW' )
+  .mergeMap( action => {
+    return Rx.Observable.concat(
+      Rx.Observable.empty()
+        .startWith({ action: 'VIEWER_SHOW_IMAGE_FULLSCREEN', payload: action.payload }),
+      Rx.Observable.empty()
+        .startWith({ action: 'SCROLL_DISABLE' })
+    )
+  })
+  .map( data => {
+    switch (data.action) {
+      case'VIEWER_SHOW_IMAGE_FULLSCREEN':
+        return {type: 'VIEWER_SHOW_IMAGE_FULLSCREEN', payload: data.payload}
+      case'SCROLL_DISABLE':
+        return {type: 'SCROLL_DISABLE'}
+      default:
+        return {}
+    }
+  })
+
+const VIEWER_CLOSE = action$ =>
+  action$.ofType( 'VIEWER_CLOSE' )
+  .mergeMap( action => {
+    return Rx.Observable.concat(
+      Rx.Observable.empty()
+        .startWith({ action: 'VIEWER_HIDE' }),
+      Rx.Observable.empty()
+        .startWith({ action: 'SCROLL_ENABLE' })
+    )
+  })
+  .map( data => {
+    switch (data.action) {
+      case'VIEWER_HIDE':
+        return {type: 'VIEWER_HIDE'}
+      case'SCROLL_ENABLE':
+        return {type: 'SCROLL_ENABLE'}
+      default:
+        return {}
+    }
+  })
+
 export { 
   APP_INIT,
   NAVIGATION_MENU_CLICK,
-  PAGE_LOAD
+  PAGE_LOAD,
+  VIEWER_SHOW,
+  VIEWER_CLOSE
 }

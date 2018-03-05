@@ -5,13 +5,17 @@ import { createEpicMiddleware, combineEpics } from 'redux-observable'
 import { 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 
-  PAGE_LOAD 
+  PAGE_LOAD,
+  VIEWER_SHOW,
+  VIEWER_CLOSE
 } from '../epics'
 
 const epics = combineEpics( 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 
-  PAGE_LOAD 
+  PAGE_LOAD,
+  VIEWER_SHOW,
+  VIEWER_CLOSE
 )
 const epicMiddleware = createEpicMiddleware(epics)
 const store = createStore( reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger, epicMiddleware) )

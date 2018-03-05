@@ -37,7 +37,7 @@ class Content extends Component {
 
   _onClickImage( payload ) {
     if ( payload.click === 'show-fullscreen' ) {
-      this.props.fire('VIEWER_SHOW_IMAGE_FULLSCREEN', payload)
+      this.props.fire('VIEWER_SHOW', payload)
     }
   }
 
@@ -145,12 +145,15 @@ class Content extends Component {
     })
   }
 
-  _showElements() {
+  _showElements(delay) {
     var me = this
     var n = 0
+    if (!delay) {delay = 0}
     for ( let x in this.refs ) {
       if ( window.pageYOffset > me.refs[ x ].offsetTop - window.innerHeight + 40 ) {
-        this._elShow( x, n )
+        setTimeout( () => {
+          this._elShow( x, n )
+        }, delay * n)
         ++n
       }
       if ( window.pageYOffset < me.refs[ x ].offsetTop - window.innerHeight - 40 ) {
@@ -201,12 +204,12 @@ class Content extends Component {
   componentDidMount() {
     this._showElementsOnScroll()
     this._showElementsOnResize()
-    this._showElements()
+    this._showElements(100)
   }
 
   componentDidUpdate( nextProps ) {
     this._hideElements()
-    this._showElements()
+    this._showElements(100)
   }
 
   render() {
