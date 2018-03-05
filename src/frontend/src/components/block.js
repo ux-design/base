@@ -13,6 +13,7 @@ class Block extends Component {
   }
 
   componentDidMount () {
+    this._restartLogo()
     this.interval = setInterval( () => {
       this._restartLogo()
     }, 2000 )

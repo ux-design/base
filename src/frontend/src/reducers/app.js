@@ -8,7 +8,7 @@ const initialState = Immutable.fromJS({
   content: null,
   templates: {}
 })
-const appReady = (state) => {
+const appReady = state => {
   return state.set('ready', true)
 }
 const updateRoute = (state, payload) => {
@@ -20,8 +20,12 @@ const templateLoad = (state, payload) => {
   let newState = state.set('templates', templates)
   return newState
 }
-const templateRender = (state) => {
+const templateRender = state => {
   return state.set('content', state.get('templates').get('http://'+ip+'/templates' + state.get('route')))
+}
+const appScrollTop = state => {
+  window.scrollTo(0,0)
+  return state
 }
 
 export default ( state = initialState, action ) => {
@@ -34,6 +38,8 @@ export default ( state = initialState, action ) => {
       return templateLoad(state, action.payload)
     case "TEMPLATE_RENDER":
       return templateRender(state)
+    case "APP_SCROLL_TOP":
+      return appScrollTop(state)
     default:
       return state
   }

@@ -25,8 +25,8 @@ class App extends Component {
                       <Content key="content" />]
                     : null
                 }
-                { this.props.viewer.visible
-                    ? <Viewer {...this.props} />
+                { this.props.viewer.get('visible')
+                    ? <Viewer key="viewer" />
                     : null
                 }
                 { this.props.preloader.get('visible')

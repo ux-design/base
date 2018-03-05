@@ -44,6 +44,8 @@ const APP_INIT = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'APP_READY' }),
       Rx.Observable.empty()
+        .delay(3000),
+      Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_HIDE' })
     )
   })
@@ -106,11 +108,15 @@ const PAGE_LOAD = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_SHOW' }),
       Rx.Observable.empty()
+        .startWith({ action: 'VIEWER_HIDE' }),
+      Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: action.payload }),
       Rx.Observable.empty()
         .startWith({ action: 'TEMPLATE_RENDER' }),
       Rx.Observable.empty()
-        .delay(1000),
+        .startWith({ action: 'APP_SCROLL_TOP' }),
+      Rx.Observable.empty()
+        .delay(3000),
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_HIDE' })
     )
@@ -130,6 +136,10 @@ const PAGE_LOAD = action$ =>
         }
       case'TEMPLATE_RENDER':
         return {type: 'TEMPLATE_RENDER'}
+      case'VIEWER_HIDE':
+        return {type: 'VIEWER_HIDE'}
+      case'APP_SCROLL_TOP':
+        return {type: 'APP_SCROLL_TOP'}
       default:
         return {}
     }
