@@ -110,6 +110,8 @@ const PAGE_LOAD = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'TEMPLATE_RENDER' }),
       Rx.Observable.empty()
+        .delay(1000),
+      Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_HIDE' })
     )
   })
