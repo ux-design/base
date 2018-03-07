@@ -11,26 +11,26 @@
     "logo": "logo.svg",
     "body": {
         "navigation": {
-            "welcome": { 
-                "name": "welcome",
-                "link": "/index"
-            },
-            "learn": { 
-                "name": "learn",
-                "link": "/learn"
-            },
-            "video": {
-                "name": "video",
-                "link": "/video"
-            },
-            "about": {
+            "about": { 
                 "name": "about",
                 "link": "/about"
+            },
+            "skills": { 
+                "name": "skills",
+                "link": "/skills"
+            },
+            "experiences": {
+                "name": "experiences",
+                "link": "/experiences"
+            },
+            "blog": {
+                "name": "blog",
+                "link": "/blog"
             },
             "contact": {
                 "name": "contact",
                 "link": "/contact",
-                "selected" : true
+                "selected": true
             }
         },
         "content": [

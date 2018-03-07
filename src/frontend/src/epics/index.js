@@ -33,9 +33,10 @@ const APP_INIT = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_SHOW' }),
       load('http://'+ip+'/templates/index'),
-      load('http://'+ip+'/templates/video'),
+      load('http://'+ip+'/templates/blog'),
       load('http://'+ip+'/templates/contact'),
-      load('http://'+ip+'/templates/learn'),
+      load('http://'+ip+'/templates/skills'),
+      load('http://'+ip+'/templates/experiences'),
       load('http://'+ip+'/templates/about'),
       Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),

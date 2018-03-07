@@ -93,8 +93,9 @@ app.options(cors());
             if (err) throw err;
             const { width , height } = resource.bitmap ;
             const rapp = parseInt( width / height * 100 ) / 100;
-            resource.quality(60)                 // set JPEG quality
-                    .resize(300,parseInt(300/rapp))
+            const mewWidth = 800
+            resource.quality(95)                 // set JPEG quality
+                    .resize(mewWidth,parseInt(mewWidth/rapp))
                     .write(`./src/images/${quality}/${image}`); // save
         });
         res.header("Access-Control-Allow-Origin", "*");

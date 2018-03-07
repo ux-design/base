@@ -70,7 +70,7 @@ class Navigation extends Component {
         <div className="navigation__logo" onClick={this._link.bind(this, '/index')}>
           <Logo className="logo logo--small" draw />
         </div> 
-        <div className={`navigation__links ${this.state.showMenu?'navigation__links--show':''}`} style={this.state.showMenu ? {transform: 'scale(1)'} : {}} >
+        <div className={`navigation__links ${this.state.showMenu?'navigation__links--show':''}`} style={this.state.showMenu ? {transform: 'scale(1)'} : {transform: 'scale(0)'}} >
           { result }
         </div>
         <div className="centered fullscreen">

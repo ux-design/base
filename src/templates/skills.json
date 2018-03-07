@@ -1,24 +1,24 @@
 {
-    "file": "about.html",
+    "file": "skills.html",
     "language": "en",
-    "url": "/about",
+    "url": "/skills",
     "meta": [ 
         "<meta charset=\"utf-8\" />",
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
     ],
-    "title": "Andrea Mazzilli - about",
+    "title": "Andrea Mazzilli - skills",
     "style": "",
     "logo": "logo.svg",
     "body": {
         "navigation": {
             "about": { 
                 "name": "about",
-                "link": "/about",
-                "selected": true
+                "link": "/about"
             },
             "skills": { 
                 "name": "skills",
-                "link": "/skills"
+                "link": "/skills",
+                "selected": true
             },
             "experiences": {
                 "name": "experiences",
@@ -36,7 +36,7 @@
         "content": [
             {
                 "tag": "h1",
-                "value": "About"
+                "value": "Skills"
             }
         ]
     }

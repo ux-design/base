@@ -1,20 +1,19 @@
 {
-    "file": "about.html",
+    "file": "blog.html",
     "language": "en",
-    "url": "/about",
+    "url": "/blog",
     "meta": [ 
         "<meta charset=\"utf-8\" />",
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
     ],
-    "title": "Andrea Mazzilli - about",
+    "title": "Andrea Mazzilli - blog",
     "style": "",
     "logo": "logo.svg",
     "body": {
         "navigation": {
             "about": { 
                 "name": "about",
-                "link": "/about",
-                "selected": true
+                "link": "/about"
             },
             "skills": { 
                 "name": "skills",
@@ -26,7 +25,8 @@
             },
             "blog": {
                 "name": "blog",
-                "link": "/blog"
+                "link": "/blog",
+                "selected": true
             },
             "contact": {
                 "name": "contact",
@@ -36,7 +36,7 @@
         "content": [
             {
                 "tag": "h1",
-                "value": "About"
+                "value": "Blog"
             }
         ]
     }

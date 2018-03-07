@@ -12,22 +12,21 @@
     "logo": "logo.svg",
     "body": {
         "navigation": {
-            "welcome": { 
-                "name": "welcome",
-                "link": "/index",
-                "selected" : true
-            },
-            "learn": { 
-                "name": "learn",
-                "link": "/learn"
-            },
-            "video": {
-                "name": "video",
-                "link": "/video"
-            },
-            "about": {
+            "about": { 
                 "name": "about",
                 "link": "/about"
+            },
+            "skills": { 
+                "name": "skills",
+                "link": "/skills"
+            },
+            "experiences": {
+                "name": "experiences",
+                "link": "/experiences"
+            },
+            "blog": {
+                "name": "blog",
+                "link": "/blog"
             },
             "contact": {
                 "name": "contact",
@@ -41,25 +40,35 @@
             },
             {
                 "tag": "h2",
-                "value": "INTRODUCTION",
+                "value": "This is me, I'm sorry for that",
                 "rollover": "anim-wiggle",
                 "rolloverRemoveAfter": 1
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-out nopadding header",
-                "src": "swim.jpg",
+                "classes": "image cropped-zoom-in nopadding large",
+                "src": "me-multi.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 0.5
+                "rolloverRemoveAfter": 100
             },
             {
                 "tag": "p",
-                "value": "<a href='mailto:mazzilli.andrea@gmail.com'>email me</a> the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
+                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. <a href='mailto:mazzilli.andrea@gmail.com'>email me test link</a>"
             },
             {
                 "tag": "h2",
-                "value": "WHY THIS WEBSITE?"
+                "value": "Why this website?",
+                "rollover": "anim-wiggle",
+                "rolloverRemoveAfter": 1
+            },
+            {
+                "tag": "p",
+                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
+            },
+            {
+                "tag": "p",
+                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
             },
             {
                 "tag": "p",
@@ -67,7 +76,9 @@
             },
             {
                 "tag": "h2",
-                "value": "USEFUL LINKS"
+                "value": "Usefull links, check them out",
+                "rollover": "anim-wiggle",
+                "rolloverRemoveAfter": 1
             },
             {
                 "tag": "p",

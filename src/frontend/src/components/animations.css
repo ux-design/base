@@ -32,7 +32,7 @@
 }
 
 .trans-zoom-in {
-  transform: scale(1.1,1.1)!important;
-  transition: all .3s!important;
+  transform: scale(1.1)!important;
+  transition: all 0.3s!important;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }
