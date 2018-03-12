@@ -5,7 +5,7 @@ const initialState = Immutable.fromJS({
   ready: false,
   route: null,
   logo: '',
-  content: null,
+  content: {},
   templates: {}
 })
 const appReady = state => {

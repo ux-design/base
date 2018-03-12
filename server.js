@@ -11,6 +11,7 @@ const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
 const forceRendering = true ;
 const Jimp = require( 'jimp' );
+const http = require( 'http' );
 
 io.on('connection', socket => {
     console.log(socket.request.connection.remoteAddress + ' connected')
@@ -104,7 +105,7 @@ app.options(cors());
         
     } ) ;
 
-    /* app.get( '/google/images/:search' , ( req, res ) => {
+    app.get( '/google/images/:search' , ( req, res ) => {
         const { search } = req.params;
     
         http.get('http://www.google.nl/search?q='+search+'&gbv=1&prmd=ivns&source=lnms&tbm=isch&sa=X', (resp) => {
@@ -128,9 +129,7 @@ app.options(cors());
             }).on("error", (err) => {
             console.log("Error: " + err.message);
         });
-        
-    
-    } ) ; */
+    } ) ;
     
 
 // functions  

@@ -1,7 +1,8 @@
 import Rx from 'rxjs'
-import io from 'socket.io-client'
+//import io from 'socket.io-client'
 const ip = window.location.hostname;
-const socket = io(ip)
+//const socket = io(ip)
+
 // observables
 
 const load = url => {
@@ -10,7 +11,12 @@ const load = url => {
       url: url,
       method: 'GET'
     })
-    .catch( err => { return Rx.Observable.of({ response: {}, request: { url: url} }) })
+    .catch( err => { 
+      return Rx.Observable.of({ 
+        response: {}, 
+        request: {url: url} 
+      })
+    })
     .map( data => {
       return {
         action: 'LOAD',
@@ -49,6 +55,7 @@ const APP_INIT = action$ =>
       Rx.Observable.empty()
         .startWith({ action: 'APP_READY' })
     )
+    .takeUntil(action$.ofType('SERVER_ERROR'))
   })
   .map( data => {
     switch ( data.action ) {
@@ -75,7 +82,7 @@ const APP_INIT = action$ =>
     }
   })
 
-  const NAVIGATION_MENU_CLICK = action$ =>
+const NAVIGATION_MENU_CLICK = action$ =>
   action$.ofType( 'NAVIGATION_MENU_CLICK' )
   .mergeMap( action => {
     return Rx.Observable.concat(
@@ -146,7 +153,7 @@ const PAGE_LOAD = action$ =>
     }
   })
 
-  const VIEWER_SHOW = action$ =>
+const VIEWER_SHOW = action$ =>
   action$.ofType( 'VIEWER_SHOW' )
   .mergeMap( action => {
     return Rx.Observable.concat(

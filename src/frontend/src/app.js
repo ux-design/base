@@ -20,7 +20,7 @@ class App extends Component {
                     ? <Loader {...this.props} on />
                     : null
                 }
-                { this.props.app.get('content')
+                { this.props.app.get('content').body
                     ? [<Navigation key="navigation" />,
                       <Content key="content" />]
                     : null
