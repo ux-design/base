@@ -40,7 +40,10 @@ class Block extends Component {
           { this.state.draw }
           <div className="loader-foreground" onClick={this._click}>
             <Logo className="logo-container logo--large" style={{ display: 'flex'}} draw={this.state.draw} />
-            <p className="loading">LOADING</p>
+            { this.props.app.get('error')
+              ? <p className="loading">SERVER ERROR</p>
+              : <p className="loading">LOADING</p>
+            }
           </div>
         </div>
     )

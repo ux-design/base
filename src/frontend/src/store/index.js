@@ -7,7 +7,9 @@ import {
   NAVIGATION_MENU_CLICK, 
   PAGE_LOAD,
   VIEWER_SHOW,
-  VIEWER_CLOSE
+  VIEWER_CLOSE,
+  SERVER_ERROR,
+  CHECK_SERVER
 } from '../epics'
 
 const epics = combineEpics( 
@@ -15,7 +17,9 @@ const epics = combineEpics(
   NAVIGATION_MENU_CLICK, 
   PAGE_LOAD,
   VIEWER_SHOW,
-  VIEWER_CLOSE
+  VIEWER_CLOSE,
+  SERVER_ERROR,
+  CHECK_SERVER
 )
 const epicMiddleware = createEpicMiddleware(epics)
 const store = createStore( reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger, epicMiddleware) )

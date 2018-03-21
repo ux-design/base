@@ -13,7 +13,6 @@ import Loader from './components/loader'
 
 class App extends Component {
     render (props) {
-        console.log(this.props)
         return  (
             <div>
                 { 1 === 2

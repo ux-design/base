@@ -5,7 +5,7 @@ import store from './store'
 import './index.css'
 import App from './app'
 
-const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
+//const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
 
 // remove body content
 

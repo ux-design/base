@@ -6,7 +6,8 @@ const initialState = Immutable.fromJS({
   route: null,
   logo: '',
   content: {},
-  templates: {}
+  templates: {},
+  error: null
 })
 const appReady = state => {
   return state.set('ready', true)
@@ -27,6 +28,9 @@ const appScrollTop = state => {
   window.scrollTo(0,0)
   return state
 }
+const serverError = (state, payload) => {
+  return state.set('error', true)
+}
 
 export default ( state = initialState, action ) => {
   switch(action.type){
@@ -40,6 +44,8 @@ export default ( state = initialState, action ) => {
       return templateRender(state)
     case "APP_SCROLL_TOP":
       return appScrollTop(state)
+    case "SERVER_ERROR":
+      return serverError(state, action.payload)
     default:
       return state
   }

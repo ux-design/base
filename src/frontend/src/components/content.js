@@ -14,11 +14,26 @@ window.ImagePreloader = ImagePreloader
 class Content extends Component {
   
   _intervals = {}
+  _timeouts = {}
 
-  _createInterval( payload , ref ) {
+  _myInterval = (func, time) => 
+    setTimeout( () => {
+      var status = func()
+      if (!status) {
+        this._myInterval(func, time)
+      } else {
+        setTimeout( () => {
+          func()
+        },200)
+      }
+    }, time )
+
+  _createInterval = ( payload , ref ) => {
     var rnd = parseInt( Math.random() * 1000, 10 )
     var imageUrl = payload
-    this._intervals[ rnd ] = setInterval( () => {
+    var status = false
+    this._intervals[ rnd ] = this._myInterval( () => {
+      console.log('interval ' + rnd + ' is alive')
       if ( this.refs[ ref ] ) {
         var el = this.refs[ ref ].children[ 1 ].children[ 0 ]
         if ( ImagePreloader.images[ imageUrl ] ) {
@@ -29,8 +44,8 @@ class Content extends Component {
       if ( ImagePreloader.images[ imageUrl ].completedPercentage === 100 ) {
         this.refs[ ref ].style.backgroundImage = 'url(' + ImagePreloader.images[ imageUrl ].src + ')' 
         this.refs[ ref ].children[ 0 ].style.display = 'none' 
-        this.refs[ ref ].children[ 1 ].style.display = 'none' 
-        clearInterval( this._intervals[ rnd ] )
+        this.refs[ ref ].children[ 1 ].style.display = 'none'
+        return true
       }
     },100)
   }
@@ -48,6 +63,7 @@ class Content extends Component {
   }
 
   _renderChild( payload , n ) {
+    console.log('render child')
     if ( payload.tag === 'img' ) {
       const props = {
               key : n ,
@@ -202,12 +218,20 @@ class Content extends Component {
   } */
 
   componentDidMount() {
+    console.log('componentDidMount')
     this._showElementsOnScroll()
     this._showElementsOnResize()
     this._showElements(100)
+    setInterval( () => {
+      console.log(this._intervals)
+    },2000)
   }
 
+  shouldComponentUpdate(nextProps) {
+    return nextProps !== this.props
+  }
   componentDidUpdate( nextProps ) {
+    console.log('componentDidUpdate')
     this._hideElements()
     this._showElements(100)
   }

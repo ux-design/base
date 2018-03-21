@@ -13,8 +13,7 @@ const load = url => {
     })
     .catch( err => { 
       return Rx.Observable.of({ 
-        response: {}, 
-        request: {url: url} 
+        response: 'SERVER_ERROR'
       })
     })
     .map( data => {
@@ -60,10 +59,17 @@ const APP_INIT = action$ =>
   .map( data => {
     switch ( data.action ) {
       case'LOAD':
-        return {
-          type: 'TEMPLATE_LOAD',
-          payload: { data: data.data.response, url: data.data.request.url }
+        if (data.data.response === 'SERVER_ERROR') {
+          return {
+            type: 'SERVER_ERROR'
+          }
+        } else {
+          return {
+            type: 'TEMPLATE_LOAD',
+            payload: { data: data.data.response, url: data.data.request.url }
+          }
         }
+        
       case'APP_READY':
         return {type: 'APP_READY'}
       case'PRELOADER_SHOW':
@@ -195,10 +201,52 @@ const VIEWER_CLOSE = action$ =>
     }
   })
 
+const SERVER_ERROR = action$ =>
+  action$.ofType( 'SERVER_ERROR' )
+  .map( action => {
+    return {
+      type: 'CHECK_SERVER'
+    }
+  })
+
+const CHECK_SERVER = (action$, store) =>
+  action$.ofType( 'CHECK_SERVER' )
+    .delay(5000)
+    .mergeMap( action => 
+      load('http://'+ip+'/templates/index')
+    )
+    .map( data => {
+      const appReady = store.getState().app.get('ready')
+      switch ( data.action ) {
+        case'LOAD':
+          if (data.data.response === 'SERVER_ERROR') {
+            return {
+              type: 'CHECK_SERVER'
+            }
+          } else {
+            if (appReady) {
+              return {
+                type: 'SERVER_UP'
+              }
+            } else {
+              return {
+                type: 'APP_INIT'
+              }
+            }
+          }
+        default:
+          return {}
+        }
+      })
+          
+    
+
 export { 
   APP_INIT,
   NAVIGATION_MENU_CLICK,
   PAGE_LOAD,
   VIEWER_SHOW,
-  VIEWER_CLOSE
+  VIEWER_CLOSE,
+  SERVER_ERROR,
+  CHECK_SERVER
 }

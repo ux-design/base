@@ -189,6 +189,7 @@ p.el-show{
   #content h2 {
     font-size: 18px;
     padding: 15px 15px 15px 15px;
+    width: 25%;
   }
 
   #content p {
