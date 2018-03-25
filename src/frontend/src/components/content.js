@@ -222,9 +222,6 @@ class Content extends Component {
     this._showElementsOnScroll()
     this._showElementsOnResize()
     this._showElements(100)
-    setInterval( () => {
-      console.log(this._intervals)
-    },2000)
   }
 
   shouldComponentUpdate(nextProps) {
