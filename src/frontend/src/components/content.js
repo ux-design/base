@@ -31,7 +31,6 @@ class Content extends Component {
   _createInterval = ( payload , ref ) => {
     var rnd = parseInt( Math.random() * 1000, 10 )
     var imageUrl = payload
-    var status = false
     this._intervals[ rnd ] = this._myInterval( () => {
       console.log('interval ' + rnd + ' is alive')
       if ( this.refs[ ref ] ) {
@@ -161,15 +160,19 @@ class Content extends Component {
     })
   }
 
+  _timeout = (x, n, delay) => {
+    setTimeout( () => {
+      this._elShow( x, n )
+    }, delay * n)
+  }
+
   _showElements(delay) {
     var me = this
     var n = 0
     if (!delay) {delay = 0}
     for ( let x in this.refs ) {
       if ( window.pageYOffset > me.refs[ x ].offsetTop - window.innerHeight + 40 ) {
-        setTimeout( () => {
-          this._elShow( x, n )
-        }, delay * n)
+        this._timeout( x, n, delay )
         ++n
       }
       if ( window.pageYOffset < me.refs[ x ].offsetTop - window.innerHeight - 40 ) {

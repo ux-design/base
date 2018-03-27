@@ -39,6 +39,15 @@ app.options(cors());
 
     // // GET
 
+    app.get( '/.well-known/pki-validation/:file' , function( req , res ) {
+        
+        const { file } = req.params;
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'text/plain');
+        res.sendFile( __dirname + `/src/ssl/.well-known/pki-validation/${file}` );
+        
+    } ) ;
+
     app.get( '/' , function( req , res ) {
 
         const query = req.query;

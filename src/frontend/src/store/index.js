@@ -12,6 +12,9 @@ import {
   CHECK_SERVER
 } from '../epics'
 
+console.log(process.env.NODE_ENV)
+console.log(1)
+
 const epics = combineEpics( 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 
@@ -22,7 +25,13 @@ const epics = combineEpics(
   CHECK_SERVER
 )
 const epicMiddleware = createEpicMiddleware(epics)
-const store = createStore( reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(logger, epicMiddleware) )
+var store
+
+if (process.env.NODE_ENV === 'production') {
+  store = createStore( reducers, applyMiddleware( epicMiddleware ) )
+} else { 
+  store = createStore( reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware( logger, epicMiddleware ) )
+}
 
 store.dispatch({type: 'APP_INIT'})
 
