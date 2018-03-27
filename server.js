@@ -39,6 +39,7 @@ app.options(cors());
 
     // // GET
 
+    // SSL VERIFICATION
     app.get( '/.well-known/pki-validation/:file' , function( req , res ) {
         
         const { file } = req.params;
@@ -48,6 +49,16 @@ app.options(cors());
         
     } ) ;
 
+    // SSL LOGO COMODO
+    app.get( '/ssl/images/comodo_secure_seal_113x59_transp.png' , function( req , res ) {
+        
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'image/png');
+        res.sendFile( __dirname + `/src/ssl/images/comodo_secure_seal_113x59_transp.png` );
+        
+    } ) ;
+
+    // ROOT URL
     app.get( '/' , function( req , res ) {
 
         const query = req.query;
@@ -58,6 +69,7 @@ app.options(cors());
         
     } ) ;
 
+    // L1 URLS
     app.get( '/:l1' , function( req , res ) {
 
         const { l1 } = req.params;
@@ -69,6 +81,7 @@ app.options(cors());
         
     } ) ;
 
+    // TEMPLATES JSON
     app.get( '/templates/:page' , function( req , res ) {
         
         const { page } = req.params;
@@ -78,6 +91,7 @@ app.options(cors());
         
     } ) ;
 
+    // IMAGES
     app.get( '/images/:image' , function( req , res ) {
         
         const { image } = req.params;
@@ -87,6 +101,7 @@ app.options(cors());
         
     } ) ;
 
+    // VECTORS
     app.get( '/svg/:svg' , function( req , res ) {
         
         const { svg } = req.params;
@@ -96,6 +111,7 @@ app.options(cors());
         
     } ) ;
 
+    // IMAGES WITH QUALITY
     app.get( '/images/:image/:quality' , function( req , res ) {
         
         const { image , quality } = req.params;
@@ -114,6 +130,7 @@ app.options(cors());
         
     } ) ;
 
+    // GOOGLE IMAGE SEARCH
     app.get( '/google/images/:search' , ( req, res ) => {
         const { search } = req.params;
     
