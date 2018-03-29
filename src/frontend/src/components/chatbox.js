@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import './chatbox.css';
-const ip = 'http://' + window.location.hostname.replace(':3000','');
+const protocol = window.location.protocol;
+const ip = protocol+'//' + window.location.hostname.replace(':3000','');
 const socket = io(ip);
 //var C = require( '../model/constants' );
 

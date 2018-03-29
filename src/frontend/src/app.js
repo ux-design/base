@@ -15,10 +15,6 @@ class App extends Component {
     render (props) {
         return  (
             <div>
-                { 1 === 2
-                    ? <Loader {...this.props} on />
-                    : null
-                }
                 { this.props.app.get('content').body
                     ? [<Navigation key="navigation" />,
                       <Content key="content" />]

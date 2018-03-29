@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import store from './store'
 import './index.css'
 import App from './app'
-import registerServiceWorker from './registerServiceWorker'
-registerServiceWorker()
+/* import registerServiceWorker from './registerServiceWorker'
+registerServiceWorker() */
 
 //const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
 

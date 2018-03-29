@@ -62,7 +62,6 @@ class Content extends Component {
   }
 
   _renderChild( payload , n ) {
-    console.log('render child')
     if ( payload.tag === 'img' ) {
       const props = {
               key : n ,
@@ -92,10 +91,6 @@ class Content extends Component {
                     <div className="text"></div>
                   </div>
                 </div>
-                {/* <img 
-                  src={ imageUrl } 
-                  onLoad={ this._imageIsLoaded.bind( this, [ 'content' + n , payload.src ] )} alt={ Math.random() } style={{ display : 'none' }}
-                /> */}
               </div>
     } else if ( payload.tag === 'chatbox' ) {
       const props = {
@@ -210,15 +205,6 @@ class Content extends Component {
     const ref = payload
     me.refs[ ref ].className = me.refs[ ref ].className.replace(' el-show','')
   }
-
-  componentWillMount() {
-  }
-
-/*   componentWillReceiveProps( nextProps ) {
-    this.setState({
-      content : nextProps.slice( 0 , itemsToRender )
-    })
-  } */
 
   componentDidMount() {
     console.log('componentDidMount')

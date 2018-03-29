@@ -1,4 +1,7 @@
+const protocol = window.location.protocol;
+
 Image.prototype.load = function(url){
+    url = url.replace('http:', protocol);
     var thisImg = this;
     const xmlHTTP = new XMLHttpRequest();
     const reader = new FileReader();

@@ -1,5 +1,6 @@
 import Immutable from 'immutable'
 const ip = window.location.hostname
+const protocol = window.location.protocol;
 
 const initialState = Immutable.fromJS({
   ready: false,
@@ -22,7 +23,7 @@ const templateLoad = (state, payload) => {
   return newState
 }
 const templateRender = state => {
-  return state.set('content', state.get('templates').get('http://'+ip+'/templates' + state.get('route')))
+  return state.set('content', state.get('templates').get(protocol+'//'+ip+'/templates' + state.get('route')))
 }
 const appScrollTop = state => {
   window.scrollTo(0,0)

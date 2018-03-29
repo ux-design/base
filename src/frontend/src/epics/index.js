@@ -1,6 +1,7 @@
 import Rx from 'rxjs'
 //import io from 'socket.io-client'
 const ip = window.location.hostname;
+const protocol = window.location.protocol;
 //const socket = io(ip)
 
 // observables
@@ -37,12 +38,12 @@ const APP_INIT = action$ =>
     return Rx.Observable.concat(
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_SHOW' }),
-      load('http://'+ip+'/templates/index'),
-      load('http://'+ip+'/templates/blog'),
-      load('http://'+ip+'/templates/contact'),
-      load('http://'+ip+'/templates/skills'),
-      load('http://'+ip+'/templates/experiences'),
-      load('http://'+ip+'/templates/about'),
+      load(protocol+'//'+ip+'/templates/index'),
+      load(protocol+'//'+ip+'/templates/blog'),
+      load(protocol+'//'+ip+'/templates/contact'),
+      load(protocol+'//'+ip+'/templates/skills'),
+      load(protocol+'//'+ip+'/templates/experiences'),
+      load(protocol+'//'+ip+'/templates/about'),
       Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),
       Rx.Observable.empty()
@@ -213,7 +214,7 @@ const CHECK_SERVER = (action$, store) =>
   action$.ofType( 'CHECK_SERVER' )
     .delay(5000)
     .mergeMap( action => 
-      load('http://'+ip+'/templates/index')
+      load(protocol+'//'+ip+'/templates/index')
     )
     .map( data => {
       const appReady = store.getState().app.get('ready')
