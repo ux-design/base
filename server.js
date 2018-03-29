@@ -1,17 +1,27 @@
+const fs = require('fs');
+// SSL
+const key = fs.readFileSync('./src/ssl/ssl.key');
+const cert = fs.readFileSync( './src/ssl/ssl.crt' );
+const options = {
+    key: key,
+    cert: cert
+};
+// SERVER
 const express = require( 'express' ) ;  
 const cors = require('cors');
 const app = express() ;  
 var compression = require('compression');
 const dateFormat = require('dateformat');
-const fs = require('fs');
-const server = require( 'http' ).createServer( app ) ;  
+const https = require( 'https' );
+const server = https.createServer( options, app ) ;  
 const io = require( 'socket.io' )( server ) ;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
 const forceRendering = true ;
 const Jimp = require( 'jimp' );
-const http = require( 'http' );
+
+
 
 io.on('connection', socket => {
     console.log(socket.request.connection.remoteAddress + ' connected')
@@ -134,7 +144,7 @@ app.options(cors());
     app.get( '/google/images/:search' , ( req, res ) => {
         const { search } = req.params;
     
-        http.get('http://www.google.nl/search?q='+search+'&gbv=1&prmd=ivns&source=lnms&tbm=isch&sa=X', (resp) => {
+        https.get('https://www.google.nl/search?q='+search+'&gbv=1&prmd=ivns&source=lnms&tbm=isch&sa=X', (resp) => {
             let data = '';
             
             // A chunk of data has been recieved.
@@ -214,5 +224,5 @@ const _forcePageRendering = ( payload ) => {
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
-server.listen( 80 );  
-console.log( `http://${ip}` );
+server.listen( 443 );  
+console.log( `https://${ip}` );
