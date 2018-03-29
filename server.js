@@ -12,9 +12,11 @@ const cors = require('cors');
 const app = express() ;  
 var compression = require('compression');
 const dateFormat = require('dateformat');
+const http = require( 'http' );
 const https = require( 'https' );
-const server = https.createServer( options, app ) ;  
-const io = require( 'socket.io' )( server ) ;
+const serverHTTPS = https.createServer( options, app ) ;  
+const serverHTTP = http.createServer( app ) ;  
+const io = require( 'socket.io' )( serverHTTP, serverHTTPS ) ;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
@@ -76,6 +78,18 @@ app.options(cors());
             _forcePageRendering( 'index' );
         }
         res.sendFile( __dirname + `/src/html/index.html` );
+        
+    } ) ;
+
+    // socket io
+    app.post( '/socket.io' , function( req , res ) {
+
+        res.sendFile( __dirname + `/node_modules/socket.io-client/dist/socket.io.js` );
+        
+    } ) ;
+    app.get( '/socket.io' , function( req , res ) {
+
+        res.sendFile( __dirname + `/node_modules/socket.io-client/dist/socket.io.js` );
         
     } ) ;
 
@@ -224,5 +238,26 @@ const _forcePageRendering = ( payload ) => {
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
-server.listen( 443 );  
+serverHTTPS.listen( 443 );  
 console.log( `https://${ip}` );
+serverHTTP.listen( 80 );  
+console.log( `http://${ip}` );
+
+// extra
+
+    // add comodo ssl trust logo
+    
+        // Add this before your </HEAD> tag
+
+        /* <script type="text/javascript"> //<![CDATA[ 
+        var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+        document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+        //]]>
+        </script> */
+
+        // Add this before your </BODY> tag
+
+        /* <script language="JavaScript" type="text/javascript">
+        TrustLogo("http://am.adv99.com/ssl/images/comodo_secure_seal_113x59_transp.png", "CL1", "none");
+        </script>
+        <a  href="https://www.positivessl.com/" id="comodoTL">Positive SSL</a> */
