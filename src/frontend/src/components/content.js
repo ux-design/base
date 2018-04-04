@@ -4,7 +4,7 @@ import actions from '../actions'
 import './content.css'
 import Animator from '../helpers/animator'
 import ImagePreloader from '../helpers/imagePreloader'
-import ChatBox from './chatbox'
+//import ChatBox from './chatbox'
 import { colors, urls } from '../model/constants'
 var itemsToRender = 10
 const itemsToRenderStep = 10
@@ -92,7 +92,7 @@ class Content extends Component {
                   </div>
                 </div>
               </div>
-    } else if ( payload.tag === 'chatbox' ) {
+    /* } else if ( payload.tag === 'chatbox' ) {
       const props = {
               key : n ,
               id : payload.id ,
@@ -107,7 +107,7 @@ class Content extends Component {
         props.onClick = this._onClickImage.bind( this, payload )
         props.style={ cursor : "pointer" }
       }
-      return  <ChatBox {...props} />
+      return  <ChatBox {...props} /> */
     } else {
       const props = {
               key :  n ,

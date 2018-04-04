@@ -8,7 +8,6 @@ import Navigation from './components/navigation'
 import Block from './components/block'
 import Content from './components/content'
 import Viewer from './components/viewer'
-import Loader from './components/loader'
 /* import Debugger from './components/debugger' */
 
 class App extends Component {

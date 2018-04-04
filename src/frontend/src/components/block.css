@@ -38,6 +38,10 @@
   height: 100%;
 }
 
+.loader-foreground:hover {
+  cursor: pointer;
+}
+
 .circle {
   width: 200px;
   height: 200px;

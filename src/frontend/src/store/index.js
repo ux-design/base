@@ -12,9 +12,6 @@ import {
   CHECK_SERVER
 } from '../epics'
 
-console.log(process.env.NODE_ENV)
-console.log(1)
-
 const epics = combineEpics( 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 

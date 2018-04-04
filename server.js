@@ -122,6 +122,7 @@ app.options(cors());
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/jpeg');
         res.sendFile( __dirname + `/src/images/${image}` );
+        console.log('reading image: '+image);
         
     } ) ;
 
@@ -147,6 +148,7 @@ app.options(cors());
             resource.quality(95)                 // set JPEG quality
                     .resize(mewWidth,parseInt(mewWidth/rapp))
                     .write(`./src/images/${quality}/${image}`); // save
+            console.log('created small image for: '+image);
         });
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/jpeg');
@@ -238,6 +240,7 @@ const _forcePageRendering = ( payload ) => {
     fs.writeFileSync( `./src/html/${payload}.html` , prettify.prettyPrint( result , options ) ) ;
 }
         
+console.log('NODE_ENV: '+process.env.NODE_ENV);
 serverHTTPS.listen( 443 );  
 console.log( `https://${ip}` );
 serverHTTP.listen( 80 );  
