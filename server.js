@@ -61,6 +61,15 @@ app.options(cors());
         
     } ) ;
 
+    // LOADER.IO VERIFICATION
+    app.get( '/loaderio-fbc896b413f1edba439299f31ba64ec6.txt' , function( req , res ) {
+        
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'text/plain');
+        res.sendFile( __dirname + `/src/loader.io/test.txt` );
+        
+    } ) ;
+
     // SSL LOGO COMODO
     app.get( '/ssl/images/comodo_secure_seal_113x59_transp.png' , function( req , res ) {
         
