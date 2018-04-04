@@ -81,7 +81,6 @@ app.options(cors());
 
     // ROOT URL
     app.get( '/' , function( req , res ) {
-
         const query = req.query;
         if ( query.render != undefined || forceRendering ) {
             _forcePageRendering( 'index' );
@@ -132,6 +131,7 @@ app.options(cors());
         res.setHeader('Content-Type', 'image/jpeg');
         res.sendFile( __dirname + `/src/images/${image}` );
         console.log('reading image: '+image);
+        console.log('> '+req.connection.remoteAddress)
         
     } ) ;
 
