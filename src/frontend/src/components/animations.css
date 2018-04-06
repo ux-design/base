@@ -1,5 +1,5 @@
 .bounceIn {
-  animation: bounceIn 1s ease-out;
+  animation: bounceIn 0.3s ease-out;
 }
 
 @keyframes bounceIn {
@@ -10,29 +10,20 @@
 }
 
 .anim-wiggle {
-  animation: anim-wiggle 1s cubic-bezier(.36,.07,.19,.97) both;
+  animation: anim-wiggle 0.3s cubic-bezier(.36,.07,.19,.97) both;
 }
 
 @keyframes anim-wiggle {
-  10%, 90% {
+  10%, 50%, 90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
+  30%, 70% {
     transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
   }
 }
 
 .trans-zoom-in {
-  transform: scale(1.1)!important;
+  transform: scale(1.25)!important;
   transition: all 0.3s!important;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: var(--font-main);
   overflow: visible;
 }
 
@@ -205,4 +205,17 @@ a, a:hover, a:link, a:visited, a:active {
   #content {
     padding-top: 50px;
   }
+}
+
+:root {
+  --col-pink: #ff0050;
+  --col-blue: #1aa1fc;
+  --col-black: black;
+  --col-white: white;
+  --col-text-grey: #999999;
+  --col-text-white: white;
+  --font-main: sans-serif;
+  --font-h1: sans-serif;
+  --font-h2: sans-serif;
+  --font-p: Georgia, 'Times New Roman', Times, serif;
 }

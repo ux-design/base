@@ -45,11 +45,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -65,11 +65,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -85,11 +85,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -105,11 +105,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -125,11 +125,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -145,11 +145,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -165,11 +165,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -185,11 +185,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -205,11 +205,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -225,11 +225,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -245,11 +245,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -265,11 +265,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -285,11 +285,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -305,11 +305,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -325,11 +325,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -345,11 +345,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -365,11 +365,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -385,11 +385,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -405,11 +405,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -425,11 +425,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -445,11 +445,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -465,11 +465,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -485,11 +485,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -505,11 +505,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -525,11 +525,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -545,11 +545,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -565,11 +565,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -585,11 +585,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -605,11 +605,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -625,11 +625,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -645,11 +645,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -665,11 +665,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -685,11 +685,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -705,11 +705,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -725,11 +725,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -745,11 +745,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -765,11 +765,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -785,11 +785,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -805,11 +805,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -825,11 +825,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -845,11 +845,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -865,11 +865,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -885,11 +885,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -905,11 +905,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -925,11 +925,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -945,11 +945,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -965,11 +965,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -985,11 +985,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1005,11 +1005,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1025,11 +1025,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1045,11 +1045,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1065,11 +1065,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1085,11 +1085,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1105,11 +1105,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1125,11 +1125,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1145,11 +1145,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1165,11 +1165,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1185,11 +1185,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1205,11 +1205,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1225,11 +1225,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1245,11 +1245,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1265,11 +1265,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1285,11 +1285,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1305,11 +1305,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1325,11 +1325,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1345,11 +1345,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1365,11 +1365,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1385,11 +1385,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1405,11 +1405,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1425,11 +1425,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1445,11 +1445,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1465,11 +1465,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1485,11 +1485,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1505,11 +1505,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1525,11 +1525,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1545,11 +1545,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1565,11 +1565,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1585,11 +1585,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1605,11 +1605,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1625,11 +1625,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1645,11 +1645,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1665,11 +1665,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1685,11 +1685,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1705,11 +1705,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1725,11 +1725,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1745,11 +1745,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1765,11 +1765,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1785,11 +1785,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1805,11 +1805,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1825,11 +1825,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1845,11 +1845,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1865,11 +1865,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1885,11 +1885,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1905,11 +1905,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1925,11 +1925,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1945,11 +1945,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1965,11 +1965,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -1985,11 +1985,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -2005,11 +2005,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
@@ -2025,11 +2025,11 @@
             },
             {
                 "tag": "img",
-                "classes": "image cropped-zoom-in nopadding large",
+                "classes": "image cropped-zoom-in rounded large",
                 "src": "breaking-glass.jpg",
                 "click": "show-fullscreen",
                 "rollover": "trans-zoom-in",
-                "rolloverRemoveAfter": 1
+                "rolloverRemoveAfter": 0.3
             },
             {
                 "tag": "p",
