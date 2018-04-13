@@ -5,7 +5,7 @@
   display: flex;
   width: 100%;
   flex: 1;
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: var(--nav-bg-col);
   overflow: hidden;
   z-index: 10000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   height: 50px;
-  color: white;
+  color: var(--col-white);
   transform-origin: 50% 50%;
   cursor: pointer;
   font-size: 30px;
@@ -42,8 +42,9 @@
   transition: all 0.5s;
 }
 .navigation__link--selected{
-  background-color: white;
-  color: #ff0050;
+  background-color: var(--col-white);
+  color: var(--col-pink);
+  border-radius: var(--nav-link-border);
 }
 .navigation__toggle {
   cursor: pointer;
@@ -65,7 +66,7 @@
   position: relative;
   width: 1000px;
   height: 1000px;
-  background-color: #ff0050;
+  background-color: var(--nav-menu-bg-col);
   border-radius: 50%;
   transition: all 0.5s;
   transform: scale(0);

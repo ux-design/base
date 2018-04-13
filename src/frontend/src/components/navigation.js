@@ -25,7 +25,7 @@ class Navigation extends Component {
     this.props.fire('NAVIGATION_MENU_CLICK', this.props.menuIsOpen)
   }
   _link = ( payload ) => {
-    this.props.fire('PAGE_LOAD', payload)
+    this.props.fire('NAVIGATION_LINK_CLICK', payload)
   }
   componentWillReceiveProps = (nextProps) => {
     console.log(nextProps.menuIsOpen)

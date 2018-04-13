@@ -89,7 +89,7 @@ const APP_INIT = action$ =>
     }
   })
 
-const NAVIGATION_MENU_CLICK = action$ =>
+  const NAVIGATION_MENU_CLICK = action$ =>
   action$.ofType( 'NAVIGATION_MENU_CLICK' )
   .mergeMap( action => {
     return Rx.Observable.concat(
@@ -114,12 +114,33 @@ const NAVIGATION_MENU_CLICK = action$ =>
     }
   })
 
+  const NAVIGATION_LINK_CLICK = (action$, store) =>
+    action$.ofType( 'NAVIGATION_LINK_CLICK' )
+    .mergeMap( action => {
+      return Rx.Observable.concat(
+        Rx.Observable.empty()
+          .startWith({ action: 'NAVIGATION_MENU_TOGGLE' }),
+        Rx.Observable.empty()
+          .delay(700),
+        Rx.Observable.empty()
+          .startWith({ action: 'PAGE_LOAD', payload: action.payload })
+      )
+    })
+    .map( data => {
+      switch (data.action) {
+        case'NAVIGATION_MENU_TOGGLE':
+          return {type: 'NAVIGATION_MENU_TOGGLE'}
+        case'PAGE_LOAD':
+          return {type: 'PAGE_LOAD', payload: data.payload}
+        default:
+          return {}
+      }
+    })
+
 const PAGE_LOAD = action$ =>
   action$.ofType( 'PAGE_LOAD' )
   .mergeMap( action => {
     return Rx.Observable.concat(
-      Rx.Observable.empty()
-        .startWith({ action: 'NAVIGATION_MENU_CLICK' }),
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_SHOW' }),
       Rx.Observable.empty()
@@ -245,6 +266,7 @@ const CHECK_SERVER = (action$, store) =>
 export { 
   APP_INIT,
   NAVIGATION_MENU_CLICK,
+  NAVIGATION_LINK_CLICK,
   PAGE_LOAD,
   VIEWER_SHOW,
   VIEWER_CLOSE,

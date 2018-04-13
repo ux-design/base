@@ -5,6 +5,7 @@ import { createEpicMiddleware, combineEpics } from 'redux-observable'
 import { 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 
+  NAVIGATION_LINK_CLICK, 
   PAGE_LOAD,
   VIEWER_SHOW,
   VIEWER_CLOSE,
@@ -15,6 +16,7 @@ import {
 const epics = combineEpics( 
   APP_INIT, 
   NAVIGATION_MENU_CLICK, 
+  NAVIGATION_LINK_CLICK, 
   PAGE_LOAD,
   VIEWER_SHOW,
   VIEWER_CLOSE,

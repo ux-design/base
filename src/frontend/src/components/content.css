@@ -33,7 +33,7 @@
   /* border: 1px dashed red;  */
   font-weight: 100;
   text-align: justify;
-  font-family: var(--font-p);
+  font-family: var(--p-font);
   color: #999;
   font-style: italic;
   padding: 15px 0 15px 0;

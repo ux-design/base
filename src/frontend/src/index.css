@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-main);
+  font-family: var(--body-font);
   overflow: visible;
 }
 
@@ -208,14 +208,29 @@ a, a:hover, a:link, a:visited, a:active {
 }
 
 :root {
+  --font-main: sans-serif;
+  --font-secondary: Georgia, 'Times New Roman', Times, serif;
+
   --col-pink: #ff0050;
   --col-blue: #1aa1fc;
   --col-black: black;
+  --col-grey: #999999;
   --col-white: white;
-  --col-text-grey: #999999;
-  --col-text-white: white;
-  --font-main: sans-serif;
-  --font-h1: sans-serif;
-  --font-h2: sans-serif;
-  --font-p: Georgia, 'Times New Roman', Times, serif;
+  --col-white-97: rgba(255, 255, 255, 0.97);
+
+  --body-font: var(--font-main);
+
+  --nav-bg-col: var(--col-white-97);
+  --nav-menu-bg-col: var(--col-pink);
+  --nav-link-border: 10px;
+
+  --h1-font: var(--font-main);
+  --h1-col: var(--col-black);
+  
+  --h2-font: var(--font-main);
+  --h2-col: var(--col-white);
+
+  --p-font: var(--font-secondary);
+  --p-col: var(--col-grey);
+
 }
