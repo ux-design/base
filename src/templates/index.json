@@ -11,6 +11,13 @@
     "title": "Andrea Mazzilli",
     "style": "",
     "logo": "logo.svg",
+    "layout": {
+        "type": "fixed",
+        "background-image": {
+            "src": "me-books.jpg"
+        },
+        "navigation": {}
+    },
     "body": {
         "navigation": {
             "about": { 
