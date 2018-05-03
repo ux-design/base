@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import './block.css'
-import './animations.css'
 import Logo from './logo'
 
 class Block extends Component {

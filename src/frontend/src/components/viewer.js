@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import './viewer.css'
 import actions from '../actions'
 import ImagePreloader from '../helpers/imagePreloader'
 const ip = 'http://' + window.location.hostname.replace(':3000','')

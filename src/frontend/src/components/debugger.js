@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './debugger.css';
 
 class Debugger extends Component {
   

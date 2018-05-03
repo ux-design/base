@@ -1,0 +1,243 @@
+@import "./scss/_index.scss";
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-primary;
+  overflow: visible;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar { 
+  display: none; 
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.fullscreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+a, a:hover, a:link, a:visited, a:active {
+  color: #009DFF;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #009DFF;
+}
+
+.lock-screen {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  position: fixed;
+}
+
+#app {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+    
+#loader {
+  z-index: 10000;
+  position: fixed ;
+  top: 0px;
+}
+
+#block {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(255,255,255,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000000;
+}
+
+#viewer {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(0,0,0,1);
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+  display: flex;
+}
+
+#debugger {
+  position: fixed;
+  top: 0px;
+  bottom: 50%;
+  left: 0px;
+  right: 50%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+#overlay {
+  z-index: 1000;
+}
+
+#navigation {
+  z-index: 900;
+  position: fixed ;
+  top: 0px;
+  width: 100%;
+  overflow: hidden;
+  /* border-bottom: solid 1px white; */
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+  z-index: 100;
+  top: 0px;
+  overflow: visible;
+}
+
+@keyframes navigation-on {
+  0% { transform: translateY( calc( 40px - 100% ) ); }
+  100% { transform: translateY( 0% ); }
+}
+
+@keyframes navigation-off {
+  0% { transform: translateY( 0% ); }
+  100% { transform: translateY( calc( 40px - 100% ) ); }
+}
+
+@keyframes ios-small-in {
+  0% { transform: translateY( -50px ); }
+  100% { transform: translateY( 0px ); }
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    font-size: 30px;
+  }
+  
+  #loader {
+    left: 0px;
+  }
+
+  #overlay {
+      
+  }
+
+  #viewer {
+    
+  }
+
+  #navigation {
+    display: flex;
+    height: 100%;
+    transform: translateY( calc( 40px - 100% ) );
+  }
+
+  #navigation.navigation-off {
+    animation: navigation-off 0s ;
+    animation-fill-mode: forwards;
+  }
+
+  #navigation.navigation-on {
+    animation: navigation-on 0s ;
+    animation-fill-mode: forwards;
+  }
+
+  #navigation.navigation-off-anim {
+    animation: navigation-off 0.3s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation-fill-mode: forwards;
+  }
+
+  #navigation.navigation-on-anim {
+    animation: navigation-on 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation-fill-mode: forwards;
+  }
+
+  .navigation.ios-small-in{
+    animation: ios-small-in 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99) ;
+    animation-fill-mode: forwards;
+  }
+
+  #content {
+    padding-top: 50px;
+  }
+}
+
+/* desktop */
+
+@media screen and (min-width: 768px) {
+
+  body {
+      font-size: 16px;
+  }
+  
+  #loader {
+    left: 120px;
+  }
+
+  #overlay {
+      
+  }
+
+  #viewer {
+    
+  }
+
+  #navigation {
+    display: flex;
+    height: 50px;
+  }
+
+  #content {
+    padding-top: 50px;
+  }
+}
+
+
+:root {
+  --font-main: sans-serif;
+  --font-secondary: Georgia, 'Times New Roman', Times, serif;
+
+  --col-pink: #ff0050;
+  --col-pri: var(--col-pink);
+  --col-blue: #1aa1fc;
+  --col-sec: var(--col-blue);
+  --col-white: white;
+  --col-ter: var(--col-white);
+  --col-black: black;
+  --col-grey: #999999;
+
+  --col-white-97: rgba(255, 255, 255, 0.97);
+
+  --body-font: var(--font-main);
+
+  --nav-bg-col: var(--col-white-97);
+  --nav-menu-bg-col: var(--col-pink);
+  --nav-link-border: 10px;
+
+  --h1-font: var(--font-main);
+  --h1-col: var(--col-black);
+  
+  --h2-font: var(--font-main);
+  --h2-col: var(--col-white);
+
+  --p-font: var(--font-secondary);
+  --p-col: var(--col-grey);
+
+}

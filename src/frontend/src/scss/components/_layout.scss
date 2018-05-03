@@ -47,9 +47,9 @@
   align-items: center;
   flex-direction: column;
   border-radius: 50%;
-  background-color: var(--col-pri);
+  background-color: $col-primary;
   text-align: center;
-  color: var(--col-white);
+  color: $col-white;
   overflow: hidden;
   cursor: pointer;
   min-width: 150px;
@@ -60,10 +60,10 @@
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
 }
 .lay_nav_btn--pri {
-  background-color: var(--col-pri);
+  background-color: $col-primary;
 }
 .lay_nav_btn--sec {
-  background-color: var(--col-sec);
+  background-color: $col-secondary;
 }
 .lay_nav_btn--md {
   transform: scale(1,1);

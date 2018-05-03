@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
-import './chatbox.css';
 const protocol = window.location.protocol;
 const ip = protocol+'//' + window.location.hostname.replace(':3000','');
 const socket = io(ip);

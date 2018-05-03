@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
-import './content.css'
 import Animator from '../helpers/animator'
 import ImagePreloader from '../helpers/imagePreloader'
 //import ChatBox from './chatbox'

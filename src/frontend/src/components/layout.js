@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
-import './layout.css'
 import { urls } from '../model/constants'
 
 class Layout extends Component {

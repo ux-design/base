@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
-import './navigation.css'
-import './animations.css'
 import Logo from './logo'
 
 class Navigation extends Component {
