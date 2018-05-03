@@ -5,20 +5,28 @@ import './index.css';
 import './bower_components/font-awesome/css/font-awesome.min.css'
 // components
 import Navigation from './components/navigation'
+import LayoutNavigation from './components/layouts/navigation'
 import Block from './components/block'
 import Content from './components/content'
+import Layout from './components/layout'
 import Viewer from './components/viewer'
 /* import Debugger from './components/debugger' */
 
 class App extends Component {
+    _renderContent = () => {
+        if (this.props.app.get('content').layout) {
+            const layout = this.props.app.get('content').layout
+            return [<Layout key="layout" />,<LayoutNavigation key="layoutNavigation" {...layout.navigation}/>]
+        } else if (this.props.app.get('content').body) {
+            return [<Navigation key="navigation" />, <Content key="content" />]
+        } else {
+            return null
+        }
+    }
     render (props) {
         return  (
             <div>
-                { this.props.app.get('content').body
-                    ? [<Navigation key="navigation" />,
-                      <Content key="content" />]
-                    : null
-                }
+                { this._renderContent() }
                 { this.props.viewer.get('visible')
                     ? <Viewer key="viewer" />
                     : null

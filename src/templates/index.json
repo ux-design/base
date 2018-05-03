@@ -12,11 +12,16 @@
     "style": "",
     "logo": "logo.svg",
     "layout": {
-        "type": "fixed",
-        "background-image": {
-            "src": "me-books.jpg"
+        "background": {
+            "image": "me-books.jpg"
         },
-        "navigation": {}
+        "content": {
+            "title": "title"
+        },
+        "navigation": {
+            "closed": "touch me",
+            "opened": ["about","skills","experience","blog","contact"]
+        }
     },
     "body": {
         "navigation": {

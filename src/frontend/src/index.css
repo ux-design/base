@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: var(--body-font);
   overflow: visible;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 ::-webkit-scrollbar { 
@@ -207,15 +208,20 @@ a, a:hover, a:link, a:visited, a:active {
   }
 }
 
+
 :root {
   --font-main: sans-serif;
   --font-secondary: Georgia, 'Times New Roman', Times, serif;
 
   --col-pink: #ff0050;
+  --col-pri: var(--col-pink);
   --col-blue: #1aa1fc;
+  --col-sec: var(--col-blue);
+  --col-white: white;
+  --col-ter: var(--col-white);
   --col-black: black;
   --col-grey: #999999;
-  --col-white: white;
+
   --col-white-97: rgba(255, 255, 255, 0.97);
 
   --body-font: var(--font-main);

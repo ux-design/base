@@ -9,8 +9,6 @@ import { colors, urls } from '../model/constants'
 var itemsToRender = 10
 const itemsToRenderStep = 10
 
-window.ImagePreloader = ImagePreloader
-
 class Content extends Component {
   
   _intervals = {}
@@ -98,14 +96,6 @@ class Content extends Component {
               id : payload.id ,
               className : payload.classes ,
               ref :  "chatbox" + n
-      }
-      if ( payload.rollover ) {
-        props.onTouchStart = this._onMouseOver.bind( this, [ payload , 'image' + n ] )
-        props.onMouseOver = this._onMouseOver.bind( this, [ payload , 'image' + n ] )
-      }
-      if ( payload.click ) {
-        props.onClick = this._onClickImage.bind( this, payload )
-        props.style={ cursor : "pointer" }
       }
       return  <ChatBox {...props} /> */
     } else {

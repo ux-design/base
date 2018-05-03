@@ -71,6 +71,8 @@ const APP_INIT = action$ =>
           }
         }
         
+      case'FETCH_PAGE':
+        return {type: 'FETCH_PAGE', payload: data.payload}
       case'APP_READY':
         return {type: 'APP_READY'}
       case'PRELOADER_SHOW':

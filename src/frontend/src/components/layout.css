@@ -1,0 +1,85 @@
+.lay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lay_bg {
+  position: absolute;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+}
+.lay_nav {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+}
+.lay_nav h1 {
+  font-size: 40px;
+  font-weight: 100;
+}
+.lay_nav h2 {
+  font-size: 30px;
+  font-weight: 100;
+}
+.lay_nav h3{
+  font-size: 20px;
+  font-weight: 100;
+}
+.lay_nav p {
+  font-size: 10px;
+  font-weight: 100;
+}
+.lay_nav_btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50%;
+  background-color: var(--col-pri);
+  text-align: center;
+  color: var(--col-white);
+  overflow: hidden;
+  cursor: pointer;
+  min-width: 150px;
+  min-height: 150px;
+}
+.lay_anim {
+  transition: all 0.3s!important;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+}
+.lay_nav_btn--pri {
+  background-color: var(--col-pri);
+}
+.lay_nav_btn--sec {
+  background-color: var(--col-sec);
+}
+.lay_nav_btn--md {
+  transform: scale(1,1);
+}
+.lay_nav_btn--sm {
+  transform: scale(0.5,0.5);
+}
+.lay_nav_btn--left {
+  transform: translate(-110px,0px) scale(0.8,0.8);
+}
+.lay_nav_btn--right {
+  transform: translate(110px,0px) scale(0.8,0.8);
+}
+.lay_nav_btn--top {
+  transform: translate(0px,-110px) scale(0.8,0.8);
+}
+.lay_nav_btn--bottom {
+  transform: translate(0px,110px) scale(0.8,0.8);
+}
