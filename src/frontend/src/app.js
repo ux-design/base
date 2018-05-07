@@ -16,7 +16,7 @@ class App extends Component {
     _renderContent = () => {
         if (this.props.app.get('content').layout) {
             const layout = this.props.app.get('content').layout
-            return [<Layout key="layout" />,<LayoutNavigation key="layoutNavigation" {...layout.navigation}/>]
+            return [<Layout key="layout" />/* ,<LayoutNavigation key="layoutNavigation" {...layout.navigation}/> */]
         } else if (this.props.app.get('content').body) {
             return [<Navigation key="navigation" />, <Content key="content" />]
         } else {
