@@ -20,7 +20,7 @@
         },
         "navigation": {
             "closed": "touch me",
-            "opened": ["about","skills","experience","blog","contact"]
+            "opened": ["about","skills","experiences","blog","contact"]
         }
     },
     "body": {
