@@ -25,7 +25,6 @@ const epics = combineEpics(
 )
 const epicMiddleware = createEpicMiddleware(epics)
 var store
-
 if (process.env.NODE_ENV === 'production') {
   store = createStore( reducers, applyMiddleware( epicMiddleware ) )
 } else { 
