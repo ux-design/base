@@ -1,7 +1,7 @@
 const fs = require('fs');
 // SSL
-const key = fs.readFileSync('./src/ssl/ssl.key');
-const cert = fs.readFileSync( './src/ssl/ssl.crt' );
+const key = fs.readFileSync('./src/ssl/private.key');
+const cert = fs.readFileSync( './src/ssl/certificate.crt' );
 const options = {
     key: key,
     cert: cert
@@ -40,6 +40,8 @@ io.on('connection', socket => {
 app.use(compression());
 app.use(cors());
 app.options(cors());
+//app.use(function(req,res,next){setTimeout(next,500)});
+
 
 //const ip = 'localhost';
 
@@ -47,10 +49,9 @@ app.options(cors());
 
     // STATIC FILES (REACT)
 
-    app.use( express.static( __dirname + `/src/frontend/build` ) );
-
     // // GET
 
+    app.use( express.static( __dirname + `/src/frontend/build` ) );
     // SSL VERIFICATION
     app.get( '/.well-known/pki-validation/:file' , function( req , res ) {
         
@@ -81,6 +82,7 @@ app.options(cors());
 
     // ROOT URL
     app.get( '/' , function( req , res ) {
+        console.log('/')
         const query = req.query;
         if ( query.render != undefined || forceRendering ) {
             _forcePageRendering( 'index' );
@@ -103,7 +105,7 @@ app.options(cors());
 
     // L1 URLS
     app.get( '/:l1' , function( req , res ) {
-
+        console.log('/:l1')
         const { l1 } = req.params;
         const query = req.query;
         if ( query.render != undefined || forceRendering ) {
@@ -115,7 +117,7 @@ app.options(cors());
 
     // TEMPLATES JSON
     app.get( '/templates/:page' , function( req , res ) {
-        
+        console.log('/templates/:page')
         const { page } = req.params;
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'application/json');
@@ -125,7 +127,7 @@ app.options(cors());
 
     // IMAGES
     app.get( '/images/:image' , function( req , res ) {
-        
+        console.log('/images/:image')
         const { image } = req.params;
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/jpeg');
@@ -137,7 +139,7 @@ app.options(cors());
 
     // VECTORS
     app.get( '/svg/:svg' , function( req , res ) {
-        
+        console.log('/svg/:svg')
         const { svg } = req.params;
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/svg+xml');
@@ -147,7 +149,7 @@ app.options(cors());
 
     // IMAGES WITH QUALITY
     app.get( '/images/:image/:quality' , function( req , res ) {
-        
+        console.log('/images/:image/:quality')
         const { image , quality } = req.params;
         Jimp.read(`./src/images/${image}`, function (err, resource) {
             if (err) throw err;

@@ -3,10 +3,10 @@ const { use } = require( './_helpers' );
 const createHTML = ( payload , test ) => {
 	return use( { payload , callback : ( payload ) => {
         // function start
-        const { file , language , url , meta , title , style , body } = payload ;
+        const { file , language , url , meta , title , style , body, link } = payload ;
         var stylesheet = '';
         if ( style !== '' ) stylesheet = `<link rel="stylesheet" type="text/css" href="${style}" media="all" />`;
-        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}${stylesheet}</head>${createBODY(body)}</html>`;
+        return `<!doctype html><html lang="${language}"><head><title>${title}</title>${createMETA({meta})}${createLINK({link})}${stylesheet}</head>${createBODY(body)}</html>`;
         // function end
 	}} , test );
 }
@@ -16,6 +16,15 @@ const createMETA = ( payload , test ) => {
         // function start
         const { meta } = payload ;
         return meta.join('');
+        // function end
+	}} , test );
+}
+
+const createLINK = ( payload , test ) => {
+	return use( { payload , callback : ( payload ) => {
+        // function start
+        const { link } = payload ;
+        return link.join('');
         // function end
 	}} , test );
 }
@@ -91,4 +100,4 @@ const createIMG = ( payload , test ) => {
 }
 
 
-module.exports = { createHTML , createMETA , createBODY , createNAVIGATION , createIMG }
+module.exports = { createHTML , createMETA, createLINK , createBODY , createNAVIGATION , createIMG }
