@@ -62,6 +62,15 @@ app.options(cors());
         
     } ) ;
 
+    // GOOGLE VERIFICATION
+    app.get( '/googleb600e8ef30b86857.html' , function( req , res ) {
+        
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'text/plain');
+        res.sendFile( __dirname + `/src/frontend/build/googleb600e8ef30b86857.html` );
+        
+    } ) ;
+
     // LOADER.IO VERIFICATION
     app.get( '/loaderio-fbc896b413f1edba439299f31ba64ec6.txt' , function( req , res ) {
         
