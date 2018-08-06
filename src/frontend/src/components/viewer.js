@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
 import ImagePreloader from '../helpers/imagePreloader'
-const ip = 'http://' + window.location.hostname.replace(':3000','')
+const protocol = window.location.protocol;
+const ip = protocol + '//' + window.location.hostname.replace(':3000','')
 
 class Viewer extends Component {
   _onClick = () => {
@@ -11,7 +12,6 @@ class Viewer extends Component {
   _closeViewer() {
   }
   render() {
-    console.log(this.props)
     const viewer = this.props.viewer
     const {type, url} = viewer.get('content')
     var content 
