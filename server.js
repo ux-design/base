@@ -20,7 +20,6 @@ const io = require( 'socket.io' )( serverHTTP, serverHTTPS ) ;
 const prettify = require( 'html' );
 const html = require( './src/modules/html' );
 const ip = require( 'ip' ).address();
-const forceRendering = true ;
 const Jimp = require( 'jimp' );
 
 
@@ -71,6 +70,15 @@ app.options(cors());
         
     } ) ;
 
+    // FAVICON
+    app.get( '/favicon.ico' , function( req , res ) {
+        
+        res.header("Access-Control-Allow-Origin", "*");
+        res.setHeader('Content-Type', 'image/png');
+        res.sendFile( __dirname + `/src/frontend/build/images/icons/favicon.ico` );
+        
+    } ) ;
+
     // LOADER.IO VERIFICATION
     app.get( '/loaderio-fbc896b413f1edba439299f31ba64ec6.txt' , function( req , res ) {
         
@@ -93,7 +101,7 @@ app.options(cors());
     app.get( '/' , function( req , res ) {
         console.log('/')
         const query = req.query;
-        if ( query.render != undefined || forceRendering ) {
+        if ( query.render !== undefined ) {
             _forcePageRendering( 'index' );
         }
         res.sendFile( __dirname + `/src/html/index.html` );
@@ -117,7 +125,7 @@ app.options(cors());
         console.log('/:l1')
         const { l1 } = req.params;
         const query = req.query;
-        if ( query.render != undefined || forceRendering ) {
+        if ( query.render !== undefined ) {
             _forcePageRendering( l1 );
         }
         res.sendFile( __dirname + `/src/html/${l1}.html` );
@@ -160,16 +168,18 @@ app.options(cors());
     app.get( '/images/:image/:quality' , function( req , res ) {
         console.log('/images/:image/:quality')
         const { image , quality } = req.params;
-        Jimp.read(`./src/images/${image}`, function (err, resource) {
-            if (err) throw err;
-            const { width , height } = resource.bitmap ;
-            const rapp = parseInt( width / height * 100 ) / 100;
-            const mewWidth = 800
-            resource.quality(95)                 // set JPEG quality
-                    .resize(mewWidth,parseInt(mewWidth/rapp))
-                    .write(`./src/images/${quality}/${image}`); // save
-            console.log('created small image for: '+image);
-        });
+        if(!fs.existsSync(`./src/images/${quality}/${image}`)){
+            Jimp.read(`./src/images/${image}`, function (err, resource) {
+                if (err) throw err;
+                const { width , height } = resource.bitmap ;
+                const rapp = parseInt( width / height * 100 ) / 100;
+                const mewWidth = 800
+                resource.quality(95)                 // set JPEG quality
+                        .resize(mewWidth,parseInt(mewWidth/rapp))
+                        .write(`./src/images/${quality}/${image}`); // save
+                console.log(`created small image: /src/images/${quality}/${image}`);
+            });
+        }
         res.header("Access-Control-Allow-Origin", "*");
         res.setHeader('Content-Type', 'image/jpeg');
         res.sendFile( __dirname + `/src/images/${quality}/${image}` );

@@ -1,4 +1,5 @@
 const { use } = require( './_helpers' );
+const headAllLinks = require('../templates/links');
 
 const createHTML = ( payload , test ) => {
 	return use( { payload , callback : ( payload ) => {
@@ -24,7 +25,7 @@ const createLINK = ( payload , test ) => {
 	return use( { payload , callback : ( payload ) => {
         // function start
         const { link } = payload ;
-        return link.join('');
+        return Array.isArray(link) ? link.join('') : headAllLinks.join('');
         // function end
 	}} , test );
 }

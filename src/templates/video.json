@@ -4,7 +4,10 @@
     "url": "/video",
     "meta": [ 
         "<meta charset=\"utf-8\" />",
-        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
+        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\"/>",
+        "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+        "<meta name=\"description\" content=\"Personal website of Andrea Mazzilli with all information about this software developer\">",
+        "<meta name=\"theme-color\" content=\"white\">"
     ],
     "title": "Andrea Mazzilli - video",
     "style": "",
