@@ -14,6 +14,9 @@ const appReady = state => {
   return state.set('ready', true)
 }
 const updateRoute = (state, payload) => {
+  if (payload !== '/updater') {
+    window.history.pushState("object or string", "Title", payload)
+  }
   return state.set('route', payload)
 }
 const templateLoad = (state, payload) => {

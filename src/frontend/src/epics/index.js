@@ -34,7 +34,7 @@ const APP_INIT = action$ =>
       document.querySelector( '#first-loader' ).parentNode.removeChild( document.querySelector( '#first-loader' ) )
     }
   })
-  .mergeMap( action => {
+  .mergeMap( () => {
     return Rx.Observable.concat(
       Rx.Observable.empty()
         .startWith({ action: 'PRELOADER_SHOW' }),
@@ -45,7 +45,7 @@ const APP_INIT = action$ =>
       load(protocol+'//'+ip+'/templates/experiences'),
       load(protocol+'//'+ip+'/templates/about'),
       Rx.Observable.empty()
-        .startWith({ action: 'ROUTE_UPDATE', payload: '/index' }),
+        .startWith({ action: 'ROUTE_UPDATE', payload: window.location.pathname}),
       Rx.Observable.empty()
         .delay(1000),
       Rx.Observable.empty()
@@ -116,7 +116,7 @@ const APP_INIT = action$ =>
     }
   })
 
-  const NAVIGATION_LINK_CLICK = (action$, store) =>
+  const NAVIGATION_LINK_CLICK = action$ =>
     action$.ofType( 'NAVIGATION_LINK_CLICK' )
     .mergeMap( action => {
       return Rx.Observable.concat(

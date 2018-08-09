@@ -13,6 +13,12 @@ import Viewer from './components/viewer'
 /* import Debugger from './components/debugger' */
 
 class App extends Component {
+    _checkRoute = () => {
+        const url = window.location.pathname
+        if (this.props.app.get('route') !== url ) {
+            this.props.fire('PAGE_LOAD', url)
+        }
+    }
     _renderContent = () => {
         if (this.props.app.get('content').layout) {
             const layout = this.props.app.get('content').layout
@@ -23,7 +29,8 @@ class App extends Component {
             return null
         }
     }
-    render (props) {
+    render () {
+        this._checkRoute()
         return  (
             <div>
                 { this._renderContent() }

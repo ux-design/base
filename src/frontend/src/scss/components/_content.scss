@@ -9,6 +9,7 @@
   margin: 0;
   /* border: 1px dashed red;  */
   font-weight: 100;
+  color: #002;
   padding: 15px 15px 15px 0px;
   font-weight: bold;
   text-transform: uppercase;
@@ -21,20 +22,20 @@
   font-weight: bold;
   padding: 15px 15px 15px 0;
   /* background-color: #ff0050; */
-  color: white;
+  color: $col-white;
   display: table;
-  transform: scale( 0.5 , 0.5 ) rotate(-30deg);
-  background-color: var(--col-blue);
+  transform: scale( 0.5 , 0.5 ) rotate(-10deg);
+  background-color: $col-primary;
   z-index: 1;
 }
 
 #content p {
   margin: 0;
   /* border: 1px dashed red;  */
-  font-weight: 100;
+  font-weight: lighter;
   text-align: justify;
-  font-family: var(--p-font);
-  color: #999;
+  font-family: $font-readable;
+  color: #667;
   font-style: italic;
   padding: 15px 0 15px 0;
 }
@@ -169,7 +170,7 @@ p.el-show{
 
   #content p {
     font-size: 17px;
-    line-height: 21px;
+    line-height:28px;
   }
 
   #content .image.small {

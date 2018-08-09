@@ -100,6 +100,7 @@
   margin: 0;
   /* border: 1px dashed red;  */
   font-weight: 100;
+  color: #002;
   padding: 15px 15px 15px 0px;
   font-weight: bold;
   text-transform: uppercase;
@@ -113,17 +114,17 @@
   /* background-color: #ff0050; */
   color: white;
   display: table;
-  transform: scale(0.5, 0.5) rotate(-30deg);
-  background-color: var(--col-blue);
+  transform: scale(0.5, 0.5) rotate(-10deg);
+  background-color: #ff0050;
   z-index: 1; }
 
 #content p {
   margin: 0;
   /* border: 1px dashed red;  */
-  font-weight: 100;
+  font-weight: lighter;
   text-align: justify;
-  font-family: var(--p-font);
-  color: #999;
+  font-family: "Trebuchet MS";
+  color: #667;
   font-style: italic;
   padding: 15px 0 15px 0; }
 
@@ -232,7 +233,7 @@ p.el-show {
     padding: 15px 15px 15px 15px; }
   #content p {
     font-size: 17px;
-    line-height: 21px; }
+    line-height: 28px; }
   #content .image.small {
     height: 100px; }
   #content .image.large {
@@ -473,7 +474,7 @@ p.el-show {
   display: flex;
   width: 100%;
   flex: 1;
-  background-color: var(--nav-bg-col);
+  background-color: rgba(255, 255, 255, 0.97);
   overflow: hidden;
   z-index: 10000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -500,7 +501,7 @@ p.el-show {
   align-items: center;
   justify-content: center;
   height: 50px;
-  color: var(--col-white);
+  color: white;
   transform-origin: 50% 50%;
   cursor: pointer;
   font-size: 30px; }
@@ -510,9 +511,9 @@ p.el-show {
   transition: all 0.5s; }
 
 .navigation__link--selected {
-  background-color: var(--col-white);
-  color: var(--col-pink);
-  border-radius: var(--nav-link-border); }
+  background-color: white;
+  color: #ff0050;
+  border-radius: 10px; }
 
 .navigation__toggle {
   cursor: pointer;
@@ -534,7 +535,7 @@ p.el-show {
   position: relative;
   width: 1000px;
   height: 1000px;
-  background-color: var(--nav-menu-bg-col);
+  background-color: #ff0050;
   border-radius: 50%;
   transition: all 0.5s;
   transform: scale(0);
@@ -765,8 +766,9 @@ a, a:hover, a:link, a:visited, a:active {
     padding-top: 50px; } }
 
 :root {
-  --font-main: sans-serif;
+  /*   --font-main: sans-serif;
   --font-secondary: Georgia, 'Times New Roman', Times, serif;
+
   --col-pink: #ff0050;
   --col-pri: var(--col-pink);
   --col-blue: #1aa1fc;
@@ -775,14 +777,20 @@ a, a:hover, a:link, a:visited, a:active {
   --col-ter: var(--col-white);
   --col-black: black;
   --col-grey: #999999;
+
   --col-white-97: rgba(255, 255, 255, 0.97);
+
   --body-font: var(--font-main);
+
   --nav-bg-col: var(--col-white-97);
   --nav-menu-bg-col: var(--col-pink);
   --nav-link-border: 10px;
+
   --h1-font: var(--font-main);
   --h1-col: var(--col-black);
+  
   --h2-font: var(--font-main);
   --h2-col: var(--col-white);
+
   --p-font: var(--font-secondary);
-  --p-col: var(--col-grey); }
+  --p-col: var(--col-grey); */ }
