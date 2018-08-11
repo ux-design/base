@@ -29,7 +29,7 @@ class Content extends Component {
     var rnd = parseInt( Math.random() * 1000, 10 )
     var imageUrl = payload
     this._intervals[ rnd ] = this._myInterval( () => {
-      //console.log('interval ' + rnd + ' is alive')
+      ////console.log('interval ' + rnd + ' is alive')
       if ( this.refs[ ref ] ) {
         var el = this.refs[ ref ].children[ 1 ].children[ 0 ]
         if ( ImagePreloader.images[ imageUrl ] ) {
@@ -196,7 +196,7 @@ class Content extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount')
+    //console.log('componentDidMount')
     this._showElementsOnScroll()
     this._showElementsOnResize()
     this._showElements(100)
@@ -206,13 +206,13 @@ class Content extends Component {
     return nextProps !== this.props
   }
   componentDidUpdate( nextProps ) {
-    console.log('componentDidUpdate')
+    //console.log('componentDidUpdate')
     this._hideElements()
     this._showElements(100)
   }
 
   render() {
-    console.log('content.js > render')
+    //console.log('content.js > render')
     const elements = this.props.content.body.content
     var result = []
     var el

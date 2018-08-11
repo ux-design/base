@@ -26,7 +26,7 @@ class Navigation extends Component {
     this.props.fire('NAVIGATION_LINK_CLICK', payload)
   }
   componentWillReceiveProps = (nextProps) => {
-    console.log(nextProps.menuIsOpen)
+    //console.log(nextProps.menuIsOpen)
     if ( nextProps.menuIsOpen ) {
       this._maximizeNav()
       setTimeout( () => {
@@ -52,7 +52,7 @@ class Navigation extends Component {
     this.setState({showMenu: false })
   }
   render() {
-    console.log('navigation.js > render')
+    //console.log('navigation.js > render')
     const links = this.props.content.body.navigation
     var result = []
     var el, selected = ''

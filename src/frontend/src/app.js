@@ -14,10 +14,10 @@ import Viewer from './components/viewer'
 
 class App extends Component {
     _checkRoute = () => {
-        const url = window.location.pathname
+        /* const url = window.location.pathname
         if (this.props.app.get('route') !== url ) {
             this.props.fire('PAGE_LOAD', url)
-        }
+        } */
     }
     _renderContent = () => {
         if (this.props.app.get('content').layout) {
