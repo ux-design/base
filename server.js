@@ -269,7 +269,7 @@ const _cleanBuildIndex = () => {
     const jsBundleTag = '<script type="text/javascript" src="/static/js/'+jsBundleName+'"></script>'
     const cssBundleTag = '<link href="/static/css/'+cssBundleName+'" rel="stylesheet">'
     index = index.replace(jsBundleTag, '').replace(cssBundleTag, '')
-    fs.writeFileSync( './src/frontend/build/index2.html' , prettify.prettyPrint( index , options ) )
+    fs.writeFileSync( './src/frontend/build/index.html' , prettify.prettyPrint( index , options ) )
 }
 
 const _updateAllPages = () => {
