@@ -279,10 +279,10 @@ const _updateAllPages = () => {
             _forcePageRendering(pages[i].replace('.json',''))
         }
     }
+    fs.copyFileSync('./src/html/index.html', './src/frontend/build/index.html');
     console.log('_updateAllPages -> done')
 }
 
-_cleanBuildIndex()
 _updateAllPages()
 
 console.log('NODE_ENV: '+process.env.NODE_ENV);
