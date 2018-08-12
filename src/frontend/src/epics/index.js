@@ -36,10 +36,11 @@ const APP_INIT = action$ =>
   })
   .mergeMap( () => {
     const url = window.location.pathname
-    console.log(url)
     let newUrl = '/index'
     if (url === '/blog' || url === '/contact' || url === '/skills' || url === '/experiences' || url === '/about') {
       newUrl = url
+    } else if (url !== '/index' && url !== '' && url !== '/') {
+      newUrl = '/error'
     }
     return Rx.Observable.concat(
       Rx.Observable.empty()
@@ -50,6 +51,7 @@ const APP_INIT = action$ =>
       load(protocol+'//'+ip+'/templates/skills'),
       load(protocol+'//'+ip+'/templates/experiences'),
       load(protocol+'//'+ip+'/templates/about'),
+      load(protocol+'//'+ip+'/templates/error'),
       Rx.Observable.empty()
         .startWith({ action: 'ROUTE_UPDATE', payload: newUrl}),
       Rx.Observable.empty()

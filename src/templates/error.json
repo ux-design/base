@@ -1,0 +1,49 @@
+{
+    "file": "about.html",
+    "language": "en",
+    "url": "/about",
+    "meta": [ 
+        "<meta charset=\"utf-8\" />",
+        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\"/>",
+        "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+        "<meta name=\"description\" content=\"Personal website of Andrea Mazzilli with all information about this software developer\">",
+        "<meta name=\"theme-color\" content=\"white\">"
+    ],
+    "title": "Andrea Mazzilli - page not found",
+    "style": "",
+    "logo": "logo.svg",
+    "body": {
+        "navigation": {
+            "about": { 
+                "name": "about",
+                "link": "/about"
+            },
+            "skills": { 
+                "name": "skills",
+                "link": "/skills"
+            },
+            "experiences": {
+                "name": "experiences",
+                "link": "/experiences"
+            },
+            "blog": {
+                "name": "blog",
+                "link": "/blog"
+            },
+            "contact": {
+                "name": "contact",
+                "link": "/contact"
+            }
+        },
+        "content": [
+            {
+                "tag": "h1",
+                "value": "Page not found"
+            },
+            {
+                "tag": "p",
+                "value": "This page does not exists please <a href=\"/\">click here to go back to the homepage</a>."
+            }
+        ]
+    }
+}

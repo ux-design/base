@@ -13,11 +13,17 @@ const initialState = Immutable.fromJS({
 const appReady = state => {
   return state.set('ready', true)
 }
-const updateRoute = (state, payload) => {
-  if (payload !== '/updater') {
-    window.history.pushState("object or string", "Title", payload)
+const updateRoute = (state, pathname) => {
+  switch(pathname){
+    case"/updater":
+      break
+    case"/index":
+      window.history.pushState("object or string", "title..", "/")
+      break
+    default:
+      window.history.pushState("object or string", "title..", pathname)
   }
-  return state.set('route', payload)
+  return state.set('route', pathname)
 }
 const templateLoad = (state, payload) => {
   let templates = state.get('templates')
