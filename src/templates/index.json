@@ -21,16 +21,16 @@
         },
         "navigation": {
             "closed": "touch me",
-            "opened": ["about","skills","experiences","blog","contact"]
+            "opened": ["about", "skills", "experiences", "blog", "contact"]
         }
     },
     "body": {
         "navigation": {
-            "about": { 
+            "about": {
                 "name": "about",
                 "link": "/about"
             },
-            "skills": { 
+            "skills": {
                 "name": "skills",
                 "link": "/skills"
             },
@@ -47,14 +47,13 @@
                 "link": "/contact"
             }
         },
-        "content": [
-            {
+        "content": [{
                 "tag": "h1",
-                "value": "Welcome"
+                "value": "About me"
             },
             {
                 "tag": "h2",
-                "value": "This is me, I'm sorry for that",
+                "value": "Andrea Mazzilli",
                 "rollover": "anim-wiggle",
                 "rolloverRemoveAfter": 0.3
             },
@@ -68,35 +67,7 @@
             },
             {
                 "tag": "p",
-                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. <a href='mailto:mazzilli.andrea@gmail.com'>email me test link</a>"
-            },
-            {
-                "tag": "h2",
-                "value": "Why this website?",
-                "rollover": "anim-wiggle",
-                "rolloverRemoveAfter": 0.3
-            },
-            {
-                "tag": "p",
-                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
-            },
-            {
-                "tag": "p",
-                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
-            },
-            {
-                "tag": "p",
-                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
-            },
-            {
-                "tag": "h2",
-                "value": "Usefull links, check them out",
-                "rollover": "anim-wiggle",
-                "rolloverRemoveAfter": 0.3
-            },
-            {
-                "tag": "p",
-                "value": "the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. "
+                "value": "Hi! My name is Andrea, I am an experienced frontend developer who love to work with the cutting edge technologies, especially Nodejs, Reactjs and Redux, but this is not the entire story.."
             }
         ]
     }
