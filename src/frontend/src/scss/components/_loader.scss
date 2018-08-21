@@ -1,12 +1,11 @@
 .loader-el {
-  position: absolute;
-  z-index: 100000;
-  display: flex;
-  top: 0px;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transform-origin: 50% 50%;
+    position: absolute;
+    z-index: 100000;
+    display: flex;
+    top: 0px;
+    align-items: center;
+    justify-content: center;
+    transform-origin: 50% 50%;
 }
 
 .loader-on {
@@ -20,55 +19,50 @@
 }
 
 @keyframes loader-off {
-  from { 
-    opacity: 1; 
-    transform: rotate(0deg); 
-  }
-  to { 
-    opacity: 0;
-    transform: rotate(90deg); 
-  }
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
 }
 
 .spin {
-  animation: spin 0.5s linear;
-  animation-iteration-count: infinite;
+    animation: spin 0.5s linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(600deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(600deg);
+    }
 }
 
 
 /* mobile */
 
-@media screen and (max-width: 768px) {
-
-  #loader .wrapper {
-    
-  }
-
-  .loader-el {
-    width: 40px;
-    height: 40px;
-    left: 0px;
-  }
-
+@media screen and (max-width: $m-max-width) {
+    #loader .wrapper {}
+    .loader-el {
+        width: 40px;
+        height: 40px;
+        left: 0px;
+    }
 }
+
 
 /* desktop */
 
-@media screen and (min-width: 768px) {
-
-  #loader .wrapper {
-    
-  }
-
-  .loader-el {
-    width: 50px;
-    height: 50px;
-    right: 0px;
-  }
-
+@media screen and (min-width: $m-max-width) {
+    #loader .wrapper {}
+    .loader-el {
+        width: 50px;
+        height: 50px;
+        right: 0px;
+    }
 }

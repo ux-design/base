@@ -1,6 +1,18 @@
-$col-pink: #ff0050;
-$col-blue: #1aa1fc;
-$col-white: white;
-$col-white-97: rgba(255,255,255,0.97);
-$col-primary: $col-pink;
-$col-secondary: $col-blue;
+$col-pink: rgb(255, 34, 166);
+$col-blue: rgb(26, 161, 252);
+$col-white: rgb(255, 255, 255);
+$col-white-97: rgba(255, 255, 255, 0.97);
+$col-white-70: rgba(255, 255, 255, 0.7);
+$col-white-50: rgba(255, 255, 255, 0.5);
+$col-yellow: rgb(252, 209, 0);
+$col-black: rgb(0, 0, 32);
+$col-primary: $col-yellow;
+$col-secondary: $col-black;
+// scheme yellow and black
+$col-background: $col-yellow;
+$col-body-background: $col-yellow;
+$col-header-background: $col-yellow;
+$col-text: $col-black;
+$col-banner-title: $col-white;
+$col-banner-subtitle: $col-white;
+$col-link: $col-blue;

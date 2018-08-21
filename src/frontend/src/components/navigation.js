@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
 import Logo from './logo'
+import Hamburger from './hamburger'
 
 class Navigation extends Component {
   
@@ -77,7 +78,7 @@ class Navigation extends Component {
           </div>
         </div>
         <div className="navigation__toggle" onClick={ this._toggleMenu }>
-          <i className="fa fa-bars" aria-hidden="true"></i>
+          <Hamburger className="logo logo--small" draw />
         </div>
       </div>
     )

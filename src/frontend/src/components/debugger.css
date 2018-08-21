@@ -22,7 +22,7 @@
 
 /* mobile */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: $m-max-width) {
 
   #debugger .wrapper {
     
@@ -36,7 +36,7 @@
 
 /* desktop */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $m-max-width) {
 
   #debugger .wrapper {
     font-size: 32px;

@@ -97,6 +97,18 @@ class Content extends Component {
               ref :  "chatbox" + n
       }
       return  <ChatBox {...props} /> */
+    } else if ( payload.container ) {
+      const props = {
+        key : n ,
+        id : payload.id ,
+        className : payload.classes ,
+        ref : payload.container + n
+      }
+      return  <div className={payload.container} {...props}>
+                { payload.content.map( (val, index) => {
+                  return this._renderChild( val, `${n}-${index}` )
+                }) }
+              </div>
     } else {
       const props = {
               key :  n ,
@@ -205,7 +217,7 @@ class Content extends Component {
   shouldComponentUpdate(nextProps) {
     return nextProps !== this.props
   }
-  componentDidUpdate( nextProps ) {
+  componentDidUpdate() {
     //console.log('componentDidUpdate')
     this._hideElements()
     this._showElements(100)

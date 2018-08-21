@@ -1,120 +1,120 @@
 .block-el {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  color: black;
-  transform-origin: 50% 50%;
-  z-index: 100000;
-  top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    color: $col-black;
+    transform-origin: 50% 50%;
+    z-index: 100000;
+    top: 0px;
 }
 
 .block-on {
-  opacity: 1;
-  background-color: rgba(255,255,255,0.98);
+    opacity: 1;
+    background-color: $col-background;
 }
 
 .block-off {
-  opacity: 1;
-  animation: block-off 1s linear;
-  animation-fill-mode: forwards;
+    opacity: 1;
+    animation: block-off 1s linear;
+    animation-fill-mode: forwards;
 }
 
 .loader-background {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .loader-foreground {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
 .loader-foreground:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .circle {
-  width: 200px;
-  height: 200px;
-  border: dashed 5px #eee;
-  border-radius: 50%;
-  background-color: white;
+    width: 200px;
+    height: 200px;
+    border: dashed 5px $col-text;
+    border-radius: 50%;
+    background-color: $col-background;
 }
 
 .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px;
-  color: #ccc;
-  font-weight: 100;
-  font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    color: $col-black; //#ccc;
+    font-weight: 100;
+    font-size: 20px;
 }
 
 @keyframes block-off {
-  from { 
-    opacity: 1; 
-    transform: rotate(0deg); 
-  }
-  to { 
-    opacity: 0;
-    transform: rotate(90deg); 
-  }
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
 }
 
 .spin {
-  animation: spin 0.5s linear;
-  animation-iteration-count: infinite;
+    animation: spin 0.5s linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .spin-low {
-  animation: spin 6s linear;
-  animation-iteration-count: infinite;
+    animation: spin 6s linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes spin-low {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
 /* mobile */
 
-@media screen and (max-width: 768px) {
-
-  #block .wrapper {
-    
-  }
-
-  .block-el {
-    font-size: 32px;
-  }
-
+@media screen and (max-width: $m-max-width) {
+    #block .wrapper {}
+    .block-el {
+        font-size: 32px;
+    }
 }
+
 
 /* desktop */
 
-@media screen and (min-width: 768px) {
-
-  #block .wrapper {
-    font-size: 32px;
-  }
-
-  .block-el {
-  }
-
+@media screen and (min-width: $m-max-width) {
+    #block .wrapper {
+        font-size: 32px;
+    }
+    .block-el {}
 }

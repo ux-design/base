@@ -69,6 +69,35 @@ const createCONTENT = ( payload , test ) => {
             let el = content[ x ];
             let tag = el.tag 
             ,   classes = el.classes
+            ,   container = el.container
+            ,   id = el.id 
+            ,   value = el.value ? el.value : ''
+            ,   attrId = ''
+            ,   attrClass = '';
+            if ( tag == 'img' ) {
+                result.push( createIMG( el ) );
+            } else if ( container ) {
+                result.push( createContainer(el) )
+            } else {
+                if ( id ) attrId = `id="${id}"`;
+                if ( classes ) attrClass = `class="${classes}"`;
+                result.push( `<${tag} ${attrId} ${attrClass}>${value}</${tag}>` );
+            }
+        }
+        return `<div id="content">${result.join('')}</div>`;
+        // function end
+    }} , test );
+}
+
+const createContainer = ( payload, test ) => {
+    return use( { payload, callback: payload => {
+        // function start
+        var result = [];
+        const { content } = payload ; 
+        for( let x in content ) {
+            let el = content[ x ];
+            let tag = el.tag 
+            ,   classes = el.classes
             ,   id = el.id 
             ,   value = el.value ? el.value : ''
             ,   attrId = ''
@@ -81,9 +110,9 @@ const createCONTENT = ( payload , test ) => {
                 result.push( `<${tag} ${attrId} ${attrClass}>${value}</${tag}>` );
             }
         }
-        return `<div id="content">${result.join('')}</div>`;
+        return result.join('');
         // function end
-    }} , test );
+    }}, test )
 }
 
 const createIMG = ( payload , test ) => {

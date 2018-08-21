@@ -1,0 +1,39 @@
+$m-max-width: 576px;
+
+@media screen and (orientation:landscape) {
+
+}
+
+@media screen and (orientation:portrait) {
+
+}
+
+$m-margin-default: 15px;
+$d-margin-default: 30px;
+
+$m-header-height: 40px;
+$d-header-height: 80px;
+
+$m-logo-width: 40px;
+$d-logo-width: 80px;
+
+$m-logo-height: 40px;
+$d-logo-height: 80px;
+
+$m-font-size-h1: 18px;
+$d-font-size-h1: 26px;
+
+$m-font-size-h2: 12px;
+$d-font-size-h2: 24px;
+
+$m-font-size-p: 14px;
+$d-font-size-p: 28px;
+
+$m-banner-image-height: 140px;
+$d-banner-image-height: 380px;
+
+$m-banner-h1-margin: $m-margin-default 0 0 0;
+$d-banner-h1-margin: $d-margin-default 0 0 0;
+
+$m-banner-h2-margin: 45px 0 0 0;
+$d-banner-h2-margin: 90px 0 0 0;

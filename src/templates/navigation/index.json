@@ -1,0 +1,26 @@
+{
+    "index": {
+        "name": "home",
+        "link": "/"
+    },
+    "about": {
+        "name": "about",
+        "link": "/about"
+    },
+    "skills": {
+        "name": "skills",
+        "link": "/skills"
+    },
+    "experiences": {
+        "name": "experiences",
+        "link": "/experiences"
+    },
+    "blog": {
+        "name": "blog",
+        "link": "/blog"
+    },
+    "contact": {
+        "name": "contact",
+        "link": "/contact"
+    }
+}
