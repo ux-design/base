@@ -4,7 +4,7 @@ import actions from '../actions'
 import Animator from '../helpers/animator'
 import ImagePreloader from '../helpers/imagePreloader'
 //import ChatBox from './chatbox'
-import { colors, urls } from '../model/constants'
+import { urls } from '../model/constants'
 var itemsToRender = 10
 const itemsToRenderStep = 10
 
@@ -78,10 +78,9 @@ class Content extends Component {
       ImagePreloader.load( imageUrl )
       this._createInterval( imageUrl , 'content' + n )
       return  <div {...props}>
-                <div 
-                  ref={ 'content' + n } 
-                  style={{ backgroundColor : colors.IMAGE_PRELOAD_BG_COLOR , display : 'flex' , alignItems : 'center', justifyContent : 'center' }} 
-                  className="image-inner" 
+                <div
+                  ref={ 'content' + n }  
+                  className="image-inner image-preloader" 
                 >
                   <div className="image-preloader" />
                   <div className="image-preloader-perc">
