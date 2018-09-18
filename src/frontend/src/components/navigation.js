@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import actions from '../actions'
-import Logo from './logo'
-import Hamburger from './hamburger'
 import Button from './button'
 
 class Navigation extends Component {
@@ -79,7 +77,7 @@ class Navigation extends Component {
     return (
       <div className={`navigation flex flex-ai--start flex-jc--between ${this.state.showNav?'navigation--fullscreen':''}`}>
         <Button className="navigation__logo flex" onClick={ this._linkHome }>
-          <Logo className="logo logo--small" draw />
+          <i className="icon icon-logo" />
         </Button>
         { this._renderOptions(result) }
         <Button className="btn navigation__toggle" onClick={ this._toggleMenu }>
