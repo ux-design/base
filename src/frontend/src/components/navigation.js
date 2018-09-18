@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import actions from '../actions'
 import Logo from './logo'
 import Hamburger from './hamburger'
+import Button from './button'
 
 class Navigation extends Component {
   
@@ -13,7 +14,7 @@ class Navigation extends Component {
       showMenu: false
     }
   }
-  _renderChild = ( payload ) => {
+  _renderChild = payload => {
     var result
     payload.link
       ? result = <span>{ payload.name }</span>
@@ -23,11 +24,13 @@ class Navigation extends Component {
   _toggleMenu = () => {
     this.props.fire('NAVIGATION_MENU_CLICK', this.props.menuIsOpen)
   }
-  _link = ( payload ) => {
+  _link = payload => {
     this.props.fire('NAVIGATION_LINK_CLICK', payload)
   }
+  _linkHome = () => {
+    this.props.fire('PAGE_LOAD', '/index')
+  }
   componentWillReceiveProps = (nextProps) => {
-    //console.log(nextProps.menuIsOpen)
     if ( nextProps.menuIsOpen ) {
       this._maximizeNav()
       setTimeout( () => {
@@ -52,8 +55,17 @@ class Navigation extends Component {
   _hideMenu = () => {
     this.setState({showMenu: false })
   }
+  _renderNavigationLink = (key, selected, el) => {
+    return <div key={ key } className={ `navigation__link flex flex-grow ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div>
+  }
+  _renderOptions = (result) => {
+    return (
+      <div className={`navigation__links ${this.state.showMenu?'navigation__links--show':''}`} style={this.state.showMenu ? {transform: 'scale(1)'} : {transform: 'scale(0)'}} >
+        { result }
+      </div>
+    )
+  }
   render() {
-    //console.log('navigation.js > render')
     const links = this.props.content.body.navigation
     var result = []
     var el, selected = ''
@@ -62,24 +74,17 @@ class Navigation extends Component {
       el.selected
         ? selected = 'navigation__link--selected'
         : selected = ''
-      result.push( <div key={ x } className={ `navigation__link ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div> )
+      result.push( this._renderNavigationLink(x, selected, el) )
     }
     return (
-      <div className={`navigation ${this.state.showNav?'navigation--fullscreen':''}`}>
-        <div className="navigation__logo" onClick={this._link.bind(this, '/index')}>
+      <div className={`navigation flex flex-ai--start flex-jc--between ${this.state.showNav?'navigation--fullscreen':''}`}>
+        <Button className="navigation__logo flex" onClick={ this._linkHome }>
           <Logo className="logo logo--small" draw />
-        </div> 
-        <div className={`navigation__links ${this.state.showMenu?'navigation__links--show':''}`} style={this.state.showMenu ? {transform: 'scale(1)'} : {transform: 'scale(0)'}} >
-          { result }
-        </div>
-        <div className="centered fullscreen">
-          <div className="navigation__null">
-            <div className="navigation__background" style={this.state.showMenu ? {transform: 'scale(0.4)'} : {}} />
-          </div>
-        </div>
-        <div className="navigation__toggle" onClick={ this._toggleMenu }>
-          <Hamburger className="logo logo--small" draw />
-        </div>
+        </Button>
+        { this._renderOptions(result) }
+        <Button className="btn navigation__toggle" onClick={ this._toggleMenu }>
+          <i className="icon icon-hamburger" />
+        </Button>
       </div>
     )
   }

@@ -144,9 +144,7 @@ a:active {
 /* mobile */
 
 @media screen and (max-width: $m-max-width) {
-    body {
-        font-size: 30px;
-    }
+
     #loader {
         left: 0px;
     }
