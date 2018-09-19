@@ -9,7 +9,8 @@ class Navigation extends Component {
     super(props)
     this.state = {
       showNav: false,
-      showMenu: false
+      showMenu: false,
+      type: 'band'
     }
   }
   _renderChild = payload => {
@@ -80,7 +81,7 @@ class Navigation extends Component {
           <i className="icon icon-logo" />
         </Button>
         { this._renderOptions(result) }
-        <Button className="btn navigation__toggle" onClick={ this._toggleMenu }>
+        <Button className="navigation__toggle flex" onClick={ this._toggleMenu }>
           <i className="icon icon-hamburger" />
         </Button>
       </div>
