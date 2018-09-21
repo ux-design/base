@@ -1,0 +1,9 @@
+.icon--circle {
+  width: calc(100% - 20px);
+  background-color: $col-primary;
+  height: calc(100% - 20px);
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px 0px $col-black-80;
+}

@@ -12,7 +12,7 @@
     padding: 15px 15px 15px 0px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 }
 
 #content h2 {
@@ -52,17 +52,18 @@
         text-align: right;
         padding: 0!important;
         width: 50%;
+        text-shadow: 2px 2px $col-black;
     }
     h2 {
         position: absolute;
         color: $col-white-70!important;
-        opacity: 0.5!important;
         text-transform: uppercase;
         z-index: 3;
         right: 0px;
         text-align: right;
         padding: 0!important;
         width: 50%;
+        text-shadow: 2px 2px $col-black;
     }
     p {
 

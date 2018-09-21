@@ -4,18 +4,19 @@ import actions from './actions'
 import './index.css';
 import './bower_components/font-awesome/css/font-awesome.min.css'
 import Navigation from './components/navigation'
-import LayoutNavigation from './components/layouts/navigation'
+//import LayoutNavigation from './components/layouts/navigation'
 import Block from './components/block'
 import Content from './components/content'
-import Layout from './components/layout'
+//import Layout from './components/layout'
 import Viewer from './components/viewer'
 
 class App extends Component {
     _renderContent = () => {
-        if (this.props.app.get('content').layout) {
+        /* if (this.props.app.get('content').layout) {
             const layout = this.props.app.get('content').layout
             return [<Layout key="layout" />,<LayoutNavigation key="layoutNavigation" {...layout.navigation}/>]
-        } else if (this.props.app.get('content').body) {
+        } else  */
+        if (this.props.app.get('content').body) {
             return [<Navigation key="navigation" />, <Content key="content" />]
         } else {
             return <div />

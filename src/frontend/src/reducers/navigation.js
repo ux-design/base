@@ -1,7 +1,8 @@
 import Immutable from 'immutable'
 
 const initialState = Immutable.fromJS({
-  menuIsOpen: false
+  menuIsOpen: false,
+  type: 'overlay'
 })
 
 const navigationMenuToggle = (state) => {

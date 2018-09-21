@@ -114,6 +114,84 @@
                         "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
                     }
                 ]
+            },
+            {
+                "container": "banner",
+                "classes": "banner banner--experiences",
+                "content": [
+                    {
+                        "tag": "h1",
+                        "value": "Amsterdam"
+                    },
+                    {
+                        "tag": "h2",
+                        "value": "How move to another country improved my career"
+                    },
+                    {
+                        "tag": "img",
+                        "classes": "image cropped-zoom-in nopadding large",
+                        "src": "amsterdam.jpg",
+                        "click": "show-fullscreen",
+                        "rollover": "trans-zoom-in",
+                        "rolloverRemoveAfter": 0.3
+                    },
+                    {
+                        "tag": "p",
+                        "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
+                    }
+                ]
+            },
+            {
+                "container": "banner",
+                "classes": "banner banner--experiences",
+                "content": [
+                    {
+                        "tag": "h1",
+                        "value": "Last job in Italy"
+                    },
+                    {
+                        "tag": "h2",
+                        "value": "Last day picture with my Italian colleagues"
+                    },
+                    {
+                        "tag": "img",
+                        "classes": "image cropped-zoom-in nopadding large",
+                        "src": "armosia.jpg",
+                        "click": "show-fullscreen",
+                        "rollover": "trans-zoom-in",
+                        "rolloverRemoveAfter": 0.3
+                    },
+                    {
+                        "tag": "p",
+                        "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
+                    }
+                ]
+            },
+            {
+                "container": "banner",
+                "classes": "banner banner--experiences",
+                "content": [
+                    {
+                        "tag": "h1",
+                        "value": "Freelance"
+                    },
+                    {
+                        "tag": "h2",
+                        "value": "Discovering the knowledge"
+                    },
+                    {
+                        "tag": "img",
+                        "classes": "image cropped-zoom-in nopadding large",
+                        "src": "me-books.jpg",
+                        "click": "show-fullscreen",
+                        "rollover": "trans-zoom-in",
+                        "rolloverRemoveAfter": 0.3
+                    },
+                    {
+                        "tag": "p",
+                        "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
+                    }
+                ]
             }
         ]
     }

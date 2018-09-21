@@ -9,8 +9,7 @@ class Navigation extends Component {
     super(props)
     this.state = {
       showNav: false,
-      showMenu: false,
-      type: 'band'
+      showMenu: false
     }
   }
   _renderChild = payload => {
@@ -76,14 +75,15 @@ class Navigation extends Component {
         : selected = ''
       result.push( this._renderNavigationLink(x, selected, el) )
     }
+    var type = this.props.type
     return (
-      <div className={`navigation flex flex-ai--start flex-jc--between ${this.state.showNav?'navigation--fullscreen':''}`}>
+      <div className={`navigation flex flex-ai--start flex-jc--between ${this.state.showNav ? 'navigation--fullscreen' : type === 'overlay'?'gradient-navigation-overlay':''}`}>
         <Button className="navigation__logo flex" onClick={ this._linkHome }>
-          <i className="icon icon-logo" />
+          <i className={`icon icon-logo ${type === 'overlay' && !this.state.showNav ?'icon--circle':''}`} />
         </Button>
         { this._renderOptions(result) }
         <Button className="navigation__toggle flex" onClick={ this._toggleMenu }>
-          <i className="icon icon-hamburger" />
+          <i className={`icon icon-hamburger ${type === 'overlay' && !this.state.showNav ?'icon--circle':''}`} />
         </Button>
       </div>
     )
@@ -93,7 +93,8 @@ class Navigation extends Component {
 const mapState = state => {
   return {
       content: state.app.get('content'),
-      menuIsOpen: state.navigation.get('menuIsOpen')
+      menuIsOpen: state.navigation.get('menuIsOpen'),
+      type: state.navigation.get('type')
   }
 }
 

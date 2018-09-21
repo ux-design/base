@@ -1,0 +1,8 @@
+.gradient-navigation-overlay {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000020+0,000020+100&0.8+0,0+100 */
+  background: -moz-linear-gradient(top, $col-black 0%, $col-black-0 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $col-black 0%,$col-black-0 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $col-black 0%,$col-black-0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000020', endColorstr='#00000020',GradientType=0 ); /* IE6-9 */
+
+}

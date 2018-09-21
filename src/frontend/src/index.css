@@ -103,7 +103,7 @@
   padding: 15px 15px 15px 0px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: -2px; }
+  letter-spacing: -1px; }
 
 #content h2 {
   margin: 0;
@@ -136,18 +136,19 @@
   right: 0px;
   text-align: right;
   padding: 0 !important;
-  width: 50%; }
+  width: 50%;
+  text-shadow: 2px 2px #000020; }
 
 .banner h2 {
   position: absolute;
   color: rgba(255, 255, 255, 0.7) !important;
-  opacity: 0.5 !important;
   text-transform: uppercase;
   z-index: 3;
   right: 0px;
   text-align: right;
   padding: 0 !important;
-  width: 50%; }
+  width: 50%;
+  text-shadow: 2px 2px #000020; }
 
 @media screen and (orientation: landscape) {
   .banner {
@@ -575,14 +576,12 @@ p.el-show {
   margin: 10px;
   transform: scale(1);
   transition: all 0.3s; }
-
-.navigation__link:hover {
-  transform: scale(1.1);
-  transition: all 0.3s; }
-
-.navigation__link--selected {
-  background-color: #000020;
-  color: #fcd100; }
+  .navigation__link:hover {
+    transform: scale(1.1);
+    transition: all 0.3s; }
+  .navigation__link--selected {
+    background-color: #000020;
+    color: #fcd100; }
 
 .navigation__toggle {
   cursor: pointer;
@@ -594,43 +593,6 @@ p.el-show {
   position: absolute;
   right: 0px; }
 
-.navigation__null {
-  width: 100px;
-  height: 100px;
-  overflow: visible;
-  display: inline-table;
-  position: absolute; }
-
-/* DESKTOP */
-/* @media screen and (min-width: $m-max-width) {
-  .navigation {
-    min-height: $navigation-height-d;
-    max-height: $navigation-height-d;
-  }
-  .navigation--fullscreen {
-    min-height: 100%;
-  }
-  .navigation__logo {
-    height: 100%;
-  }
-  .navigation__links {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .navigation__links--show {
-    align-self: center;
-  }
-  .navigation__link {
-    height: 50px;
-    flex-grow: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .navigation__toggle {
-    height: 100%;
-  }
-} */
 #viewer .viewer-close {
   position: absolute;
   top: 10px;
@@ -709,6 +671,26 @@ p.el-show {
 .icon {
   /* font-size: 1rem;
   line-height: 0rem; */ }
+
+.icon--circle {
+  width: calc(100% - 20px);
+  background-color: #fcd100;
+  height: calc(100% - 20px);
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 32, 0.8); }
+
+.gradient-navigation-overlay {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000020+0,000020+100&0.8+0,0+100 */
+  background: -moz-linear-gradient(top, #000020 0%, rgba(0, 0, 32, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #000020 0%, rgba(0, 0, 32, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #000020 0%, rgba(0, 0, 32, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000020', endColorstr='#00000020',GradientType=0 );
+  /* IE6-9 */ }
 
 body {
   margin: 0;
@@ -797,15 +779,6 @@ a:active {
 #overlay {
   z-index: 1000; }
 
-#navigation {
-  z-index: 900;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  overflow: hidden;
-  /* border-bottom: solid 1px white; */
-  box-shadow: 0px 3px 5px #000020; }
-
 #content {
   z-index: 100;
   top: 0px;
@@ -833,25 +806,6 @@ a:active {
 @media screen and (max-width: 576px) {
   #loader {
     left: 0px; }
-  #navigation {
-    display: flex;
-    height: 100%;
-    transform: translateY(calc( 40px - 100%)); }
-  #navigation.navigation-off {
-    animation: navigation-off 0s;
-    animation-fill-mode: forwards; }
-  #navigation.navigation-on {
-    animation: navigation-on 0s;
-    animation-fill-mode: forwards; }
-  #navigation.navigation-off-anim {
-    animation: navigation-off 0.3s cubic-bezier(0.44, 0.77, 0.39, 0.99);
-    animation-fill-mode: forwards; }
-  #navigation.navigation-on-anim {
-    animation: navigation-on 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99);
-    animation-fill-mode: forwards; }
-  .navigation.ios-small-in {
-    animation: ios-small-in 0.6s cubic-bezier(0.44, 0.77, 0.39, 0.99);
-    animation-fill-mode: forwards; }
   #content {
     padding-top: 60px; } }
 
@@ -859,8 +813,5 @@ a:active {
 @media screen and (min-width: 576px) {
   #loader {
     left: 120px; }
-  #navigation {
-    display: flex;
-    height: 50px; }
   #content {
     padding-top: 80px; } }

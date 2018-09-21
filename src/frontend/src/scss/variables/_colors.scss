@@ -5,9 +5,13 @@ $col-white-97: rgba(255, 255, 255, 0.97);
 $col-white-70: rgba(255, 255, 255, 0.7);
 $col-white-50: rgba(255, 255, 255, 0.5);
 $col-yellow: rgb(252, 209, 0);
-$col-black: rgb(0, 0, 32);
+$col-black: rgba(0, 0, 32, 1);
+$col-black-80: rgba(0, 0, 32, 0.8);
+$col-black-50: rgba(0, 0, 32, 0.5);
+$col-black-0: rgba(0, 0, 32, 0);
 $col-primary: $col-yellow;
 $col-secondary: $col-black;
+
 // scheme yellow and black
 $col-background: $col-yellow;
 $col-body-background: $col-white;
