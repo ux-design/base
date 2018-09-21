@@ -55,11 +55,12 @@ class Navigation extends Component {
     this.setState({showMenu: false })
   }
   _renderNavigationLink = (key, selected, el) => {
-    return <div key={ key } className={ `navigation__link flex flex-grow ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div>
+    return <div key={ key } className={ `navigation__link flex ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div>
   }
   _renderOptions = (result) => {
+    const {showMenu} = this.state 
     return (
-      <div className={`navigation__links ${this.state.showMenu?'navigation__links--show':''}`} style={this.state.showMenu ? {transform: 'scale(1)'} : {transform: 'scale(0)'}} >
+      <div className={`navigation__links flex flex-wrap ${showMenu ? 'navigation__links--show' : ''}`} >
         { result }
       </div>
     )
