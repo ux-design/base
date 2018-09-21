@@ -39,58 +39,6 @@
     padding: 15px 0 15px 0;
 }
 
-.banner {
-    .image {
-        height: 300px!important;
-        clip-path: polygon(0 10px, 100% 0, 100% 100%, 0 100%);
-    }
-    h1 {
-        position: absolute;
-        color: white!important;
-        z-index: 2;
-        right: 0px;
-        text-align: right;
-        padding: 0!important;
-        width: 50%;
-        text-shadow: 2px 2px $col-black;
-    }
-    h2 {
-        position: absolute;
-        color: $col-white-70!important;
-        text-transform: uppercase;
-        z-index: 3;
-        right: 0px;
-        text-align: right;
-        padding: 0!important;
-        width: 50%;
-        text-shadow: 2px 2px $col-black;
-    }
-    p {
-
-    }
-}
-
-@media screen and (orientation:landscape) {
-    .banner {
-        margin-bottom: 10px;
-        .image {
-            width: 50%!important;
-            float: left;
-        }
-        h1 {
-            right: calc(50% + 30px);
-        }
-        h2 {
-            right: calc(50% + 30px);
-        }
-        p {
-            position: absolute;
-            left: 50%;
-            width: 50%;
-        }
-    }
-}
-
 #content .image {}
 
 #content .image.small {
@@ -233,17 +181,6 @@ p.el-show {
     #content .image.large {
         height: 200px;
     }
-    .banner {
-        .image {
-            height: $m-banner-image-height!important;
-        }
-        h1 {
-            margin: $m-banner-h1-margin!important;
-        }
-        h2 {
-            margin: $m-banner-h2-margin!important;
-        }
-    }
     #content .wrapper {
         padding: $m-margin-default!important;
         padding-top: 0!important;
@@ -268,17 +205,6 @@ p.el-show {
     }
     #content .image.large {
         height: 400px;
-    }
-    .banner {
-        .image {
-            height: $d-banner-image-height!important;
-        }
-        h1 {
-            margin: $d-banner-h1-margin!important;
-        }
-        h2 {
-            margin: $d-banner-h2-margin!important;
-        }
     }
     #content .wrapper {
         padding: $d-margin-default!important;

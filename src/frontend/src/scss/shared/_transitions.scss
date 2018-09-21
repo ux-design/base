@@ -1,0 +1,8 @@
+.hover {
+  transform: scale(1);
+  transition: $transition-default;
+  transition-timing-function: $transition-timing-function-default;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

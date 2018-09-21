@@ -54,7 +54,7 @@ class Navigation extends Component {
     this.setState({showMenu: false })
   }
   _renderNavigationLink = (key, selected, el) => {
-    return <div key={ key } className={ `navigation__link flex ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div>
+    return <div key={ key } className={ `navigation__link hover flex ${selected}` } onClick={ this._link.bind( this, el.link ) }>{ this._renderChild( el ) }</div>
   }
   _renderOptions = (result) => {
     const {showMenu} = this.state 
@@ -78,11 +78,11 @@ class Navigation extends Component {
     var type = this.props.type
     return (
       <div className={`navigation flex flex-ai--start flex-jc--between ${this.state.showNav ? 'navigation--fullscreen' : type === 'overlay'?'gradient-navigation-overlay':''}`}>
-        <Button className="navigation__logo flex" onClick={ this._linkHome }>
+        <Button className="navigation__logo hover flex" onClick={ this._linkHome }>
           <i className={`icon icon-logo ${type === 'overlay' && !this.state.showNav ?'icon--circle':''}`} />
         </Button>
         { this._renderOptions(result) }
-        <Button className="navigation__toggle flex" onClick={ this._toggleMenu }>
+        <Button className="navigation__toggle hover flex" onClick={ this._toggleMenu }>
           <i className={`icon icon-hamburger ${type === 'overlay' && !this.state.showNav ?'icon--circle':''}`} />
         </Button>
       </div>

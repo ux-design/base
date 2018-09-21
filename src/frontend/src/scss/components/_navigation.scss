@@ -6,7 +6,7 @@
   overflow: hidden;
   z-index: 2;
   transition: all 0.5s;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-timing-function: $transition-timing-function-default;
   min-height: $navigation-height-m;
   max-height: $navigation-height-m;
   overflow: hidden;
@@ -25,6 +25,17 @@
   position: absolute;
 }
 
+.navigation__toggle {
+  cursor: pointer;
+  z-index: 1;
+  width: $navigation-height-m;
+  height: $navigation-height-m;
+  font-size: 1rem;
+  line-height: 0rem;
+  position: absolute;
+  right: 0px;
+}
+
 .navigation__links {
   align-items: center;
   justify-content: center;
@@ -32,7 +43,7 @@
   transition: all 0.5s;
   transform: scale(0.02);
   transform-origin: center center;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-timing-function: $transition-timing-function-default;
   align-self: center;
   opacity: 0;
   overflow: scroll;
@@ -54,23 +65,8 @@
   margin: 10px;
   transform: scale(1);
   transition: all 0.3s;
-  &:hover {
-    transform: scale(1.1);
-    transition: all 0.3s;
-  }
   &--selected {
     background-color: $col-text;
     color: $col-primary;
   }
-}
-
-.navigation__toggle {
-  cursor: pointer;
-  z-index: 1;
-  width: $navigation-height-m;
-  height: $navigation-height-m;
-  font-size: 1rem;
-  line-height: 0rem;
-  position: absolute;
-  right: 0px;
 }
