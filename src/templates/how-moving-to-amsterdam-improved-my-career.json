@@ -1,0 +1,62 @@
+{
+  "file": "how-moving-to-amsterdam-improved-my-career.html",
+  "language": "en",
+  "url": "/how-moving-to-amsterdam-improved-my-career",
+  "meta": [ 
+      "<meta charset=\"utf-8\" />",
+      "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\"/>",
+      "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">",
+      "<meta name=\"description\" content=\"Personal website of Andrea Mazzilli with all information about this software developer\">",
+      "<meta name=\"theme-color\" content=\"white\">"
+  ],
+  "title": "Andrea Mazzilli - How moving to Amsterdam improved my career",
+  "style": "",
+  "logo": "logo.svg",
+  "body": {
+      "navigation": {
+          "about": { 
+              "name": "about",
+              "link": "/about"
+          },
+          "skills": { 
+              "name": "skills",
+              "link": "/skills"
+          },
+          "experiences": {
+              "name": "experiences",
+              "link": "/experiences",
+              "selected": true
+          },
+          "blog": {
+              "name": "blog",
+              "link": "/blog"
+          },
+          "contact": {
+              "name": "contact",
+              "link": "/contact"
+          }
+      },
+      "content": [
+        {
+          "tag": "h1",
+          "value": "Amsterdam"
+        },
+        {
+            "tag": "h2",
+            "value": "How move to another country improved my career"
+        },
+        {
+            "tag": "img",
+            "classes": "image cropped-zoom-in nopadding large",
+            "src": "amsterdam.jpg",
+            "click": "show-fullscreen",
+            "rollover": "trans-zoom-in",
+            "rolloverRemoveAfter": 0.3
+        },
+        {
+            "tag": "p",
+            "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
+        }
+      ]
+  }
+}

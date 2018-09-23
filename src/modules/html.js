@@ -72,8 +72,10 @@ const createCONTENT = ( payload , test ) => {
             ,   container = el.container
             ,   id = el.id 
             ,   value = el.value ? el.value : ''
+            ,   link = el.link
             ,   attrId = ''
-            ,   attrClass = '';
+            ,   attrClass = ''
+            ,   attrHref = '';
             if ( tag == 'img' ) {
                 result.push( createIMG( el ) );
             } else if ( container ) {
@@ -81,7 +83,10 @@ const createCONTENT = ( payload , test ) => {
             } else {
                 if ( id ) attrId = `id="${id}"`;
                 if ( classes ) attrClass = `class="${classes}"`;
-                result.push( `<${tag} ${attrId} ${attrClass}>${value}</${tag}>` );
+                if ( link ) {
+                    attrHref = `href="${link}"`
+                };
+                result.push( `<${tag} ${attrId} ${attrHref} ${attrClass}>${value}</${tag}>` );
             }
         }
         return `<div id="content">${result.join('')}</div>`;
@@ -99,15 +104,20 @@ const createContainer = ( payload, test ) => {
             let tag = el.tag 
             ,   classes = el.classes
             ,   id = el.id 
+            ,   link = el.link 
             ,   value = el.value ? el.value : ''
             ,   attrId = ''
-            ,   attrClass = '';
+            ,   attrClass = ''
+            ,   attrHref = '';
             if ( tag == 'img' ) {
                 result.push( createIMG( el ) );
             } else {
                 if ( id ) attrId = `id="${id}"`;
                 if ( classes ) attrClass = `class="${classes}"`;
-                result.push( `<${tag} ${attrId} ${attrClass}>${value}</${tag}>` );
+                if ( link ) {
+                    attrHref = `href="${link}"`
+                };
+                result.push( `<${tag} ${attrHref} ${attrId} ${attrClass}>${value}</${tag}>` );
             }
         }
         return result.join('');

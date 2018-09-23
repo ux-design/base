@@ -60,6 +60,11 @@
                     {
                         "tag": "p",
                         "value": "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.The quick brown fox jumped over the lazy dog."
+                    },
+                    {
+                        "tag": "a",
+                        "value": "read more",
+                        "link": "/how-moving-to-amsterdam-improved-my-career"
                     }
                 ]
             },
