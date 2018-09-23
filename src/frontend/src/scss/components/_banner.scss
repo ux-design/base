@@ -49,24 +49,11 @@
   }
 }
 
-@media screen and (orientation:landscape) {
+@media screen and (orientation:landscape) and (max-width: $m-max-width) {
   .banner {
-    margin-bottom: 10px;
-    .image {
-      width: 50%!important;
-      float: left;
-    }
-    h1 {
-      right: calc(50% + 30px);
-    }
-    h2 {
-      right: calc(50% + 30px);
-    }
-    p {
-      position: absolute;
-      left: 50%;
-      width: 50%;
-    }
+    width: calc(50% - 20px);
+    margin: 10px;
+    display: inline-block;
   }
 }
 
@@ -74,10 +61,12 @@
 
 @media screen and (min-width: $m-max-width) {
   .banner {
-    width: 50%;
+    width: calc(50% - 20px);
+    margin: 10px;
     display: inline-block;
     .image {
       height: $d-banner-image-height!important;
+      overflow: hidden;
     }
     h1 {
       margin: $d-banner-h1-margin!important;
