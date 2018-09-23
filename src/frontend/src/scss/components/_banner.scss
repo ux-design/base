@@ -1,14 +1,11 @@
 .banner {
   .image {
     height: $m-banner-image-height!important;
-    clip-path: polygon(0 10px, 100% 0, 100% 100%, 0 100%);
   }
   h1 {
     position: absolute;
     color: white!important;
     z-index: 2;
-    right: 0px;
-    text-align: right;
     padding: 0!important;
     text-shadow: 2px 2px $col-black;
     margin: $m-banner-h1-margin!important;
@@ -18,8 +15,6 @@
     color: $col-white-70!important;
     text-transform: uppercase;
     z-index: 3;
-    right: 0px;
-    text-align: right;
     padding: 0!important;
     width: 50%;
     text-shadow: 2px 2px $col-black;
@@ -27,6 +22,30 @@
   }
   p {
 
+  }
+  &--left {
+    .image {
+      clip-path: polygon(0 0, 100% 10px, 100% 100%, 0 100%);
+    }
+    h1 {
+      left: 0px;
+    }
+    h2 {
+      left: 0px;
+    }
+  }
+  &--right {
+    .image {
+      clip-path: polygon(0 10px, 100% 0, 100% 100%, 0 100%);
+    }
+    h1 {
+      right: 0px;
+      text-align: right;
+    }
+    h2 {
+      right: 0px;
+      text-align: right;
+    }
   }
 }
 
@@ -55,6 +74,8 @@
 
 @media screen and (min-width: $m-max-width) {
   .banner {
+    width: 50%;
+    display: inline-block;
     .image {
       height: $d-banner-image-height!important;
     }

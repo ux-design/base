@@ -232,10 +232,8 @@ class Content extends Component {
       result.push( this._renderChild( el , x ) )
     }
     return (
-      <div id="content">
-        <div className="wrapper">
-          { result }
-        </div>
+      <div className="content">
+        { result }
       </div>
     )
   }

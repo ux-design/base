@@ -39,7 +39,7 @@
         "content": [
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--left banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
@@ -65,7 +65,7 @@
             },
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--right banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
@@ -91,7 +91,7 @@
             },
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--left banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
@@ -117,7 +117,7 @@
             },
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--right banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
@@ -143,7 +143,7 @@
             },
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--left banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
@@ -169,7 +169,7 @@
             },
             {
                 "container": "banner",
-                "classes": "banner banner--experiences",
+                "classes": "banner banner--right banner--experiences",
                 "content": [
                     {
                         "tag": "h1",
